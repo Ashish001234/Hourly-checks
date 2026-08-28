@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEPARTURES — New Grad Board</title>
+<style>
+:root{
+  --bg:#0F1115;
+  --panel:#171A21;
+  --panel-2:#1D2029;
+  --line:#2A2E38;
+  --text:#E9E7E1;
+  --muted:#8A8F98;
+  --amber:#F2A93B;
+  --teal:#4FB6A8;
+  --coral:#E85D4C;
+  --mono: 'IBM Plex Mono', 'SF Mono', 'Courier New', monospace;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;}
+
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px;}
+
+.hero{
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:linear-gradient(180deg,var(--panel-2),var(--panel));
+  padding:22px 24px;
+  margin-bottom:22px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background: repeating-linear-gradient(180deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px);
+  pointer-events:none;
+}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.14em;
+  color:var(--amber);
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.title{
+  font-family:var(--mono);
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:.03em;
+  margin:0 0 4px;
+}
+.subtitle{color:var(--muted); font-size:13.5px; margin:0 0 18px; max-width:640px; line-height:1.5;}
+
+.board{display:flex; gap:10px; flex-wrap:wrap;}
+.flip{
+  background:#0B0D11;
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:10px 16px;
+  min-width:96px;
+  text-align:center;
+}
+.flip .n{
+  font-family:var(--mono);
+  font-size:26px;
+  font-weight:700;
+  color:var(--text);
+  line-height:1;
+}
+.flip.amber .n{color:var(--amber);}
+.flip.teal .n{color:var(--teal);}
+.flip.coral .n{color:var(--coral);}
+.flip .l{
+  font-size:9.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:5px;
+}
+
+.tabs{display:flex; gap:2px; margin-bottom:16px; border-bottom:1px solid var(--line);}
+.tab{
+  font-family:var(--mono);
+  font-size:12.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  background:none; border:none; color:var(--muted);
+  padding:10px 4px; margin-right:22px; cursor:pointer;
+  border-bottom:2px solid transparent;
+}
+.tab.active{color:var(--text); border-bottom-color:var(--amber);}
+.tab .cnt{color:var(--muted); font-size:11px;}
+
+.panel{display:none;}
+.panel.active{display:block;}
+
+.controls{
+  display:flex; gap:8px; flex-wrap:wrap; align-items:center;
+  margin-bottom:14px;
+}
+input[type=text]{
+  background:var(--panel); border:1px solid var(--line); color:var(--text);
+  border-radius:6px; padding:8px 10px; font-size:13px; font-family:var(--sans);
+  flex:1; min-width:180px;
+}
+input[type=text]:focus{outline:1px solid var(--amber); border-color:var(--amber);}
+select{
+  background:var(--panel); border:1px solid var(--line); color:var(--text);
+  border-radius:6px; padding:8px 10px; font-size:12.5px; font-family:var(--sans);
+}
+.chip{
+  font-family:var(--mono); font-size:11px; letter-spacing:.04em;
+  border:1px solid var(--line); background:var(--panel); color:var(--muted);
+  border-radius:20px; padding:6px 12px; cursor:pointer; user-select:none;
+}
+.chip.on{color:var(--bg); background:var(--amber); border-color:var(--amber);}
+
+.rows{border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+.rowhead, .row{
+  display:grid;
+  grid-template-columns: 76px 1fr 160px 76px 60px 34px;
+  gap:10px; align-items:center;
+  padding:10px 14px;
+}
+.rowhead{
+  background:var(--panel-2);
+  font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+  border-bottom:1px solid var(--line);
+}
+.row{border-bottom:1px solid var(--line); font-size:13px;}
+.row:last-child{border-bottom:none;}
+.row:hover{background:var(--panel);}
+.row.applied{opacity:.5;}
+.date{font-family:var(--mono); color:var(--muted); font-size:11.5px; white-space:nowrap;}
+.role-cell .company{font-weight:600; margin-right:6px;}
+.role-cell .role{color:var(--muted);}
+.tier-badge{
+  font-family:var(--mono); font-size:9.5px; padding:2px 6px; border-radius:3px; letter-spacing:.03em;
+}
+.tier-1{background:rgba(242,169,59,.15); color:var(--amber);}
+.tier-2{background:rgba(79,182,168,.15); color:var(--teal);}
+.tier-3{background:rgba(138,143,152,.15); color:var(--muted);}
+.loc{color:var(--muted); font-size:12px;}
+.badge-new{
+  font-family:var(--mono); font-size:9px; font-weight:700; letter-spacing:.06em;
+  background:var(--coral); color:#fff; border-radius:3px; padding:2px 5px; margin-right:6px;
+  vertical-align:1px;
+}
+.flag{
+  font-family:var(--mono); font-size:9.5px; padding:1px 5px; border-radius:3px;
+  margin-left:6px; white-space:nowrap; vertical-align:1px;
+}
+.flag-none{background:rgba(232,93,76,.16); color:var(--coral);}
+.flag-citizen{background:rgba(232,93,76,.16); color:var(--coral);}
+.flag-ok{background:rgba(79,182,168,.16); color:var(--teal);}
+.salary{font-family:var(--mono); font-size:10.5px; color:var(--teal); margin-left:6px;}
+.srcs{font-family:var(--mono); font-size:9px; color:var(--muted); margin-left:6px; opacity:.75;}
+.applylink{
+  font-family:var(--mono); font-size:11px; color:var(--bg); background:var(--text);
+  border-radius:4px; padding:5px 8px; text-decoration:none; text-align:center; white-space:nowrap;
+}
+.applylink:hover{background:var(--amber);}
+.chk{width:16px; height:16px; accent-color:var(--amber); cursor:pointer;}
+.empty{padding:30px; text-align:center; color:var(--muted); font-size:13px;}
+
+.pipe-add{
+  border:1px solid var(--line); border-radius:8px; background:var(--panel);
+  padding:14px; margin-bottom:18px;
+}
+.pipe-add .grid{display:grid; grid-template-columns:1fr 1fr 140px; gap:8px; margin-bottom:8px;}
+.pipe-add textarea{
+  width:100%; background:var(--panel-2); border:1px solid var(--line); color:var(--text);
+  border-radius:6px; padding:8px 10px; font-size:13px; font-family:var(--sans); resize:vertical; min-height:44px;
+}
+.btn{
+  font-family:var(--mono); font-size:12px; letter-spacing:.04em;
+  background:var(--amber); color:var(--bg); border:none; border-radius:6px;
+  padding:9px 16px; cursor:pointer; font-weight:600;
+}
+.btn:hover{opacity:.9;}
+.btn.ghost{background:none; border:1px solid var(--line); color:var(--muted);}
+
+.pcard{
+  border:1px solid var(--line); border-radius:8px; background:var(--panel);
+  padding:14px 16px; margin-bottom:10px;
+  display:grid; grid-template-columns:1fr 130px 30px; gap:14px; align-items:start;
+}
+.pcard .company{font-weight:700; font-size:14.5px;}
+.pcard .role{color:var(--muted); font-size:12.5px; margin-bottom:6px;}
+.pcard .notes{font-size:12.5px; color:var(--text); white-space:pre-wrap; line-height:1.5;}
+.pcard .meta{font-family:var(--mono); font-size:10px; color:var(--muted); margin-top:6px;}
+.stage-select{
+  font-family:var(--mono); font-size:11px; text-align:center;
+  border-radius:5px; padding:6px 8px; border:1px solid var(--line); cursor:pointer;
+}
+.stage-outreach{background:rgba(138,143,152,.15); color:var(--muted);}
+.stage-interviewing{background:rgba(79,182,168,.15); color:var(--teal);}
+.stage-offer{background:rgba(242,169,59,.15); color:var(--amber);}
+.stage-closed{background:rgba(232,93,76,.15); color:var(--coral);}
+.del{background:none; border:none; color:var(--muted); cursor:pointer; font-size:16px;}
+.del:hover{color:var(--coral);}
+
+.note{
+  font-size:12px; color:var(--muted); line-height:1.6; margin-top:20px;
+  border-top:1px solid var(--line); padding-top:14px;
+}
+.note b{color:var(--text);}
+.status{font-family:var(--mono); font-size:11px; color:var(--muted); margin-bottom:14px;}
+.status .dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--teal); margin-right:6px;}
+
+@media(max-width:640px){
+  .rowhead, .row{grid-template-columns: 1fr 60px 34px;}
+  .rowhead span:nth-child(2), .rowhead span:nth-child(3), .row .loc, .row .date{display:none;}
+  .pcard{grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">New Grad &middot; SDE / AI-ML</div>
+    <h1 class="title">DEPARTURES</h1>
+    <p class="subtitle">New-grad listings refreshed automatically, three times a day, plus your own pipeline of interviews and offer talks in one place.</p>
+    <div class="board">
+      <div class="flip amber"><div class="n" id="cnt-total">0</div><div class="l">Open Roles</div></div>
+      <div class="flip"><div class="n" id="cnt-faang">0</div><div class="l">FAANG+</div></div>
+      <div class="flip"><div class="n" id="cnt-ml">0</div><div class="l">AI / ML</div></div>
+      <div class="flip coral"><div class="n" id="cnt-new">0</div><div class="l">New for you</div></div>
+      <div class="flip teal"><div class="n" id="cnt-applied">0</div><div class="l">Applied</div></div>
+      <div class="flip"><div class="n" id="cnt-pipe">0</div><div class="l">In Pipeline</div></div>
+    </div>
+  </div>
+
+  <div class="status">
+    <span class="dot"></span>refreshed hourly · <span id="srcSummary">loading…</span>
+    &nbsp;·&nbsp; tracking new since <span id="seenSince">—</span>
+    <button class="btn ghost" id="markSeen" style="padding:3px 9px; font-size:10.5px; margin-left:8px;">Mark all seen</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="listings">Listings <span class="cnt" id="tab-cnt-listings"></span></button>
+    <button class="tab" data-tab="pipeline">Pipeline <span class="cnt" id="tab-cnt-pipeline"></span></button>
+  </div>
+
+  <div class="panel active" id="panel-listings">
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search company or role...">
+      <select id="tierFilter">
+        <option value="all">All companies</option>
+        <option value="1">FAANG+ only</option>
+        <option value="2">FAANG+ &amp; Big Tech</option>
+      </select>
+      <select id="sortBy">
+        <option value="date">Newest first</option>
+        <option value="tier">FAANG+ first</option>
+        <option value="company">Company A–Z</option>
+      </select>
+      <select id="ageFilter">
+        <option value="all">Any age</option>
+        <option value="0">Posted today</option>
+        <option value="2">Posted &lt; 3 days</option>
+        <option value="6">Posted &lt; 7 days</option>
+        <option value="29">Posted &lt; 30 days</option>
+      </select>
+      <div class="chip" id="newChip">New only</div>
+      <div class="chip" id="mlChip">AI/ML roles</div>
+      <div class="chip" id="sponChip">Sponsor-friendly</div>
+      <div class="chip" id="hideAppliedChip">Hide applied</div>
+    </div>
+    <div class="rowhead">
+      <span>Posted</span><span>Role</span><span>Location</span><span>Tier</span><span>Apply</span><span>✓</span>
+    </div>
+    <div class="rows" id="rows"><div class="empty">Loading listings…</div></div>
+  </div>
+
+  <div class="panel" id="panel-pipeline">
+    <div class="pipe-add">
+      <div class="grid">
+        <input type="text" id="p-company" placeholder="Company">
+        <input type="text" id="p-role" placeholder="Role / contact (e.g. AI Builder — recruiter name)">
+        <select id="p-stage">
+          <option value="outreach">Outreach / Applied</option>
+          <option value="interviewing">Interviewing</option>
+          <option value="offer">Offer talks</option>
+          <option value="closed">Closed</option>
+        </select>
+      </div>
+      <textarea id="p-notes" placeholder="Notes — interview dates, who you spoke with, next steps..."></textarea>
+      <div style="margin-top:8px;"><button class="btn" id="p-add">+ Add to pipeline</button></div>
+    </div>
+    <div id="pipe-list"></div>
+  </div>
+
+  <div class="note">
+    <b>How this stays current.</b> A scheduled job refreshes the listings three times a day and redeploys this page automatically — no manual step. Applied checkboxes and your pipeline are saved in this browser's local storage, so they'll persist here on this device, but won't follow you to a different browser or phone. Listings are merged from four trackers, so an outage at any one of them no longer blanks the board; <b>2&times; confirmed</b> means more than one tracker carries the role. <b>NEW</b> marks anything first seen since your last &ldquo;Mark all seen&rdquo;. Sponsorship flags come from the sources &mdash; most roles state nothing either way, so <b>Sponsor-friendly</b> hides only roles explicitly closed to sponsorship.
+  </div>
+
+</div>
+
+<script>
+let JOBS = [];
+let appliedMap = {};
+let pipeline = [];
+let state = { search:'', tier:'all', sort:'date', age:'all', mlOnly:false, hideApplied:false, newOnly:false, sponOnly:false };
+let lastSeenAt = null;
+const RENDER_CAP = 400;
+
+async function loadJobs(){
+  try{
+    const res = await fetch('data/jobs.json', {cache:'no-store'});
+    JOBS = await res.json();
+    const srcs = new Set();
+    for(const j of JOBS){ for(const s of (j.sources||[])) srcs.add(s); }
+    document.getElementById('srcSummary').textContent =
+      `${JOBS.length} roles from ${srcs.size} source${srcs.size===1?'':'s'} (${[...srcs].sort().join(', ')})`;
+  }catch(e){
+    document.getElementById('rows').innerHTML = '<div class="empty">Could not load data/jobs.json</div>';
+  }
+}
+
+function loadLocal(){
+  try{ appliedMap = JSON.parse(localStorage.getItem('applied-status') || '{}'); }catch(e){ appliedMap = {}; }
+  try{
+    const raw = localStorage.getItem('pipeline-entries');
+    pipeline = raw ? JSON.parse(raw) : defaultPipeline();
+    if(!raw) saveLocalPipeline();
+  }catch(e){ pipeline = defaultPipeline(); }
+}
+
+// Intentionally empty. Pipeline entries name real recruiters and describe live
+// negotiations, and a Pages site is served publicly on the internet whether or
+// not its repository is private -- so none of that can live in committed source.
+// Add entries through the UI instead: they stay in this browser's local storage
+// and are never committed or published.
+function defaultPipeline(){
+  return [];
+}
+
+function loadLastSeen(){
+  // Seed on first ever load, otherwise every listing would show as NEW.
+  try{
+    lastSeenAt = localStorage.getItem('last-seen-at');
+    if(!lastSeenAt){ lastSeenAt = new Date().toISOString(); localStorage.setItem('last-seen-at', lastSeenAt); }
+  }catch(e){ lastSeenAt = new Date().toISOString(); }
+}
+// Sticky on purpose: NEW badges survive reloads until explicitly cleared,
+// so a refresh can't silently wipe the list of things you have not reviewed.
+function markAllSeen(){
+  lastSeenAt = new Date().toISOString();
+  try{ localStorage.setItem('last-seen-at', lastSeenAt); }catch(e){}
+  render();
+}
+function isNew(j){ return !!(j.first_seen && lastSeenAt && j.first_seen > lastSeenAt); }
+
+function saveLocalApplied(){ localStorage.setItem('applied-status', JSON.stringify(appliedMap)); }
+function saveLocalPipeline(){ localStorage.setItem('pipeline-entries', JSON.stringify(pipeline)); }
+
+function tierLabel(t){ return t===1 ? 'FAANG+' : t===2 ? 'Big Tech' : 'Other'; }
+
+function render(){
+  let list = JOBS.slice();
+  if(state.search){
+    const q = state.search.toLowerCase();
+    list = list.filter(j => j.company.toLowerCase().includes(q) || j.role.toLowerCase().includes(q) || j.location.toLowerCase().includes(q));
+  }
+  if(state.tier !== 'all'){
+    const max = parseInt(state.tier);
+    list = list.filter(j => j.tier <= max);
+  }
+  if(state.mlOnly){ list = list.filter(j => j.is_ml); }
+  if(state.hideApplied){ list = list.filter(j => !appliedMap[j.id]); }
+  if(state.newOnly){ list = list.filter(isNew); }
+  // "Sponsor-friendly" hides only what a source positively marked as closed to
+  // sponsorship. Unknown stays visible — most listings say nothing either way.
+  if(state.sponOnly){ list = list.filter(j => j.sponsorship !== 'none' && j.sponsorship !== 'citizen'); }
+  if(state.age !== 'all'){
+    const cutoff = isoDaysAgo(parseInt(state.age));
+    list = list.filter(j => j.posted && j.posted >= cutoff);
+  }
+
+  if(state.sort === 'tier'){ list.sort((a,b)=> a.tier - b.tier); }
+  else if(state.sort === 'company'){ list.sort((a,b)=> a.company.localeCompare(b.company)); }
+  else {
+    // Sort explicitly rather than trusting the source to stay newest-first.
+    list.sort((a,b)=>{
+      const ta = postedTime(a), tb = postedTime(b);
+      if(ta === null && tb === null) return 0;
+      if(ta === null) return 1;   // undated listings sink to the bottom
+      if(tb === null) return -1;
+      return tb - ta;
+    });
+  }
+
+  const rowsEl = document.getElementById('rows');
+  rowsEl.innerHTML = '';
+  if(list.length === 0){
+    rowsEl.innerHTML = '<div class="empty">No listings match those filters.</div>';
+  } else {
+    // The merged board runs to thousands of rows. Rebuilding all of them on
+    // every keystroke makes search feel broken, so cap it and say so plainly.
+    for(const j of list.slice(0, RENDER_CAP)){
+      const applied = !!appliedMap[j.id];
+      const row = document.createElement('div');
+      row.className = 'row' + (applied ? ' applied' : '');
+      row.innerHTML = `
+        <span class="date">${esc(dateLabel(j))}</span>
+        <span class="role-cell">${isNew(j) ? '<span class="badge-new">NEW</span>' : ''}<span class="company">${esc(j.company)}</span><span class="role">${esc(j.role)}</span>${sponFlag(j)}${j.salary ? `<span class="salary">${esc(j.salary)}</span>` : ''}${(j.sources&&j.sources.length>1) ? `<span class="srcs">${j.sources.length}× confirmed</span>` : ''}</span>
+        <span class="loc">${esc(j.location)}</span>
+        <span class="tier-badge tier-${j.tier}">${tierLabel(j.tier)}</span>
+        <a class="applylink" href="${escAttr(safeUrl(j.link))}" target="_blank" rel="noopener">Apply →</a>
+        <input type="checkbox" class="chk" ${applied?'checked':''} data-id="${escAttr(j.id)}">
+      `;
+      rowsEl.appendChild(row);
+    }
+  }
+  if(list.length > RENDER_CAP){
+    const more = document.createElement('div');
+    more.className = 'empty';
+    more.textContent = `Showing the ${RENDER_CAP} newest of ${list.length} matches — narrow the filters to see the rest.`;
+    rowsEl.appendChild(more);
+  }
+  rowsEl.querySelectorAll('.chk').forEach(cb=>{
+    cb.addEventListener('change', (e)=>{
+      const id = e.target.getAttribute('data-id');
+      appliedMap[id] = e.target.checked;
+      saveLocalApplied();
+      render();
+    });
+  });
+
+  document.getElementById('cnt-total').textContent = JOBS.length;
+  document.getElementById('cnt-faang').textContent = JOBS.filter(j=>j.tier===1).length;
+  document.getElementById('cnt-ml').textContent = JOBS.filter(j=>j.is_ml).length;
+  document.getElementById('cnt-new').textContent = JOBS.filter(isNew).length;
+  document.getElementById('cnt-applied').textContent = Object.values(appliedMap).filter(Boolean).length;
+  if(lastSeenAt) document.getElementById('seenSince').textContent = new Date(lastSeenAt).toLocaleString();
+  document.getElementById('cnt-pipe').textContent = pipeline.length;
+  document.getElementById('tab-cnt-listings').textContent = '(' + list.length + ')';
+  document.getElementById('tab-cnt-pipeline').textContent = '(' + pipeline.length + ')';
+
+  renderPipeline();
+}
+
+function renderPipeline(){
+  const el = document.getElementById('pipe-list');
+  el.innerHTML = '';
+  if(pipeline.length===0){
+    el.innerHTML = '<div class="empty">Nothing tracked yet — add an interview, offer conversation, or application above.</div>';
+    return;
+  }
+  const order = {interviewing:0, offer:1, outreach:2, closed:3};
+  const sorted = pipeline.slice().sort((a,b)=>(order[a.stage]??9)-(order[b.stage]??9));
+  for(const p of sorted){
+    const card = document.createElement('div');
+    card.className = 'pcard';
+    card.innerHTML = `
+      <div>
+        <div class="company">${esc(p.company)}</div>
+        <div class="role">${esc(p.role||'')}</div>
+        ${p.notes ? `<div class="notes">${esc(p.notes)}</div>` : ''}
+        <div class="meta">added ${esc(p.date||'')}</div>
+      </div>
+      <select class="stage-select stage-${p.stage}" data-id="${escAttr(p.id)}">
+        <option value="outreach" ${p.stage==='outreach'?'selected':''}>Outreach / Applied</option>
+        <option value="interviewing" ${p.stage==='interviewing'?'selected':''}>Interviewing</option>
+        <option value="offer" ${p.stage==='offer'?'selected':''}>Offer talks</option>
+        <option value="closed" ${p.stage==='closed'?'selected':''}>Closed</option>
+      </select>
+      <button class="del" data-id="${escAttr(p.id)}" title="Remove">✕</button>
+    `;
+    el.appendChild(card);
+  }
+  el.querySelectorAll('.stage-select').forEach(s=>{
+    s.addEventListener('change', (e)=>{
+      const id = e.target.getAttribute('data-id');
+      const item = pipeline.find(x=>x.id===id);
+      if(item){ item.stage = e.target.value; saveLocalPipeline(); render(); }
+    });
+  });
+  el.querySelectorAll('.del').forEach(b=>{
+    b.addEventListener('click', (e)=>{
+      const id = e.target.getAttribute('data-id');
+      pipeline = pipeline.filter(x=>x.id!==id);
+      saveLocalPipeline(); render();
+    });
+  });
+}
+
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function escAttr(s){ return esc(s).replace(/`/g,'&#96;'); }
+
+// Listings come from a third-party README, so a link is untrusted input.
+// Allow only http(s) — never javascript:/data: — and fall back to a dead link.
+function isoDaysAgo(n){
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return d.toISOString().slice(0,10);
+}
+
+function sponFlag(j){
+  if(j.sponsorship === 'none')    return '<span class="flag flag-none">no sponsorship</span>';
+  if(j.sponsorship === 'citizen') return '<span class="flag flag-citizen">US citizen req</span>';
+  if(j.sponsorship === 'ok')      return '<span class="flag flag-ok">sponsors</span>';
+  return '';
+}
+
+function postedTime(j){
+  if(!j || !j.posted) return null;
+  const t = Date.parse(j.posted + 'T00:00:00');
+  return Number.isNaN(t) ? null : t;
+}
+
+// Render from the ISO `posted` date. The board spans well over a year, so tag
+// anything not from the current year to keep an old role from reading fresh.
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function dateLabel(j){
+  if(!j.posted) return '—';
+  const [y, m, d] = j.posted.split('-');
+  const base = `${MON[parseInt(m,10)-1] || '?'} ${d}`;
+  return y === String(new Date().getFullYear()) ? base : `${base} '${y.slice(2)}`;
+}
+
+function safeUrl(u){
+  if(!u) return '#';
+  try{
+    // Parse with no base on purpose. Resolving against the page would turn a
+    // malformed upstream link such as "https:/.workable.com/x" into a path on
+    // this very site, so "Apply" would 404 here instead of failing visibly.
+    const p = new URL(u);
+    if(p.protocol !== 'http:' && p.protocol !== 'https:') return '#';
+    // A real host, not ".workable.com" or a bare label.
+    if(!/^[a-z0-9]([a-z0-9.-]*[a-z0-9])?\.[a-z]{2,}$/i.test(p.hostname)) return '#';
+    return p.href;
+  }catch(e){ return '#'; }
+}
+
+document.getElementById('search').addEventListener('input', e=>{ state.search = e.target.value; render(); });
+document.getElementById('tierFilter').addEventListener('change', e=>{ state.tier = e.target.value; render(); });
+document.getElementById('sortBy').addEventListener('change', e=>{ state.sort = e.target.value; render(); });
+document.getElementById('ageFilter').addEventListener('change', e=>{ state.age = e.target.value; render(); });
+document.getElementById('mlChip').addEventListener('click', e=>{ state.mlOnly = !state.mlOnly; e.target.classList.toggle('on'); render(); });
+document.getElementById('newChip').addEventListener('click', e=>{ state.newOnly = !state.newOnly; e.target.classList.toggle('on'); render(); });
+document.getElementById('sponChip').addEventListener('click', e=>{ state.sponOnly = !state.sponOnly; e.target.classList.toggle('on'); render(); });
+document.getElementById('markSeen').addEventListener('click', markAllSeen);
+document.getElementById('hideAppliedChip').addEventListener('click', e=>{ state.hideApplied = !state.hideApplied; e.target.classList.toggle('on'); render(); });
+
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-'+t.dataset.tab).classList.add('active');
+  });
+});
+
+document.getElementById('p-add').addEventListener('click', ()=>{
+  const company = document.getElementById('p-company').value.trim();
+  const role = document.getElementById('p-role').value.trim();
+  const stage = document.getElementById('p-stage').value;
+  const notes = document.getElementById('p-notes').value.trim();
+  if(!company) return;
+  pipeline.push({
+    id: 'p-' + Date.now(),
+    company, role, stage, notes,
+    date: new Date().toISOString().slice(0,10)
+  });
+  saveLocalPipeline();
+  document.getElementById('p-company').value='';
+  document.getElementById('p-role').value='';
+  document.getElementById('p-notes').value='';
+  render();
+});
+
+(async function init(){
+  loadLastSeen();
+  loadLocal();
+  await loadJobs();
+  render();
+})();
+</script>
+</body>
+</html>

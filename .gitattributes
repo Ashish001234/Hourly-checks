@@ -1,0 +1,3 @@
+# The workflow YAML and its inline shell run on ubuntu-latest, so keep
+# line endings LF in the repo regardless of what Windows checks out.
+* text=auto eol=lf
