@@ -37,11 +37,20 @@ jobs:
         # non-zero without touching data/jobs.json. Keep going so the site still
         # redeploys with the last good data instead of the run failing outright.
         continue-on-error: true
-        run: python3 scripts/fetch_jobs.py
+        run: |
+          # Once a day, sweep every known company board and recompute which of
+          # them actually post new-grad roles. Every other hour, poll just that
+          # productive subset -- ~223 boards instead of ~892, same yield, and a
+          # fraction of the requests.
+          if [ "$(date -u +%H)" = "06" ]; then
+            python3 scripts/fetch_jobs.py --full
+          else
+            python3 scripts/fetch_jobs.py
+          fi
       - name: Check for changes
         id: diff
         run: |
-          if git diff --quiet -- data/jobs.json; then
+          if git diff --quiet -- data/jobs.json data/boards.json; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -51,7 +60,7 @@ jobs:
         run: |
           git config user.name "grad-job-dashboard-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/jobs.json
+          git add data/jobs.json data/boards.json
           git commit -m "Refresh listings [automated]"
           # Rebase-and-retry in case you pushed an edit while this run was
           # mid-flight; the data commit touches only data/jobs.json.

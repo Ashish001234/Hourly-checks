@@ -36,6 +36,10 @@ JOBRIGHT_URL = "https://raw.githubusercontent.com/jobright-ai/2026-Software-Engi
 VANSH_URL = "https://raw.githubusercontent.com/vanshb03/New-Grad-2027/dev/README.md"
 
 OUT_PATH = os.path.join("data", "jobs.json")
+BOARDS_PATH = os.path.join("data", "boards.json")
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import ats  # noqa: E402  (needs the path above)
 
 FAANG = {"google", "meta", "facebook", "apple", "amazon", "netflix", "microsoft", "nvidia"}
 BIGTECH = {
@@ -432,7 +436,108 @@ def carry_first_seen(jobs):
     return jobs
 
 
+def load_boards():
+    try:
+        with open(BOARDS_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def save_boards(boards):
+    with open(BOARDS_PATH, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(boards, f, indent=1, sort_keys=True)
+        f.write("\n")
+
+
+def from_ats(full):
+    """Poll company ATS boards directly -- upstream of every tracker we read.
+
+    Two cadences. A full sweep hits every known board and is slow enough that
+    we only want it once a day; the hourly pass polls just the boards that
+    actually produced a new-grad role last sweep, which is a small fraction and
+    keeps request volume neighbourly. The productive set is recomputed on every
+    full sweep, so boards that start (or stop) hiring grads move in and out on
+    their own.
+    """
+    boards = load_boards()
+    productive = boards.pop("_productive", [])
+    if not full and productive:
+        keep = set(productive)
+        scope = {p: {t: n for t, n in toks.items() if f"{p}|{t}" in keep}
+                 for p, toks in boards.items()}
+        scope = {p: t for p, t in scope.items() if t}
+    else:
+        scope = boards
+
+    n = sum(len(t) for t in scope.values())
+    print(f"  {'ats':<12} polling {n} boards ({'full sweep' if full else 'productive set'})")
+    records, stats = ats.poll(scope)
+    for plat, s in sorted(stats.items()):
+        if s["ok"] or s["fail"]:
+            print(f"    {plat:<16} ok={s['ok']:<4} fail={s['fail']:<4} "
+                  f"raw={s['raw']:<6} kept={s['kept']}")
+
+    if full:
+        hit = sorted({f"{r['platform']}|{r['board']}" for r in records})
+        boards["_productive"] = hit
+        save_boards(boards)
+        print(f"    productive boards: {len(hit)} of {n}")
+
+    out = []
+    for r in records:
+        posted = None
+        if r["posted_ts"]:
+            posted = datetime.datetime.fromtimestamp(
+                r["posted_ts"], datetime.timezone.utc).date().isoformat()
+        rec_ = rec(r["company"], r["title"], r["location"], r["url"], posted, "ats")
+        if rec_:
+            out.append(rec_)
+    return out
+
+
+def refresh_boards(jobs):
+    """Grow the registry from whatever apply URLs the merged listings revealed."""
+    boards = load_boards()
+    productive = boards.pop("_productive", [])
+    found = ats.discover_boards(jobs)
+    added = 0
+    for plat, toks in found.items():
+        cur = boards.setdefault(plat, {})
+        for tok, company in toks.items():
+            if tok not in cur:
+                cur[tok] = company
+                added += 1
+    if productive:
+        boards["_productive"] = productive
+    save_boards(boards)
+    total = sum(len(v) for k, v in boards.items() if k != "_productive")
+    print(f"  boards registry: {total} boards (+{added} new)")
+
+
+def seed_boards():
+    """Make sure the registry exists before we poll it.
+
+    refresh_boards() runs after the merge, so on a first run (or a fresh
+    clone) the registry would still be empty when from_ats() wants it, and the
+    ATS sweep would silently poll nothing. Seed from the previous output.
+    """
+    if load_boards():
+        return
+    try:
+        with open(OUT_PATH, encoding="utf-8") as f:
+            previous = json.load(f)
+    except (OSError, ValueError):
+        return
+    if previous:
+        print("  boards registry empty; seeding from previous listings")
+        refresh_boards(previous)
+
+
 def main():
+    full = "--full" in sys.argv
+    seed_boards()
+
     all_rows, ok = [], []
     for name, fn in SOURCES:
         try:
@@ -444,6 +549,14 @@ def main():
         print(f"  {name:<12} {len(rows):>5} rows")
         all_rows.extend(rows)
         ok.append(name)
+
+    try:
+        rows = from_ats(full)
+        print(f"  {'ats':<12} {len(rows):>5} rows")
+        all_rows.extend(rows)
+        ok.append("ats")
+    except (urllib.error.URLError, ValueError, OSError) as e:
+        print(f"  {'ats':<12} FAILED: {e}", file=sys.stderr)
 
     if len(ok) < 2:
         print(f"Only {len(ok)} source(s) succeeded; refusing to overwrite "
@@ -458,6 +571,7 @@ def main():
 
     jobs = carry_first_seen(jobs)
     jobs.sort(key=lambda j: (j["posted"] or "0000-00-00", j["first_seen"]), reverse=True)
+    refresh_boards(jobs)
 
     with open(OUT_PATH, "w", encoding="utf-8", newline="\n") as f:
         json.dump(jobs, f, indent=1)

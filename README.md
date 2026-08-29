@@ -17,6 +17,45 @@ See **SETUP.md** for the 5-minute, no-coding setup.
 
 ## Where the listings come from
 
+Two layers. The important one is first.
+
+### 1. Company ATS boards, polled directly (`scripts/ats.py`)
+
+The trackers below are themselves scrapers pointed at company applicant-tracking
+systems, so they are structurally behind. Indeed and LinkedIn are downstream of
+the same boards, and both prohibit automated access -- LinkedIn says so outright
+in its robots.txt -- so neither is scraped here. Polling the ATS directly puts us
+*upstream* of all of them: a role appears in the system the company posts into
+before it appears anywhere else.
+
+Six platforms, all public and unauthenticated, no API keys:
+
+| Platform | Endpoint |
+|---|---|
+| Greenhouse | `boards-api.greenhouse.io/v1/boards/{co}/jobs` |
+| Lever | `api.lever.co/v0/postings/{co}?mode=json` |
+| Ashby | `api.ashbyhq.com/posting-api/job-board/{co}` |
+| SmartRecruiters | `api.smartrecruiters.com/v1/companies/{co}/postings` |
+| Workable | `apply.workable.com/api/v1/widget/accounts/{co}` |
+| Workday | `{tenant}.{wd}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs` |
+
+**The board registry builds itself.** Every listing links to wherever the company
+actually accepts applications, so `discover_boards()` mines `data/jobs.json` for
+ATS URLs and grows `data/boards.json` on its own -- currently ~890 boards, none
+hand-entered.
+
+A full sweep reads ~52,000 raw postings and keeps ~520 after filtering. Roughly a
+third of those appear in no tracker at all.
+
+**Filtering carries the whole feed's quality.** One Greenhouse board can be 800
+roles across every function, so `relevant()` demands a specific software/data/ML
+term (a bare "engineer" pulls in civil and mechanical), requires a new-grad
+signal, and rejects senior titles, interns, other engineering disciplines, and
+non-US locations. Precision is favoured over recall: a board you stop trusting is
+worse than one that misses a listing.
+
+### 2. Community trackers, as a safety net
+
 Four community trackers, merged. No single one is dependable: in Aug 2026
 `vanshb03` went a full week without an update while the other three posted
 daily. A one-source setup cannot tell "the source is stale" apart from
@@ -79,9 +118,15 @@ schedule does not generate churn commits.
 
 ## Scheduling
 
-Hourly, at `:17`. GitHub documents that scheduled runs are delayed under load
-and that "high load times include the start of every hour", so the top of the
-hour is the worst slot to ask for. Pages is redeployed only when the data
+Two cadences. Hourly at `:17`, polling only the ~220 boards that actually
+produced a new-grad role on the last full sweep -- same yield as sweeping all
+890, at a quarter of the requests. Once a day at 06:17 UTC the run passes
+`--full`, sweeps every board, and recomputes that productive set, so companies
+that start or stop hiring grads move in and out on their own.
+
+`:17` rather than `:00`: GitHub documents that scheduled runs are delayed under
+load and that "high load times include the start of every hour", so the top of
+the hour is the worst slot to ask for. Pages is redeployed only when the data
 actually changed, or on a push / manual run.
 
 ⚠️ GitHub **auto-disables scheduled workflows after 60 days of no repository
