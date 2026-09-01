@@ -346,8 +346,14 @@ def fold(cur, r):
     for s in r["sources"]:
         if s not in cur["sources"]:
             cur["sources"].append(s)
-    # Earliest known posting date wins: it is the true first appearance.
-    if r["posted"] and (not cur["posted"] or r["posted"] < cur["posted"]):
+    # Most recent posting date wins. Earliest sounds like "true first
+    # appearance", but it buries live roles: Stripe's New Grad opening is
+    # carried by Simplify dated today and by vanshb03 dated a year earlier,
+    # and taking the earlier one displayed a role reposted today as stale and
+    # sank it to rank ~2800 in a date-sorted board. The freshest date is the
+    # best evidence the listing is currently open, which is what matters when
+    # the goal is applying within a day of a posting.
+    if r["posted"] and (not cur["posted"] or r["posted"] > cur["posted"]):
         cur["posted"] = r["posted"]
     if LINK_RANK.get(src, 9) < LINK_RANK.get(cur["link_src"], 9):
         cur["link"] = r["link"]
