@@ -4651,22 +4651,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "iCapital Network",
-  "role": "Full Stack Engineer - Associate",
-  "location": "Salt Lake City, Utah, United States",
-  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8452448002",
-  "posted": "2026-08-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "icapital network|full stack engineer associate",
-  "first_seen": "2026-09-01T19:32:41Z"
- },
- {
   "company": "Metropolitan Transportation Authority",
   "role": "Application Developer Levels 1 - 5",
   "location": "New York, NY, United States",
@@ -5244,87 +5228,6 @@
   "first_seen": "2026-08-29T07:02:45Z"
  },
  {
-  "company": "SharkNinja",
-  "role": "Associate Product Developer - Corded/Cordless",
-  "location": "Needham, MA",
-  "link": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4707165006",
-  "posted": "2026-08-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "sharkninja|associate product developer corded cordless",
-  "first_seen": "2026-08-29T07:02:45Z"
- },
- {
-  "company": "iCapital Network",
-  "role": "Backend Software Engineer - Associate / Assistant Vice President",
-  "location": "Salt Lake City, Utah, United States",
-  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8534824002",
-  "posted": "2026-08-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "icapital network|backend software engineer associate assistant vice president",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
-  "company": "iCapital Network",
-  "role": "Business Process Analyst, UiPath Developer - Associate/ Assistant Vice President",
-  "location": "Greenwich, Connecticut, United States",
-  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8631123002",
-  "posted": "2026-08-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "icapital network|business process analyst uipath developer associate assistant vice president",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
-  "company": "iCapital Network",
-  "role": "Software Engineer - Associate / Assistant Vice President",
-  "location": "Salt Lake City, Utah, United States",
-  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8662826002",
-  "posted": "2026-08-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "icapital network|software engineer associate assistant vice president",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
-  "company": "iCapital Network",
-  "role": "UI Frontend Engineer - Associate",
-  "location": "New York, New York, United States",
-  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8645574002",
-  "posted": "2026-08-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "icapital network|ui frontend engineer associate",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
   "company": "Stoke Space",
   "role": "Software Integration Engineer - HIL",
   "location": "Kent, WA, United States",
@@ -5600,6 +5503,23 @@
   "first_seen": "2026-08-29T07:02:45Z"
  },
  {
+  "company": "SharkNinja",
+  "role": "Associate Product Developer - Corded/Cordless",
+  "location": "Needham, MA",
+  "link": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4707165006",
+  "posted": "2026-08-28",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "sharkninja|associate product developer corded cordless",
+  "first_seen": "2026-08-29T07:02:45Z"
+ },
+ {
   "company": "Careerswift",
   "role": "Data Analyst \u2013 Junior / Middle",
   "location": "United States",
@@ -5677,6 +5597,70 @@
   "tier": 3,
   "is_ml": false,
   "id": "general matter|test engineer new grad",
+  "first_seen": "2026-08-29T00:15:27Z"
+ },
+ {
+  "company": "iCapital Network",
+  "role": "Backend Software Engineer - Associate / Assistant Vice President",
+  "location": "Salt Lake City, Utah, United States",
+  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8534824002",
+  "posted": "2026-08-28",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "icapital network|backend software engineer associate assistant vice president",
+  "first_seen": "2026-08-29T00:15:27Z"
+ },
+ {
+  "company": "iCapital Network",
+  "role": "Business Process Analyst, UiPath Developer - Associate/ Assistant Vice President",
+  "location": "New York, New York, United States",
+  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8634720002",
+  "posted": "2026-08-28",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "icapital network|business process analyst uipath developer associate assistant vice president",
+  "first_seen": "2026-08-29T00:15:27Z"
+ },
+ {
+  "company": "iCapital Network",
+  "role": "Software Engineer - Associate / Assistant Vice President",
+  "location": "Salt Lake City, Utah, United States",
+  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8662826002",
+  "posted": "2026-08-28",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "icapital network|software engineer associate assistant vice president",
+  "first_seen": "2026-08-29T00:15:27Z"
+ },
+ {
+  "company": "iCapital Network",
+  "role": "UI Frontend Engineer - Associate",
+  "location": "New York, New York, United States",
+  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8645574002",
+  "posted": "2026-08-28",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "icapital network|ui frontend engineer associate",
   "first_seen": "2026-08-29T00:15:27Z"
  },
  {
@@ -6645,23 +6629,6 @@
   "tier": 3,
   "is_ml": true,
   "id": "tiktok|machine learning engineer graduate e commerce recommendation video",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
-  "company": "True Anomaly",
-  "role": "Data Engineer 1",
-  "location": "Long Beach, CA, Denver, CO",
-  "link": "https://job-boards.greenhouse.io/trueanomalyinc/jobs/5223279007",
-  "posted": "2026-08-27",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "true anomaly|data engineer 1",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -8273,22 +8240,6 @@
   "first_seen": "2026-08-29T13:09:30Z"
  },
  {
-  "company": "Solace Health",
-  "role": "Associate Platform Engineer (College Grad 2027)",
-  "location": "Redwood City, CA",
-  "link": "https://jobs.ashbyhq.com/solace/bbdb1020-2900-4d63-908a-20cea79a65cd",
-  "posted": "2026-08-26",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "solace health|associate platform engineer college grad 2027",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
   "company": "Flow Traders",
   "role": "Junior Quantitative Researcher",
   "location": "New York",
@@ -8933,6 +8884,23 @@
   "tier": 3,
   "is_ml": false,
   "id": "hewlett packard enterprise|software engineer",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "True Anomaly",
+  "role": "Data Engineer 1",
+  "location": "Long Beach, CA, Denver, CO",
+  "link": "https://job-boards.greenhouse.io/trueanomalyinc/jobs/5223279007",
+  "posted": "2026-08-26",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "true anomaly|data engineer 1",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -10125,6 +10093,22 @@
   "tier": 3,
   "is_ml": true,
   "id": "deeter analytics|junior quantitative researcher",
+  "first_seen": "2026-08-29T00:15:27Z"
+ },
+ {
+  "company": "Solace Health",
+  "role": "Associate Platform Engineer (College Grad 2027)",
+  "location": "Redwood City, CA",
+  "link": "https://jobs.ashbyhq.com/solace/bbdb1020-2900-4d63-908a-20cea79a65cd",
+  "posted": "2026-08-25",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "solace health|associate platform engineer college grad 2027",
   "first_seen": "2026-08-29T00:15:27Z"
  },
  {
@@ -11996,22 +11980,6 @@
   "first_seen": "2026-09-01T19:32:41Z"
  },
  {
-  "company": "Muon",
-  "role": "Hardware Test Engineer I, Testbeds & EGSE",
-  "location": "San Jose, CA",
-  "link": "https://job-boards.greenhouse.io/muonspace/jobs/5218189007",
-  "posted": "2026-08-21",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "muon|hardware test engineer i testbeds egse",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
   "company": "Point72",
   "role": "Quantitative Portfolio Analyst \u2013 2026 Grad",
   "location": "New York, New York",
@@ -12746,6 +12714,22 @@
   "tier": 3,
   "is_ml": false,
   "id": "impact|associate qa engineer",
+  "first_seen": "2026-08-29T00:15:27Z"
+ },
+ {
+  "company": "Muon",
+  "role": "Hardware Test Engineer I, Testbeds & EGSE",
+  "location": "San Jose, CA",
+  "link": "https://job-boards.greenhouse.io/muonspace/jobs/5218189007",
+  "posted": "2026-08-20",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "muon|hardware test engineer i testbeds egse",
   "first_seen": "2026-08-29T00:15:27Z"
  },
  {
@@ -15719,40 +15703,6 @@
  },
  {
   "company": "Applied Intuition",
-  "role": "Research Engineer - New Grad (2027)",
-  "location": "Sunnyvale",
-  "link": "https://jobs.ashbyhq.com/applied/45fc41cd-8280-4010-ba1f-def6114b3e39",
-  "posted": "2026-08-15",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "applied intuition|research engineer new grad 2027",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
-  "company": "Applied Intuition",
-  "role": "Software Engineer New Grad - December 2026",
-  "location": "Ann Arbor, MI, Sunnyvale, CA",
-  "link": "https://jobs.ashbyhq.com/applied/a837cbd6-9fe4-4d74-a2dc-84f602c40694/application?embed=true",
-  "posted": "2026-08-15",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "applied intuition|software engineer new grad december 2026",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
-  "company": "Applied Intuition",
   "role": "Research Engineer New Grad",
   "location": "Sunnyvale, CA",
   "link": "https://jobs.ashbyhq.com/applied/45fc41cd-8280-4010-ba1f-def6114b3e39/application?embed=true",
@@ -15881,57 +15831,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "Applied Intuition",
-  "role": "Embedded Test Engineer - New Grad - December 2026",
-  "location": "Sunnyvale, CA",
-  "link": "https://jobs.ashbyhq.com/applied/0695a5b7-6823-4da5-b918-3b580d49662c",
-  "posted": "2026-08-15",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "applied intuition|embedded test engineer new grad december 2026",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
-  "company": "Applied Intuition",
-  "role": "Software Integration Engineer - New Grad - 2027",
-  "location": "Sunnyvale, CA",
-  "link": "https://jobs.ashbyhq.com/applied/250080bd-10a8-4e5f-82b8-506029292d19",
-  "posted": "2026-08-15",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "applied intuition|software integration engineer new grad 2027",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
-  "company": "Applied Intuition",
-  "role": "Embedded Software Engineer - New Grad - 2027",
-  "location": "Sunnyvale, CA",
-  "link": "https://jobs.ashbyhq.com/applied/6971d533-1536-448b-96b8-544ad5383f44",
-  "posted": "2026-08-15",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "applied intuition|embedded software engineer new grad 2027",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
   "company": "Bosch",
   "role": "Software Engineer - Vehicle Diagnostics",
   "location": "Owatonna, MN",
@@ -15945,23 +15844,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "bosch|software engineer vehicle diagnostics",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
-  "company": "Notion",
-  "role": "Software Engineer - New Grad - Dec 2026",
-  "location": "San Francisco, CA",
-  "link": "https://jobs.ashbyhq.com/notion/e32799d2-8ef8-4803-8189-c72514afa816",
-  "posted": "2026-08-15",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "notion|software engineer new grad dec 2026",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -15979,6 +15861,22 @@
   "is_ml": false,
   "id": "university for atmospheric research|cesm software engineer i",
   "first_seen": "2026-08-29T13:09:30Z"
+ },
+ {
+  "company": "Applied Intuition",
+  "role": "Research Engineer - New Grad (2027)",
+  "location": "Sunnyvale",
+  "link": "https://jobs.ashbyhq.com/applied/45fc41cd-8280-4010-ba1f-def6114b3e39",
+  "posted": "2026-08-14",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "applied intuition|research engineer new grad 2027",
+  "first_seen": "2026-08-29T00:15:27Z"
  },
  {
   "company": "Vista Equity Partners",
@@ -16816,6 +16714,24 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
+  "company": "Applied Intuition",
+  "role": "Software Engineer New Grad - December 2026",
+  "location": "Ann Arbor, MI, Sunnyvale, CA",
+  "link": "https://jobs.ashbyhq.com/applied/a837cbd6-9fe4-4d74-a2dc-84f602c40694/application?embed=true",
+  "posted": "2026-08-14",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "simplify",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "applied intuition|software engineer new grad december 2026",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
   "company": "Capital Health",
   "role": "Product Engineer 1",
   "location": "Pennington, NJ",
@@ -16878,6 +16794,74 @@
   "tier": 3,
   "is_ml": false,
   "id": "roblox|software engineer creator business",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Applied Intuition",
+  "role": "Embedded Test Engineer - New Grad - December 2026",
+  "location": "Sunnyvale, CA",
+  "link": "https://jobs.ashbyhq.com/applied/0695a5b7-6823-4da5-b918-3b580d49662c",
+  "posted": "2026-08-14",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "applied intuition|embedded test engineer new grad december 2026",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Applied Intuition",
+  "role": "Software Integration Engineer - New Grad - 2027",
+  "location": "Sunnyvale, CA",
+  "link": "https://jobs.ashbyhq.com/applied/250080bd-10a8-4e5f-82b8-506029292d19",
+  "posted": "2026-08-14",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "applied intuition|software integration engineer new grad 2027",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Applied Intuition",
+  "role": "Embedded Software Engineer - New Grad - 2027",
+  "location": "Sunnyvale, CA",
+  "link": "https://jobs.ashbyhq.com/applied/6971d533-1536-448b-96b8-544ad5383f44",
+  "posted": "2026-08-14",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "applied intuition|embedded software engineer new grad 2027",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Notion",
+  "role": "Software Engineer - New Grad - Dec 2026",
+  "location": "San Francisco, CA",
+  "link": "https://jobs.ashbyhq.com/notion/e32799d2-8ef8-4803-8189-c72514afa816",
+  "posted": "2026-08-14",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "notion|software engineer new grad dec 2026",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -18026,22 +18010,6 @@
   "first_seen": "2026-08-29T00:15:27Z"
  },
  {
-  "company": "Loram",
-  "role": "Test Engineer I",
-  "location": "Hamel, MN, us",
-  "link": "https://jobs.smartrecruiters.com/loram1/3743990014550116",
-  "posted": "2026-08-12",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "loram|test engineer i",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
   "company": "SOSi",
   "role": "PeopleSoft Software Developer",
   "location": "Charleston, SC",
@@ -18971,6 +18939,22 @@
   "is_ml": false,
   "id": "vector atomic|associate engineer firmware",
   "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Loram",
+  "role": "Test Engineer I",
+  "location": "Hamel, MN, us",
+  "link": "https://jobs.smartrecruiters.com/loram1/3743990014550116",
+  "posted": "2026-08-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "loram|test engineer i",
+  "first_seen": "2026-08-29T00:15:27Z"
  },
  {
   "company": "Major League Baseball",
@@ -24761,23 +24745,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "Lightfield",
-  "role": "Software Engineer - Infrastructure - Early Career",
-  "location": "Cambridge, MA",
-  "link": "https://jobs.ashbyhq.com/lightfield/9a7ef2f9-577a-4242-b884-719e3cdf4420",
-  "posted": "2026-08-03",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "lightfield|software engineer infrastructure early career",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
   "company": "Retell AI",
   "role": "Software Engineer - New Grad",
   "location": "Redwood City, CA",
@@ -24920,6 +24887,23 @@
   "tier": 3,
   "is_ml": true,
   "id": "two sigma|ai research scientist campus full time",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Lightfield",
+  "role": "Software Engineer - Infrastructure - Early Career",
+  "location": "Cambridge, MA",
+  "link": "https://jobs.ashbyhq.com/lightfield/9a7ef2f9-577a-4242-b884-719e3cdf4420",
+  "posted": "2026-08-02",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "lightfield|software engineer infrastructure early career",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -25346,24 +25330,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "polymarket|backend engineer markets",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
-  "company": "Quora",
-  "role": "Software Engineer - Machine Learning Platform - New Grad - Quora - Remote",
-  "location": "Remote - USA +1",
-  "link": "https://jobs.ashbyhq.com/quora/452afc2e-0c79-41f8-8201-1aab7df775db",
-  "posted": "2026-08-01",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "speedyapply",
-   "vanshb03"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "quora|software engineer machine learning platform new grad quora remote",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -25941,6 +25907,24 @@
   "tier": 3,
   "is_ml": false,
   "id": "belay technologies|junior software engineer",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Quora",
+  "role": "Software Engineer - Machine Learning Platform - New Grad - Quora - Remote",
+  "location": "Remote - USA +1",
+  "link": "https://jobs.ashbyhq.com/quora/452afc2e-0c79-41f8-8201-1aab7df775db",
+  "posted": "2026-07-31",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply",
+   "vanshb03"
+  ],
+  "tier": 3,
+  "is_ml": true,
+  "id": "quora|software engineer machine learning platform new grad quora remote",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -30396,23 +30380,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "SBT Global",
-  "role": "Junior Full Stack Developer - Bilingual in Korean",
-  "location": "Plano, TX",
-  "link": "https://jobs.smartrecruiters.com/SBTGlobalInc/3743990014116306-junior-full-stack-developer-bilingual-in-korean?oga=true",
-  "posted": "2026-07-16",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "sbt global|junior full stack developer bilingual in korean",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
   "company": "WallStreetQuants",
   "role": "Entry-Level Quantitative Developer",
   "location": "United States",
@@ -30652,6 +30619,23 @@
   "tier": 3,
   "is_ml": false,
   "id": "citadel securities|software engineer university graduate us",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "SBT Global",
+  "role": "Junior Full Stack Developer - Bilingual in Korean",
+  "location": "Plano, TX",
+  "link": "https://jobs.smartrecruiters.com/SBTGlobalInc/3743990014116306-junior-full-stack-developer-bilingual-in-korean?oga=true",
+  "posted": "2026-07-15",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "sbt global|junior full stack developer bilingual in korean",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -31501,23 +31485,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "Revel",
-  "role": "Software Engineer - Test - Entry-Junior",
-  "location": "SF, LA",
-  "link": "https://jobs.ashbyhq.com/revel/014c6445-bf8c-4213-ad97-faa83d129199/application?embed=true",
-  "posted": "2026-07-11",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "revel|software engineer test entry junior",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
   "company": "Mass General Brigham",
   "role": "Data Innovation Research Data Analyst",
   "location": "Boston, MA",
@@ -31563,6 +31530,23 @@
   "tier": 3,
   "is_ml": false,
   "id": "marriott international|flex associate software engineer customer data platform",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Revel",
+  "role": "Software Engineer - Test - Entry-Junior",
+  "location": "SF, LA",
+  "link": "https://jobs.ashbyhq.com/revel/014c6445-bf8c-4213-ad97-faa83d129199/application?embed=true",
+  "posted": "2026-07-10",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "revel|software engineer test entry junior",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -33729,8 +33713,8 @@
  {
   "company": "Innodata",
   "role": "Generative AI Associate - Flexible Hours",
-  "location": "Remote - Minnesota",
-  "link": "https://job-boards.greenhouse.io/innodatainc/jobs/4307425009",
+  "location": "Remote - Oklahoma",
+  "link": "https://job-boards.greenhouse.io/innodatainc/jobs/4307420009",
   "posted": "2026-06-29",
   "salary": null,
   "sponsorship": "unknown",
@@ -34617,23 +34601,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "Cylake",
-  "role": "Software Engineer - 2027 University Grad",
-  "location": "Sunnyvale, CA",
-  "link": "https://jobs.ashbyhq.com/cylake-inc/1d1ac42e-299c-42af-bd7c-b8c5fb07f735",
-  "posted": "2026-06-23",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "cylake|software engineer 2027 university grad",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
   "company": "SS&C",
   "role": "Salesforce Systems Engineer",
   "location": "Jacksonville, FL",
@@ -34712,6 +34679,23 @@
   "tier": 3,
   "is_ml": false,
   "id": "solerity|javascript software engineer 1 ts sci with poly",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Cylake",
+  "role": "Software Engineer - 2027 University Grad",
+  "location": "Sunnyvale, CA",
+  "link": "https://jobs.ashbyhq.com/cylake-inc/1d1ac42e-299c-42af-bd7c-b8c5fb07f735",
+  "posted": "2026-06-22",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "cylake|software engineer 2027 university grad",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -35054,23 +35038,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "Snowflake",
-  "role": "AI Research Scientist New Grad - Agents & Reinforcement Learning",
-  "location": "Bellevue, WA",
-  "link": "https://jobs.ashbyhq.com/snowflake/1bad12df-f443-426f-9d09-e96fc780d698/application",
-  "posted": "2026-06-17",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 2,
-  "is_ml": true,
-  "id": "snowflake|ai research scientist new grad agents reinforcement learning",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
   "company": "Ritchie Bros.",
   "role": "Software Engineer",
   "location": "Brookfield, IL",
@@ -35358,6 +35325,23 @@
   "tier": 3,
   "is_ml": false,
   "id": "citizens financial group|data management specialist",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Snowflake",
+  "role": "AI Research Scientist New Grad - Agents & Reinforcement Learning",
+  "location": "Bellevue, WA",
+  "link": "https://jobs.ashbyhq.com/snowflake/1bad12df-f443-426f-9d09-e96fc780d698/application",
+  "posted": "2026-06-16",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "simplify"
+  ],
+  "tier": 2,
+  "is_ml": true,
+  "id": "snowflake|ai research scientist new grad agents reinforcement learning",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -35829,22 +35813,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "Clipboard Health",
-  "role": "Strategy & Ops Associate, Applied AI",
-  "location": "U.S. (Remote)",
-  "link": "https://jobs.ashbyhq.com/clipboard/f9ec8cfe-9eb2-4b10-9942-a36c2fe0cc20",
-  "posted": "2026-06-12",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "clipboard health|strategy ops associate applied ai",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
   "company": "NVIDIA",
   "role": "Research Scientist New Grad - Efficient Deep Learning",
   "location": "Santa Clara, CA",
@@ -35892,6 +35860,22 @@
   "is_ml": false,
   "id": "chaos industries|field software engineer",
   "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Clipboard Health",
+  "role": "Strategy & Ops Associate, Applied AI",
+  "location": "U.S. (Remote)",
+  "link": "https://jobs.ashbyhq.com/clipboard/f9ec8cfe-9eb2-4b10-9942-a36c2fe0cc20",
+  "posted": "2026-06-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": true,
+  "id": "clipboard health|strategy ops associate applied ai",
+  "first_seen": "2026-08-29T00:15:27Z"
  },
  {
   "company": "Mariana Minerals",
@@ -37817,6 +37801,7 @@
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
+   "ats",
    "simplify",
    "speedyapply"
   ],
@@ -39925,38 +39910,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "Ellipsis Labs",
-  "role": "Software Engineer - 2027 Interns",
-  "location": "New York, New York",
-  "link": "https://jobs.ashbyhq.com/ellipsislabs/02136b22-35b1-4b3d-8bef-567c3380a849",
-  "posted": "2026-03-27",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "ellipsis labs|software engineer 2027 interns",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
-  "company": "Ellipsis Labs",
-  "role": "Software Engineer - 2027 New Grads",
-  "location": "New York, New York",
-  "link": "https://jobs.ashbyhq.com/ellipsislabs/256c2ec2-01c8-4ff6-9ad0-b926fe40472d",
-  "posted": "2026-03-27",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "ellipsis labs|software engineer 2027 new grads",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
   "company": "GlobalFoundries",
   "role": "Global Tapeout and Mask Operations New College Graduate - Biz App and Data Engineer",
   "location": "Austin, TX",
@@ -40100,6 +40053,38 @@
   "is_ml": false,
   "id": "skild ai|robot operator",
   "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Ellipsis Labs",
+  "role": "Software Engineer - 2027 Interns",
+  "location": "New York, New York",
+  "link": "https://jobs.ashbyhq.com/ellipsislabs/02136b22-35b1-4b3d-8bef-567c3380a849",
+  "posted": "2026-03-26",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "ellipsis labs|software engineer 2027 interns",
+  "first_seen": "2026-08-29T00:15:27Z"
+ },
+ {
+  "company": "Ellipsis Labs",
+  "role": "Software Engineer - 2027 New Grads",
+  "location": "New York, New York",
+  "link": "https://jobs.ashbyhq.com/ellipsislabs/256c2ec2-01c8-4ff6-9ad0-b926fe40472d",
+  "posted": "2026-03-26",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "ellipsis labs|software engineer 2027 new grads",
+  "first_seen": "2026-08-29T00:15:27Z"
  },
  {
   "company": "Ellipsis Labs",
@@ -41899,23 +41884,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "Strada",
-  "role": "Software Engineer New Grad",
-  "location": "SF",
-  "link": "https://jobs.ashbyhq.com/stradahq/626411c6-808e-4eb2-b28d-76f5d88e0af6/application?embed=true",
-  "posted": "2026-02-05",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "strada|software engineer new grad",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
   "company": "Jain Global",
   "role": "Software Developer",
   "location": "NYC",
@@ -41945,6 +41913,23 @@
   "tier": 2,
   "is_ml": false,
   "id": "servicenow|associate software engineer core infrastructure",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Strada",
+  "role": "Software Engineer New Grad",
+  "location": "SF",
+  "link": "https://jobs.ashbyhq.com/stradahq/626411c6-808e-4eb2-b28d-76f5d88e0af6/application?embed=true",
+  "posted": "2026-02-04",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "strada|software engineer new grad",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -42333,23 +42318,6 @@
   "first_seen": "2026-08-29T00:15:27Z"
  },
  {
-  "company": "Baton Corporation",
-  "role": "Junior Full Stack Engineer",
-  "location": "New York, NY",
-  "link": "https://jobs.ashbyhq.com/batoncorporation/bb3ab630-5e59-48b5-9794-00a225879a66",
-  "posted": "2026-01-21",
-  "salary": null,
-  "sponsorship": "ok",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "baton|junior full stack engineer",
-  "first_seen": "2026-08-28T23:31:08Z"
- },
- {
   "company": "Susquehanna International Group (SIG)",
   "role": "Quantitative Sports Researcher",
   "location": "Bala Cynwyd, PA",
@@ -42395,6 +42363,23 @@
   "tier": 3,
   "is_ml": true,
   "id": "invisible technologies ai|ai generalist entry level freelance ai trainer project",
+  "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "Baton Corporation",
+  "role": "Junior Full Stack Engineer",
+  "location": "New York, NY",
+  "link": "https://jobs.ashbyhq.com/batoncorporation/bb3ab630-5e59-48b5-9794-00a225879a66",
+  "posted": "2026-01-20",
+  "salary": null,
+  "sponsorship": "ok",
+  "sources": [
+   "ats",
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "baton|junior full stack engineer",
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
@@ -48972,22 +48957,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "EliseAI",
-  "role": "Junior Research Scientist",
-  "location": "New York City",
-  "link": "https://jobs.ashbyhq.com/eliseai/54f71abf-9184-4b4a-8d41-43ebf1600eba",
-  "posted": "2025-06-21",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "eliseai|junior research scientist",
-  "first_seen": "2026-08-29T00:15:27Z"
- },
- {
   "company": "Da Vinci",
   "role": "Graduate C++ Software Engineer",
   "location": "Miami, FL",
@@ -49018,6 +48987,22 @@
   "is_ml": false,
   "id": "collective hub|new grad software engineer",
   "first_seen": "2026-08-28T23:31:08Z"
+ },
+ {
+  "company": "EliseAI",
+  "role": "Junior Research Scientist",
+  "location": "New York City",
+  "link": "https://jobs.ashbyhq.com/eliseai/54f71abf-9184-4b4a-8d41-43ebf1600eba",
+  "posted": "2025-06-20",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "eliseai|junior research scientist",
+  "first_seen": "2026-08-29T00:15:27Z"
  },
  {
   "company": "Palantir",
@@ -50328,7 +50313,7 @@
   "role": "Entry Level Java Developer",
   "location": "Silver Creek, NY",
   "link": "https://jobs.smartrecruiters.com/9to9SoftwareSolutionsLLC/743999674047363",
-  "posted": "2018-07-25",
+  "posted": "2018-07-24",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50345,7 +50330,7 @@
   "role": "Entry Level .NET Developer",
   "location": "Louisville, CO",
   "link": "https://jobs.smartrecruiters.com/9to9SoftwareSolutionsLLC/743999674047805",
-  "posted": "2018-07-25",
+  "posted": "2018-07-24",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50362,7 +50347,7 @@
   "role": "Entry Level Software Developer",
   "location": "Copperhill, TN",
   "link": "https://jobs.smartrecruiters.com/9to9SoftwareSolutionsLLC/743999677188473",
-  "posted": "2018-07-25",
+  "posted": "2018-07-24",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50411,7 +50396,7 @@
   "role": "Entry Level- QA/ Tester",
   "location": "Wilmington, MA, us",
   "link": "https://jobs.smartrecruiters.com/insilicologix/743999659470616",
-  "posted": "2017-09-09",
+  "posted": "2017-09-08",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50427,7 +50412,7 @@
   "role": "QA Analyst - entry level",
   "location": "Reston, VA, us",
   "link": "https://jobs.smartrecruiters.com/sqexpetsllc/743999656610417",
-  "posted": "2017-07-28",
+  "posted": "2017-07-27",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50493,7 +50478,7 @@
   "role": "HW Test Engineer 1",
   "location": "Redmond, WA, us",
   "link": "https://jobs.smartrecruiters.com/testingxperts/743999652691148",
-  "posted": "2017-06-09",
+  "posted": "2017-06-08",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50509,7 +50494,7 @@
   "role": "QA Analyst/ Tester/ IT Business Analyst - Entry Level",
   "location": "Herndon, VA, us",
   "link": "https://jobs.smartrecruiters.com/insilicologix/743999655203691",
-  "posted": "2017-06-07",
+  "posted": "2017-06-06",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50574,7 +50559,7 @@
   "role": "Entry Level QA Analyst",
   "location": "Reston, VA, us",
   "link": "https://jobs.smartrecruiters.com/sqexpetsllc/88381463",
-  "posted": "2015-11-03",
+  "posted": "2015-11-02",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50590,7 +50575,7 @@
   "role": "Fresh Graduates For Entry Level QA/BA Analyst",
   "location": "Reston, VA, us",
   "link": "https://jobs.smartrecruiters.com/sqexpetsllc/86614742",
-  "posted": "2015-10-17",
+  "posted": "2015-10-16",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50622,7 +50607,7 @@
   "role": "Quality Assurance Engineer - Quality Assurance - Software",
   "location": "Fremont, CA",
   "link": "https://jobs.smartrecruiters.com/BetaSoftSystems3/85575889",
-  "posted": "2015-09-26",
+  "posted": "2015-09-25",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50655,7 +50640,7 @@
   "role": "Entry level QA",
   "location": "Fremont, CA, us",
   "link": "https://jobs.smartrecruiters.com/betasoftsystems3/84697798",
-  "posted": "2015-08-15",
+  "posted": "2015-08-14",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50703,7 +50688,7 @@
   "role": "Entry level Quality Assurance (Software Tester cum Programmer)",
   "location": "Fremont, CA, us",
   "link": "https://jobs.smartrecruiters.com/betasoftsystems3/83288864",
-  "posted": "2015-06-03",
+  "posted": "2015-06-02",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50736,7 +50721,7 @@
   "role": "Entry Level Programmer / Developer",
   "location": "Piscataway, NJ",
   "link": "https://jobs.smartrecruiters.com/MarlabsInc1/82334887",
-  "posted": "2015-04-17",
+  "posted": "2015-04-16",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
@@ -50770,7 +50755,7 @@
   "role": "Software Engineering Associate",
   "location": "Arlington County, Arlington, VA",
   "link": "https://jobs.smartrecruiters.com/AccentureFederalServices/78253961",
-  "posted": "2014-07-29",
+  "posted": "2014-07-28",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
