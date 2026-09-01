@@ -176,9 +176,32 @@ EXCLUDE = re.compile(
     r"field engineer|\brf\b|optical|thermal|packaging|petroleum|mining|environmental|"
     r"biomedical|aerospace engineer|\bmaterials\b", re.I)
 
+US_STATES = {
+    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL",
+    "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT",
+    "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI",
+    "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",
+    "DC", "PR", "VI", "GU", "AS", "MP",
+}
+
+# Two-letter suffixes that are unambiguously NOT US states. Deliberately
+# excludes codes that collide with real states -- DE is Delaware before it is
+# Germany, IN is Indiana before it is India -- since the US check runs first.
+NON_US_SUBDIV = {
+    "ON", "BC", "QC", "AB", "MB", "SK", "NS", "NB", "PE", "YT", "NT", "NU",  # Canada
+    "UK", "GB",                                                              # Britain
+}
+
+US_MARKER = re.compile(r"united states|\bU\.?S\.?A\.?\b|\bUS\b", re.I)
+STATE_SUFFIX = re.compile(r",\s*([A-Za-z]{2})\b")
+REMOTE = re.compile(r"\bremote\b|\banywhere\b", re.I)
+
 # Enumerating every US location is hopeless, so exclude clearly non-US instead.
 NON_US = re.compile(
-    r"united kingdom|\bengland\b|scotland|\bwales\b|ireland|canada|\bindia\b|brazil|"
+    # Bare abbreviations too: "Remote in UK" has no comma, so the two-letter
+    # suffix check never sees it and it would fall through to the remote rule.
+    r"\bU\.?K\.?\b|united kingdom|\bengland\b|scotland|\bwales\b|ireland|canada|"
+    r"\bindia\b|brazil|"
     r"mexico|germany|france|spain|portugal|netherlands|belgium|poland|romania|"
     r"ukraine|sweden|norway|denmark|finland|switzerland|austria|\bitaly\b|greece|"
     r"czech|hungary|israel|turkey|egypt|nigeria|kenya|south africa|australia|"
@@ -192,6 +215,35 @@ NON_US = re.compile(
     r"jakarta|bangkok|kuala lumpur|milton keynes|belfast|stevenage", re.I)
 
 
+def is_us(location):
+    """Is this location in the US?
+
+    Order matters. A positive US signal has to win before any foreign-place
+    name is consulted, because plenty of real US towns share a name with a
+    foreign city -- "Berlin, NJ", "London, KY", "Vancouver, WA". Checking the
+    blocklist first would quietly delete those.
+
+    An unrecognized location with no foreign signal is kept, not dropped:
+    boards routinely say just "Sunnyvale" or "SF Office", and silently losing
+    those is worse than letting a rare foreign listing through.
+    """
+    loc = (location or "").strip()
+    if not loc or loc == "—":
+        return True
+    if US_MARKER.search(loc):
+        return True
+    suffixes = {m.group(1).upper() for m in STATE_SUFFIX.finditer(loc)}
+    if suffixes & US_STATES:
+        return True
+    if suffixes & NON_US_SUBDIV:
+        return False
+    if NON_US.search(loc):
+        return False
+    if REMOTE.search(loc):
+        return True
+    return True
+
+
 def relevant(title, location):
     t = title or ""
     if not t:
@@ -200,9 +252,7 @@ def relevant(title, location):
         return False
     if not SOFTWARE.search(t) or not NEWGRAD.search(t):
         return False
-    if location and NON_US.search(location):
-        return False
-    return True
+    return is_us(location)
 
 
 # --------------------------------------------------------------------------

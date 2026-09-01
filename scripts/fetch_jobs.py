@@ -165,10 +165,16 @@ def rec(company, role, location, link, posted, source,
     link = fix_link(link)
     if not company or not role or not LINK_OK.match(link):
         return None
+    where = clean_loc(location) or "—"
+    # US-only. Applied here rather than per-source: the ATS layer filtered
+    # locations from the start, but the four trackers did not, and they were
+    # supplying ~325 UK/Canada/India roles that are not applicable.
+    if not ats.is_us(where):
+        return None
     return {
         "company": company,
         "role": role,
-        "location": clean_loc(location) or "—",
+        "location": where,
         "link": link,
         "posted": posted,
         "salary": salary,
