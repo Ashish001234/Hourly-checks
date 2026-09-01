@@ -316,7 +316,7 @@ let appliedMap = {};
 let pipeline = [];
 let state = { search:'', tier:'all', sort:'date', age:'all', mlOnly:false, hideApplied:false, newOnly:false, sponOnly:false };
 let lastSeenAt = null;
-const RENDER_CAP = 400;
+const RENDER_CAP = 5000;   // effectively the whole board; a guard, not a page size
 
 async function loadJobs(){
   try{
@@ -405,41 +405,43 @@ function render(){
   }
 
   const rowsEl = document.getElementById('rows');
-  rowsEl.innerHTML = '';
   if(list.length === 0){
     rowsEl.innerHTML = '<div class="empty">No listings match those filters.</div>';
   } else {
-    // The merged board runs to thousands of rows. Rebuilding all of them on
-    // every keystroke makes search feel broken, so cap it and say so plainly.
+    // Build one HTML string and assign it once. The previous version created
+    // an element per row, which was slow enough to need a 400-row cap -- and
+    // that cap silently hid most of the board: a still-open Stripe role sat at
+    // rank 2830 because it was posted months ago, so scrolling never reached
+    // it. One assignment is fast enough to render everything.
+    const parts = [];
     for(const j of list.slice(0, RENDER_CAP)){
       const applied = !!appliedMap[j.id];
-      const row = document.createElement('div');
-      row.className = 'row' + (applied ? ' applied' : '');
-      row.innerHTML = `
-        <span class="date">${esc(dateLabel(j))}</span>
-        <span class="role-cell">${isNew(j) ? '<span class="badge-new">NEW</span>' : ''}<span class="company">${esc(j.company)}</span><span class="role">${esc(j.role)}</span>${sponFlag(j)}${j.salary ? `<span class="salary">${esc(j.salary)}</span>` : ''}${(j.sources&&j.sources.length>1) ? `<span class="srcs">${j.sources.length}× confirmed</span>` : ''}</span>
-        <span class="loc">${esc(j.location)}</span>
-        <span class="tier-badge tier-${j.tier}">${tierLabel(j.tier)}</span>
-        <a class="applylink" href="${escAttr(safeUrl(j.link))}" target="_blank" rel="noopener">Apply →</a>
-        <input type="checkbox" class="chk" ${applied?'checked':''} data-id="${escAttr(j.id)}">
-      `;
-      rowsEl.appendChild(row);
+      parts.push(
+        `<div class="row${applied ? ' applied' : ''}">` +
+        `<span class="date">${esc(dateLabel(j))}</span>` +
+        `<span class="role-cell">${isNew(j) ? '<span class="badge-new">NEW</span>' : ''}<span class="company">${esc(j.company)}</span><span class="role">${esc(j.role)}</span>${sponFlag(j)}${j.salary ? `<span class="salary">${esc(j.salary)}</span>` : ''}${(j.sources&&j.sources.length>1) ? `<span class="srcs">${j.sources.length}× confirmed</span>` : ''}</span>` +
+        `<span class="loc">${esc(j.location)}</span>` +
+        `<span class="tier-badge tier-${j.tier}">${tierLabel(j.tier)}</span>` +
+        `<a class="applylink" href="${escAttr(safeUrl(j.link))}" target="_blank" rel="noopener">Apply →</a>` +
+        `<input type="checkbox" class="chk" ${applied?'checked':''} data-id="${escAttr(j.id)}">` +
+        `</div>`
+      );
     }
+    if(list.length > RENDER_CAP){
+      parts.push(`<div class="empty">Showing ${RENDER_CAP} of ${list.length} matches. Search or filter to reach the rest.</div>`);
+    }
+    rowsEl.innerHTML = parts.join('');
   }
-  if(list.length > RENDER_CAP){
-    const more = document.createElement('div');
-    more.className = 'empty';
-    more.textContent = `Showing the ${RENDER_CAP} newest of ${list.length} matches — narrow the filters to see the rest.`;
-    rowsEl.appendChild(more);
-  }
-  rowsEl.querySelectorAll('.chk').forEach(cb=>{
-    cb.addEventListener('change', (e)=>{
-      const id = e.target.getAttribute('data-id');
-      appliedMap[id] = e.target.checked;
+  // One delegated listener instead of one per row.
+  if(!rowsEl.dataset.bound){
+    rowsEl.dataset.bound = '1';
+    rowsEl.addEventListener('change', (e)=>{
+      if(!e.target.classList.contains('chk')) return;
+      appliedMap[e.target.getAttribute('data-id')] = e.target.checked;
       saveLocalApplied();
       render();
     });
-  });
+  }
 
   document.getElementById('cnt-total').textContent = JOBS.length;
   document.getElementById('cnt-faang').textContent = JOBS.filter(j=>j.tier===1).length;
@@ -547,7 +549,12 @@ function safeUrl(u){
   }catch(e){ return '#'; }
 }
 
-document.getElementById('search').addEventListener('input', e=>{ state.search = e.target.value; render(); });
+let searchTimer = null;
+document.getElementById('search').addEventListener('input', e=>{
+  state.search = e.target.value;
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(render, 120);   // keep typing smooth on a full board
+});
 document.getElementById('tierFilter').addEventListener('change', e=>{ state.tier = e.target.value; render(); });
 document.getElementById('sortBy').addEventListener('change', e=>{ state.sort = e.target.value; render(); });
 document.getElementById('ageFilter').addEventListener('change', e=>{ state.age = e.target.value; render(); });
