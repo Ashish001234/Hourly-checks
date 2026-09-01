@@ -1,0 +1,39 @@
+id: sde-infra
+label: SDE -- Infrastructure / Platform
+voice: sde
+pdf_title: Ashish Molakalapalli -- Infrastructure Engineer
+
+match:
+  - infrastructure
+  - platform engineer
+  - site reliability
+  - sre
+  - devops
+  - cloud engineer
+  - distributed systems
+
+sections:
+  - education
+  - experience
+  - projects
+  - skills
+  - research
+  - achievements
+
+emphasis:
+  systems: 3
+  distributed: 3
+  devops: 3
+  reliability: 3
+  ci: 2
+  scale: 2
+  async: 2
+  monitoring: 2
+  aws: 2
+  docker: 2
+  hpc: 2
+
+exclude:
+  - cdac
+  - multimodal
+  - ecommerce

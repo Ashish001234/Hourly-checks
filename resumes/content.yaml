@@ -1,0 +1,613 @@
+# =============================================================================
+# Resume content library -- the single source of truth.
+#
+# Every bullet is written once here, tagged, and weighted. build.py selects and
+# orders them per profile (and per job description), so the SDE and ML resumes
+# stop being two copy-pasted files that drift apart.
+#
+# Rules for editing:
+#   * Everything here must be TRUE and defensible in an interview. Wording is
+#     deliberately generous; the underlying facts are not negotiable.
+#   * Text is LaTeX and uses YAML block scalars (`>-`) so backslashes stay
+#     literal. Never switch a bullet to "double quotes" -- YAML will eat \& \%.
+#   * `sde:` / `ml:` give audience-specific phrasings of the same real work.
+#     A bare `text:` is used for both.
+#   * weight 1-10 = how strong the bullet is when nothing else distinguishes it.
+#   * tags drive job-description matching. Keep them lowercase and reuse
+#     existing ones where possible.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# The accepted paper. This is the headline credential, so it lives in one place
+# and is substituted into every @@PAPER_*@@ placeholder below.
+#
+# TODO(ashish): replace title/venue with the exact accepted citation. Stated
+# conservatively until then -- do not send this out with an unconfirmed venue.
+# -----------------------------------------------------------------------------
+paper:
+  title: >-
+    Deep Learning Job Runtime Prediction for GPU Cluster Scheduling
+  venue: >-
+    Findings of EMNLP 2026
+  collaborators: >-
+    in collaboration with XPerf and Texas A\&M University
+  bullet: >-
+    \textbf{Accepted to @@VENUE@@} -- co-authored survey on deep learning job
+    runtime prediction for GPU cluster scheduling, built on the 941-job
+    benchmark above, @@COLLAB@@.
+  achievement: >-
+    \textbf{@@VENUE@@ (Accepted)} -- \textit{@@TITLE@@}; co-authored survey on
+    deep learning job runtime prediction for GPU cluster scheduling,
+    @@COLLAB@@, grounded in a 941-job, 37-feature benchmark across 9 GPU
+    configurations plus a 1,884-run inference dataset.
+
+profile:
+  name: Ashish Molakalapalli
+  email: ashish.molakalapalli@gmail.com
+  phone: (945) 232 0866
+  linkedin: linkedin.com/in/ashish-molakalapalli
+  github: github.com/Ashish001234
+  graduation: May 2027
+
+education:
+  - id: tamu
+    degree: Master of Science in Computer Science
+    org: Texas A\&M University
+    location: College Station, TX
+    dates: Aug 2025 -- May 2027
+    bullets:
+      - id: tamu-gpa-sde
+        weight: 8
+        tags: [systems, algorithms]
+        sde: >-
+          GPA: 3.833\,/\,4.0\enspace|\enspace Graduating \textbf{May 2027}\enspace|\enspace
+          Coursework: Operating Systems, Analysis of Algorithms, Machine Learning,
+          Artificial Intelligence, NLP Foundations \& Tech, Information Storage \& Retrieval
+      - id: tamu-gpa-ml
+        weight: 8
+        tags: [ml, nlp]
+        ml: >-
+          GPA: 3.833\,/\,4.0\enspace|\enspace Graduating \textbf{May 2027}\enspace|\enspace
+          Coursework: Machine Learning, NLP Foundations \& Tech, Artificial Intelligence,
+          Information Storage \& Retrieval, Operating Systems, Analysis of Algorithms
+      - id: tamu-focus-sde
+        weight: 6
+        tags: [systems, cloud, distributed, backend]
+        sde: >-
+          Focus: Scalable Systems, Cloud Infrastructure, API Design, Distributed Computing
+      - id: tamu-focus-ml
+        weight: 6
+        tags: [ml, llm, nlp, research]
+        ml: >-
+          Research focus: LLM Self-Correction and Alignment, Multimodal Learning,
+          Efficient AI Systems, Foundation Models
+
+  - id: iiit
+    degree: Bachelor of Technology in Computer Science \& Engineering
+    org: IIIT Kottayam
+    location: India
+    dates: Dec 2021 -- Apr 2025
+    bullets:
+      - id: iiit-gpa
+        weight: 7
+        tags: [research]
+        text: >-
+          GPA: 9.34\,/\,10.0\enspace|\enspace Selected Research Scholar, IoT Cloud
+          Research Group -- Top 5 of 150+ applicants
+
+experience:
+  - id: servicenow
+    org: ServiceNow
+    location: San Diego, CA
+    dates: May 2025 -- Aug 2025
+    titles:
+      sde: Software Engineering Intern -- Security Platform
+      ml: AI for Security Operations Engineer, Intern
+    bullets:
+      - id: sn-agents
+        weight: 10
+        tags: [llm, agents, aws, bedrock, security, production, javascript]
+        sde: >-
+          Designed and shipped a modular 14-tool service layer (JavaScript, Now Assist
+          Skill Kit) orchestrating parallel GlideRecord queries, REST callouts, and
+          scheduled-job introspection across ServiceNow's production security
+          infrastructure with zero manual intervention.
+        ml: >-
+          Architected two production LLM agents for automated instance health monitoring
+          and incident investigation across ServiceNow's global security infrastructure,
+          deployed via the Now Assist Skill Kit (JavaScript) and backed by Claude Sonnet
+          on AWS Bedrock.
+      - id: sn-schema
+        weight: 9
+        tags: [llm, bedrock, aws, schema, production, prompt-engineering]
+        sde: >-
+          Built a schema-driven analysis pipeline with a 14-field JSON contract and
+          confidence-based escalation logic; integrated AWS Bedrock as the inference
+          backend, achieving consistent structured output across all instance types
+          in production.
+        ml: >-
+          Designed a 14-field JSON schema with confidence-based tier escalation (items
+          below 0.85 auto-promote severity) and few-shot prompt strategies ensuring
+          reproducible, structured LLM output at production quality.
+      - id: sn-tools-detail
+        weight: 8
+        tags: [security, monitoring, distributed, production]
+        ml: >-
+          Engineered a 14-tool parallel data-collection layer (GlideRecord, REST
+          callouts, scheduled-job introspection) covering MID server health, certificate
+          expiry, VA scanning, and Tenable hygiene; surfaced real critical findings
+          including a MID server offline since March 2026.
+      - id: sn-alerting
+        weight: 8
+        tags: [backend, webhooks, monitoring, production, integration]
+        sde: >-
+          Engineered a real-time alerting service delivering adaptive-card health
+          summaries to Microsoft Teams via webhooks, replacing a manual multi-instance
+          review process and cutting incident response latency from hours to minutes.
+        ml: >-
+          Delivered automated daily health summaries via Microsoft Teams adaptive-card
+          webhooks, eliminating manual multi-instance review and cutting incident
+          response latency from hours to minutes.
+      - id: sn-migration
+        weight: 6
+        tags: [devops, release, debugging, production]
+        sde: >-
+          Resolved cross-environment deployment conflicts during PDI-to-SecurityDev
+          migration by auditing update sets, isolating conflicting records, and
+          establishing a repeatable porting protocol adopted for subsequent releases.
+
+  - id: shipsy
+    org: Shipsy
+    location: Gurugram, India
+    dates: Sep 2024 -- Jul 2025
+    titles:
+      sde: Software Engineering Intern
+      ml: AI Engineer
+    bullets:
+      - id: shipsy-pipeline
+        weight: 9
+        tags: [backend, api, async, scale, integration, llm]
+        sde: >-
+          Engineered event-driven automation workflows integrating Slack, Gmail, and
+          GitHub APIs to process 10K+ requests per day for DTDC; implemented request
+          batching and async processing, reducing manual triage by 35\% and cutting
+          average API latency by 40\%.
+        ml: >-
+          Designed LLM summarization and classification pipelines processing 10K+
+          support tickets daily for DTDC, integrating Slack, Gmail, and GitHub APIs to
+          automate triage and reduce backlog by 35\%.
+      - id: shipsy-kg
+        weight: 7
+        tags: [search, rag, knowledge-graph, backend]
+        sde: >-
+          Built a prototype knowledge graph service with structured entity linking and
+          full-text search, improving internal documentation query response time by
+          40\% under concurrent load.
+        ml: >-
+          Built an enterprise knowledge graph with structured entity linking and RAG
+          over internal documentation, improving query response latency by 40\%; won
+          Best Idea Award at Shipsy Hackathon 2025.
+      - id: shipsy-scrum
+        weight: 7
+        tags: [backend, reliability, idempotency, integration, agents]
+        sde: >-
+          Designed and shipped an autonomous standup transcription pipeline (AI Scrum
+          Agent) with retry logic, idempotency guarantees, and Jira write-back; won
+          Best Idea Award at Shipsy Hackathon 2025.
+
+  - id: ust
+    org: UST Global
+    location: Kochi, India
+    dates: Jun 2024 -- Aug 2024
+    titles:
+      sde: Software Developer Intern
+      ml: AI/ML Intern
+    bullets:
+      - id: ust-smartchat
+        weight: 7
+        tags: [microservices, api, nlp, backend, llm]
+        sde: >-
+          Architected SmartChat as a modular microservices system; exposed NLP inference
+          pipelines via production-grade REST endpoints with structured request
+          validation, error handling, and response observability.
+        ml: >-
+          Developed SmartChat, an LLM-powered enterprise chatbot with intent recognition
+          and entity extraction achieving 95\% accuracy; fine-tuned GPT-4o on
+          domain-specific data, improving factual correctness by 30\% over a zero-shot
+          baseline.
+      - id: ust-perf
+        weight: 6
+        tags: [caching, performance, backend, api]
+        sde: >-
+          Optimized request routing and introduced query-time caching, reducing average
+          resolution latency by 30\% and improving end-to-end accuracy by 25\% under
+          sustained load.
+        ml: >-
+          Authored an internal whitepaper on Enterprise LLM Chatbots establishing prompt
+          engineering and evaluation standards, adopted as team-wide best practices for
+          IT and retail support deployments.
+
+  - id: navtech
+    org: Nav Tech
+    location: Hyderabad, India
+    dates: Dec 2023 -- Feb 2024
+    titles:
+      sde: Software Intern
+    bullets:
+      - id: nav-ingest
+        weight: 6
+        tags: [backend, async, api, performance, embedded]
+        sde: >-
+          Implemented low-latency ingestion APIs for UWB hardware data streams using
+          async I/O and connection pooling, reducing average response time by 45\%.
+      - id: nav-health
+        weight: 5
+        tags: [monitoring, reliability, backend]
+        sde: >-
+          Introduced health-check endpoints and alerting hooks integrated with the
+          monitoring stack, sustaining 99.9\% service uptime across the device fleet.
+
+  - id: cdac
+    org: CDAC (Centre for Development of Advanced Computing)
+    location: Remote
+    dates: May 2024 -- Nov 2024
+    titles:
+      ml: Research Intern, Reinforcement Learning
+    bullets:
+      - id: cdac-marl
+        weight: 8
+        tags: [rl, hpc, scheduling, research, ml]
+        ml: >-
+          Proposed and implemented a Multi-Agent RL scheduler using PPO on simulated HPC
+          workloads, achieving 15\% lower energy consumption and 12\% faster job
+          makespan versus baseline schedulers.
+      - id: cdac-ctde
+        weight: 7
+        tags: [rl, research, ablation, ml]
+        ml: >-
+          Applied centralized training with decentralized execution (CTDE) and
+          cooperative reward shaping; ran ablation studies isolating the contribution of
+          each design choice against independent baselines.
+
+research:
+  - id: tamu-ra
+    role: Research Assistant, NLP Lab
+    org: Texas A\&M University
+    location: College Station, TX
+    dates: Feb 2026 -- Present
+    bullets:
+      - id: ra-dataset
+        weight: 10
+        tags: [ml, hpc, gpu, data-pipeline, benchmark, research, slurm]
+        sde: >-
+          Built an automated ingestion and feature-engineering pipeline converting raw
+          SLURM telemetry from 941 profiled HPC training jobs across 9 NVIDIA GPU
+          configurations (A100, A40, RTX, T4, and multi-GPU) into a structured
+          37-feature dataset used for downstream model training.
+        ml: >-
+          Constructed a 941-job deep learning runtime benchmark spanning 37 model
+          architectures (CNNs, ViTs, BERT/T5/BART, GPT-2, Llama-2 7B, Qwen2.5, diffusion
+          and video models) across 9 NVIDIA GPU configurations, with a 37-feature schema
+          capturing batch size, sequence length, precision, parallelism, and optimizer
+          configuration.
+      - id: ra-inference
+        weight: 9
+        tags: [ml, gpu, benchmark, inference, research, llm]
+        text: >-
+          Extended the benchmark with a 1,884-run LLM inference dataset capturing
+          prefill/decode split timing, TTFT, TPOT, and KV-cache pressure across 22
+          models and 4 GPU types.
+      - id: ra-models
+        weight: 9
+        tags: [ml, xgboost, gbdt, prediction, research, evaluation]
+        sde: >-
+          Trained gradient-boosted and neural regressors on the resulting dataset,
+          reaching 23.7\% MAPE (R\textsuperscript{2}\,=\,0.881) on training-job runtime
+          and 8.8\% MAPE (R\textsuperscript{2}\,=\,0.982) on inference latency.
+        ml: >-
+          Trained GBDT, Random Forest, and neural regressors reaching 23.7\% MAPE
+          (R\textsuperscript{2}\,=\,0.881) on training runtime and 8.8\% MAPE
+          (R\textsuperscript{2}\,=\,0.982) on inference latency; identified log-transform
+          of the target as worth 40--70\% relative MAPE improvement.
+      - id: ra-ood
+        weight: 8
+        tags: [ml, evaluation, research, generalization]
+        ml: >-
+          Ran out-of-distribution analysis exposing catastrophic cross-architecture
+          failure (CNN to Transformer, 454\% MAPE) while per-architecture models held
+          7--19\%, motivating a hybrid analytical-plus-learned correction approach over
+          a purely learned one.
+      - id: ra-parallel
+        weight: 7
+        tags: [distributed, gpu, hpc, systems, pytorch]
+        sde: >-
+          Instrumented distributed training runs across DistributedDataParallel,
+          DataParallel, and DeepSpeed ZeRO stages 1--3 to capture multi-GPU scaling
+          behaviour under mixed precision.
+      - id: ra-paper
+        weight: 10
+        tags: [research, publication, nlp, hpc]
+        text: '@@PAPER_BULLET@@'
+
+  - id: tamu-gr
+    role: Graduate Researcher, NLP Lab
+    org: Texas A\&M University
+    location: College Station, TX
+    dates: Sep 2025 -- Feb 2026
+    bullets:
+      - id: gr-pipeline
+        weight: 8
+        tags: [cv, ocr, pipeline, ml, docker]
+        sde: >-
+          Designed an 8-stage automated data processing pipeline converting P\&ID
+          engineering schematics to structured JSON graph outputs; integrated YOLOv8 for
+          component detection, PaddleOCR with EasyOCR for multi-scale text extraction,
+          and HDBSCAN with UMAP for symbol clustering.
+        ml: >-
+          Built an 8-stage pipeline automating digitization of P\&ID engineering
+          schematics into LLM-ready graph structures; fine-tuned YOLOv8 for component
+          detection and applied PaddleOCR with EasyOCR for multi-scale tiled text
+          recognition.
+      - id: gr-api
+        weight: 7
+        tags: [docker, api, backend, integration]
+        sde: >-
+          Containerized the pipeline as a REST API service with structured JSON output
+          contracts, enabling integration with downstream LLM reasoning and knowledge
+          graph construction systems.
+        ml: >-
+          Applied Hough transforms with morphological operations for line extraction and
+          HDBSCAN with UMAP for unsupervised symbol clustering; emitted structured JSON
+          graphs for downstream LLM reasoning.
+
+projects:
+  - id: second-thoughts
+    name: 'Second Thoughts: When LLM Self-Correction Helps vs Hurts'
+    stack: Llama-3.1-8B, Mistral-7B, Qwen-2.5-7B, LoRA, GSM8K, HumanEval, MBPP
+    tags: [llm, nlp, evaluation, research, finetuning, alignment, ml]
+    bullets:
+      - id: st-study
+        weight: 10
+        tags: [llm, evaluation, research, nlp]
+        text: >-
+          Ran a controlled 3-model $\times$ 5-strategy $\times$ 4-dataset study (96
+          conditions, 71,595 question-strategy pairs); correction broke 14.7\% of
+          correct answers while helping only 4.4\% -- a 3.4$\times$ damage ratio -- with
+          self-consistency dominating correction in 11 of 12 compute-matched comparisons.
+      - id: st-sft
+        weight: 10
+        tags: [finetuning, lora, llm, ml, data]
+        text: >-
+          Constructed two SFT datasets (D1 single-step detection, D2 late-detection with
+          retrace) via an all-rollouts-wrong filter on MetaMathQA with DeepSeek-R1
+          attribution; LoRA fine-tuning raised Mistral-7B from 47.61\% to 65.43\% on
+          GSM8K (+17.82 pts), attribution signal alone contributing +2.96 pts.
+      - id: st-code
+        weight: 9
+        tags: [llm, evaluation, research, code]
+        text: >-
+          Showed the same recipe regresses on code (MBPP $-$10.27, HumanEval $-$5.87,
+          Codeforces-A $-$15.22), arguing intrinsic supervision interferes where an
+          external verifier already exists; advised by Prof. Kuan-Hao Huang.
+
+  - id: jobboard
+    name: Real-Time Job Ingestion and Deduplication Platform
+    stack: Python, GitHub Actions, Concurrent I/O, REST APIs, JavaScript
+    tags: [backend, api, distributed, scale, data-pipeline, systems, async]
+    bullets:
+      - id: jb-ats
+        weight: 9
+        tags: [backend, api, async, scale, integration]
+        text: >-
+          Built a concurrent ingestion service polling 950+ company applicant-tracking
+          boards across 6 platform APIs (Greenhouse, Lever, Ashby, SmartRecruiters,
+          Workable, Workday), sweeping 52K+ postings per run with a bounded thread pool
+          and per-source fault isolation.
+      - id: jb-dedupe
+        weight: 8
+        tags: [data-pipeline, algorithms, backend]
+        text: >-
+          Implemented two-pass deduplication (normalized entity matching, then canonical
+          URL matching restricted to job-id-bearing URLs) collapsing 4K raw records into
+          3.2K unique postings; a self-growing board registry discovers new targets from
+          ingested data with no manual curation.
+      - id: jb-ci
+        weight: 7
+        tags: [devops, ci, reliability, systems]
+        text: >-
+          Deployed on an hourly GitHub Actions schedule with tiered polling, byte-stable
+          output to avoid churn commits, and write guards that refuse to overwrite good
+          data when upstream sources degrade.
+
+  - id: taskmgmt
+    name: Scalable Task Management Platform
+    stack: React, Node.js, WebSockets, PostgreSQL, AWS EC2/RDS, Docker, JWT
+    tags: [backend, fullstack, websockets, sql, aws, docker, scale]
+    bullets:
+      - id: tm-ws
+        weight: 8
+        tags: [websockets, backend, fullstack, aws]
+        sde: >-
+          Built a real-time collaboration app with WebSocket-driven live updates and
+          optimistic UI; deployed containerized services on AWS EC2 with RDS PostgreSQL,
+          sustaining 99.9\% uptime under concurrent load.
+      - id: tm-auth
+        weight: 7
+        tags: [auth, sql, performance, backend, scale]
+        sde: >-
+          Implemented JWT authentication, RBAC, and query indexing strategies to handle
+          high-concurrency workloads without lock contention; load-tested to 500
+          concurrent users with sub-200ms P99 latency.
+
+  - id: schematic
+    name: Engineering Schematic Digitization Pipeline
+    stack: Python, YOLOv8, PaddleOCR, HDBSCAN, UMAP, REST APIs, Docker
+    tags: [cv, ocr, ml, pipeline, docker]
+    bullets:
+      - id: sch-pipeline
+        weight: 7
+        tags: [cv, ocr, ml, pipeline]
+        sde: >-
+          Designed an 8-stage automated processing pipeline ingesting P\&ID engineering
+          schematics and emitting structured JSON graph representations; fine-tuned
+          YOLOv8 for component detection and applied PaddleOCR with EasyOCR for
+          multi-scale tiled text recognition.
+      - id: sch-cluster
+        weight: 6
+        tags: [cv, ml, docker, api]
+        sde: >-
+          Implemented Hough transforms with morphological operations for line extraction
+          and HDBSCAN with UMAP for unsupervised symbol clustering; containerized as a
+          REST API service enabling downstream LLM and knowledge graph integrations.
+
+  - id: finsearch
+    name: 'Financial Document Intelligence: Production RAG System'
+    stack: RAG, GPT-4o, FAISS, BM25 Hybrid Search, Python, Flask, Docker, AWS EC2
+    tags: [rag, search, llm, backend, api, aws, docker]
+    bullets:
+      - id: fs-index
+        weight: 8
+        tags: [rag, search, llm, backend]
+        sde: >-
+          Designed and deployed a production document search service over 100+ Schroders
+          financial prospectuses using dense FAISS vector indexing with BM25 sparse
+          re-ranking; improved retrieval precision by 32\% over a TF-IDF baseline.
+        ml: >-
+          Designed a production RAG pipeline over 100+ Schroders financial prospectuses
+          using dense FAISS embeddings with BM25 hybrid re-ranking and GPT-4o generation,
+          improving retrieval precision by 32\% over a TF-IDF baseline.
+      - id: fs-deploy
+        weight: 7
+        tags: [docker, aws, api, backend]
+        sde: >-
+          Containerized the service with Docker and deployed on EC2; exposed low-latency
+          REST endpoints with per-query source attribution, reducing analyst document
+          retrieval time by 50\% in production use.
+        ml: >-
+          Deployed low-latency REST endpoints with per-answer source attribution and
+          confidence scoring, reducing analyst document retrieval time by 50\%.
+
+  - id: multimodal
+    name: 'Multimodal Medical AI: Chest X-Ray and Clinical Notes'
+    stack: ViT-B/16, ClinicalBERT, PyTorch, Cross-Attention, MIMIC-III
+    tags: [ml, multimodal, pytorch, cv, nlp, research]
+    bullets:
+      - id: mm-fusion
+        weight: 8
+        tags: [ml, multimodal, pytorch, cv, nlp]
+        ml: >-
+          Developed a multimodal disease prediction system fusing chest X-ray features
+          (ViT-B/16) with clinical note embeddings (ClinicalBERT) via cross-attention,
+          achieving F1\,=\,0.89 on MIMIC-III and outperforming unimodal baselines by 14\%.
+      - id: mm-ablation
+        weight: 7
+        tags: [ml, evaluation, research, ablation]
+        ml: >-
+          Ran ablations across early, late, and cross-attention fusion; applied
+          class-weighted loss and threshold calibration for MIMIC-III label imbalance,
+          reducing false negatives on critical findings by 18\%.
+
+  - id: ecommerce
+    name: E-Commerce Order Management Platform
+    stack: React, Node.js, MySQL, AWS ALB/RDS, Auto Scaling, Docker
+    tags: [backend, fullstack, sql, aws, scale, api]
+    bullets:
+      - id: ec-api
+        weight: 7
+        tags: [backend, api, sql, reliability]
+        sde: >-
+          Orchestrated checkout and order APIs with rate limiting, idempotency keys, and
+          request validation; modeled the relational schema on RDS MySQL ensuring
+          transactional integrity under concurrent load.
+      - id: ec-scale
+        weight: 6
+        tags: [aws, scale, devops]
+        sde: >-
+          Scaled horizontally via AWS ALB and auto-scaling groups; achieved consistent
+          sub-300ms response times under 10x traffic spikes without manual intervention.
+
+skills:
+  sde:
+    - cat: Languages
+      val: >-
+        Python, JavaScript (Node.js, React), C++, Java, SQL, Bash
+    - cat: Backend \& Systems
+      val: >-
+        REST APIs, Microservices, WebSockets, Async I/O, Event-Driven Architecture,
+        Rate Limiting, Message Queuing, Concurrency
+    - cat: Databases
+      val: >-
+        PostgreSQL, MySQL, Query Optimization, Indexing, Transactions,
+        FAISS (vector search), Redis
+    - cat: Cloud \& DevOps
+      val: >-
+        AWS (EC2, RDS, S3, ALB, SageMaker, Bedrock, Auto Scaling), Docker, Git,
+        CI/CD, GitHub Actions, SLURM
+    - cat: Tools \& Platforms
+      val: >-
+        ServiceNow (Skill Kit, GlideRecord, Update Sets), Flask, n8n,
+        Weights \& Biases, Jira, Pandas, NumPy
+    - cat: CS Fundamentals
+      val: >-
+        Distributed Systems, System Design, Data Structures \& Algorithms,
+        OS Concepts, Networking, Concurrency
+  ml:
+    - cat: Languages
+      val: >-
+        Python, C++, Java, JavaScript (Node.js), R, SQL, CUDA (basic)
+    - cat: AI / ML
+      val: >-
+        PyTorch, TensorFlow, HuggingFace Transformers, JAX (basic), LoRA / PEFT,
+        DeepSpeed ZeRO, Scikit-learn, XGBoost, OpenCV
+    - cat: LLM \& Agents
+      val: >-
+        Fine-tuning (SFT, LoRA, QLoRA), Prompt Engineering, Chain-of-Thought, RAG,
+        Tool-use, Agentic Pipelines, AWS Bedrock, OpenAI API, Anthropic API
+    - cat: Evaluation \& Alignment
+      val: >-
+        Self-Correction Analysis, Per-instance Correction Matrix, Ablation Design,
+        Reward Modeling, ROUGE, BERTScore, Hallucination Detection
+    - cat: MLOps
+      val: >-
+        AWS (EC2, S3, Bedrock, SageMaker), Docker, Git, FAISS, SLURM,
+        Weights \& Biases, Experiment Tracking, REST APIs
+    - cat: Research Areas
+      val: >-
+        LLM Alignment, Foundation Models, Multimodal Learning,
+        Efficient Inference (Quantization, LoRA), Agentic AI, NLP
+
+achievements:
+  - id: ach-paper
+    weight: 10
+    tags: [research, publication, nlp, hpc]
+    text: '@@PAPER_ACHIEVEMENT@@'
+  - id: ach-second-thoughts
+    weight: 9
+    tags: [llm, nlp, research, evaluation]
+    ml: >-
+      \textbf{Second Thoughts: When LLM Self-Correction Helps vs Hurts} -- Course paper
+      (CSCE 638, NLP), Texas A\&M; 96-condition study across 71,595 pairs, novel D1/D2
+      SFT datasets with DeepSeek-R1 attribution-conditioned LoRA fine-tuning, +17.82
+      GSM8K gain on Mistral-7B.
+  - id: ach-hackathon
+    weight: 8
+    tags: [leadership, hackathon]
+    text: >-
+      \textbf{Hackathon Winner} -- Best Idea Award, Shipsy Hackathon 2025 (40+ teams)
+      for an autonomous standup-to-Jira pipeline; National Finalist, Smart India
+      Hackathon competing against 500K+ participants across institute, regional, and
+      national rounds.
+  - id: ach-cbse
+    weight: 6
+    tags: [academic]
+    text: >-
+      \textbf{CBSE Merit Certificate} -- Perfect score 100/100 in Mathematics (Grade 10),
+      awarded to the Top 0.1\% of all national candidates.
+  - id: ach-club
+    weight: 7
+    tags: [leadership, mentoring]
+    text: >-
+      \textbf{AI/ML Club Sub-Lead}, IIIT Kottayam (2024) -- Directed 8 ML workshops and
+      3 hackathons; grew active membership by 40\% and mentored 30+ students.
+      \textbf{IEEE Event Organizer} (2023) -- Hosted the IoT Cloud Research Symposium
+      with 200+ attendees across 6 research sessions.

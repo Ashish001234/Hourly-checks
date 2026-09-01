@@ -1,0 +1,34 @@
+id: quant
+label: Quant / Research Engineering
+voice: ml
+pdf_title: Ashish Molakalapalli -- Quantitative Engineering
+
+match:
+  - quant
+  - quantitative
+  - trading
+  - algorithmic
+
+sections:
+  - education
+  - experience
+  - research
+  - projects
+  - skills
+  - achievements
+
+emphasis:
+  research: 3
+  ml: 3
+  evaluation: 3
+  algorithms: 3
+  performance: 2
+  benchmark: 2
+  rl: 2
+  publication: 2
+  async: 1
+
+exclude:
+  - navtech
+  - ecommerce
+  - schematic

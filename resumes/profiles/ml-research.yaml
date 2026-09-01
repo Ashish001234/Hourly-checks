@@ -1,0 +1,38 @@
+id: ml-research
+label: AI/ML -- Research
+voice: ml
+pdf_title: Ashish Molakalapalli -- Machine Learning
+
+match:
+  - machine learning
+  - research scientist
+  - research engineer
+  - deep learning
+  - nlp
+  - llm
+  - ai resident
+
+sections:
+  - education
+  - experience
+  - research
+  - projects
+  - skills
+  - achievements
+
+emphasis:
+  research: 3
+  ml: 3
+  llm: 3
+  nlp: 3
+  evaluation: 2
+  finetuning: 2
+  publication: 3
+  pytorch: 2
+  benchmark: 2
+  alignment: 2
+
+exclude:
+  - navtech
+  - ecommerce
+  - taskmgmt

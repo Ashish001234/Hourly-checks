@@ -167,6 +167,31 @@ select{
 .flag-ok{background:rgba(79,182,168,.16); color:var(--teal);}
 .salary{font-family:var(--mono); font-size:10.5px; color:var(--teal); margin-left:6px;}
 .srcs{font-family:var(--mono); font-size:9px; color:var(--muted); margin-left:6px; opacity:.75;}
+.cvlink{
+  font-family:var(--mono); font-size:9.5px; color:var(--teal);
+  text-decoration:none; margin-left:6px; white-space:nowrap;
+  border-bottom:1px dotted rgba(79,182,168,.5);
+}
+.cvlink:hover{color:var(--amber); border-bottom-color:var(--amber);}
+.rcard{
+  border:1px solid var(--line); border-radius:8px; background:var(--panel);
+  padding:14px 16px; margin-bottom:10px;
+  display:grid; grid-template-columns:1fr 120px 150px; gap:14px; align-items:center;
+}
+.rcard .rname{font-weight:700; font-size:14.5px;}
+.rcard .rmeta{font-family:var(--mono); font-size:10px; color:var(--muted); margin-top:4px;}
+.rcard .rmatch{font-size:11.5px; color:var(--muted); margin-top:5px; line-height:1.45;}
+.rfill{font-family:var(--mono); font-size:11px; text-align:center; color:var(--teal);}
+.rfill.warn{color:var(--coral);}
+.rdl{
+  font-family:var(--mono); font-size:11px; color:var(--bg); background:var(--text);
+  border-radius:4px; padding:7px 10px; text-decoration:none; text-align:center;
+  white-space:nowrap; display:block;
+}
+.rdl:hover{background:var(--amber);}
+.rtex{font-family:var(--mono); font-size:10px; color:var(--muted); text-align:center; display:block; margin-top:5px; text-decoration:none;}
+.rtex:hover{color:var(--amber);}
+@media(max-width:640px){ .rcard{grid-template-columns:1fr;} }
 .applylink{
   font-family:var(--mono); font-size:11px; color:var(--bg); background:var(--text);
   border-radius:4px; padding:5px 8px; text-decoration:none; text-align:center; white-space:nowrap;
@@ -253,6 +278,7 @@ select{
   <div class="tabs">
     <button class="tab active" data-tab="listings">Listings <span class="cnt" id="tab-cnt-listings"></span></button>
     <button class="tab" data-tab="pipeline">Pipeline <span class="cnt" id="tab-cnt-pipeline"></span></button>
+    <button class="tab" data-tab="resumes">R&eacute;sum&eacute;s <span class="cnt" id="tab-cnt-resumes"></span></button>
   </div>
 
   <div class="panel active" id="panel-listings">
@@ -304,6 +330,16 @@ select{
     <div id="pipe-list"></div>
   </div>
 
+  <div class="panel" id="panel-resumes">
+    <div class="note" style="margin-top:0; border-top:none; padding-top:0;">
+      Each variant is rebuilt from a single content library and is guaranteed to be
+      exactly two full pages. <b>Best for</b> shows which listings it is auto-suggested
+      for &mdash; the R&eacute;sum&eacute; link on each listing picks one for you.
+      Use <b>Tailor</b> on a listing to copy a prompt for a bespoke build.
+    </div>
+    <div id="resume-list"></div>
+  </div>
+
   <div class="note">
     <b>How this stays current.</b> A scheduled job refreshes the listings three times a day and redeploys this page automatically — no manual step. Applied checkboxes and your pipeline are saved in this browser's local storage, so they'll persist here on this device, but won't follow you to a different browser or phone. Listings are merged from four trackers, so an outage at any one of them no longer blanks the board; <b>2&times; confirmed</b> means more than one tracker carries the role. <b>NEW</b> marks anything first seen since your last &ldquo;Mark all seen&rdquo;. Sponsorship flags come from the sources &mdash; most roles state nothing either way, so <b>Sponsor-friendly</b> hides only roles explicitly closed to sponsorship.
   </div>
@@ -316,7 +352,53 @@ let appliedMap = {};
 let pipeline = [];
 let state = { search:'', tier:'all', sort:'date', age:'all', mlOnly:false, hideApplied:false, newOnly:false, sponOnly:false };
 let lastSeenAt = null;
+let RESUMES = [];
 const RENDER_CAP = 5000;   // effectively the whole board; a guard, not a page size
+
+async function loadResumes(){
+  try{
+    const res = await fetch('data/resumes.json', {cache:'no-store'});
+    RESUMES = await res.json();
+  }catch(e){ RESUMES = []; }
+}
+
+// Pick the variant whose match terms best fit a listing's role title. Falls
+// back to the ML/SDE split already computed by the fetcher rather than
+// guessing, so a role with no keyword hit still gets a sensible resume.
+function resumeFor(job){
+  if(!RESUMES.length) return null;
+  const role = (job.role || '').toLowerCase();
+  let best = null, bestScore = 0;
+  for(const r of RESUMES){
+    let sc = 0;
+    for(const term of (r.match || [])){
+      if(role.includes(term)) sc = Math.max(sc, term.length);
+    }
+    if(sc > bestScore){ bestScore = sc; best = r; }
+  }
+  if(best) return best;
+  const want = job.is_ml ? 'ml-research' : 'sde-general';
+  return RESUMES.find(r => r.id === want) || RESUMES[0];
+}
+
+function tailorPrompt(job){
+  return [
+    'Build me a tailored two-page resume for this role.',
+    '',
+    'Company:  ' + (job.company || ''),
+    'Role:     ' + (job.role || ''),
+    'Location: ' + (job.location || ''),
+    'Posted:   ' + (job.posted || ''),
+    'Apply:    ' + (job.link || ''),
+    '',
+    'Paste the full job description below, then run:',
+    '  py -3 site/resumes/build.py --profile <profile> --jd jd.txt --out-id ' +
+      (job.id || '').replace(/[^a-z0-9]+/gi, '-').slice(0, 40).toLowerCase(),
+    '',
+    'JOB DESCRIPTION:',
+    ''
+  ].join('\n');
+}
 
 async function loadJobs(){
   try{
@@ -419,7 +501,7 @@ function render(){
       parts.push(
         `<div class="row${applied ? ' applied' : ''}">` +
         `<span class="date">${esc(dateLabel(j))}</span>` +
-        `<span class="role-cell">${isNew(j) ? '<span class="badge-new">NEW</span>' : ''}<span class="company">${esc(j.company)}</span><span class="role">${esc(j.role)}</span>${sponFlag(j)}${j.salary ? `<span class="salary">${esc(j.salary)}</span>` : ''}${(j.sources&&j.sources.length>1) ? `<span class="srcs">${j.sources.length}× confirmed</span>` : ''}</span>` +
+        `<span class="role-cell">${isNew(j) ? '<span class="badge-new">NEW</span>' : ''}<span class="company">${esc(j.company)}</span><span class="role">${esc(j.role)}</span>${sponFlag(j)}${j.salary ? `<span class="salary">${esc(j.salary)}</span>` : ''}${(j.sources&&j.sources.length>1) ? `<span class="srcs">${j.sources.length}× confirmed</span>` : ''}${resumeLink(j)}</span>` +
         `<span class="loc">${esc(j.location)}</span>` +
         `<span class="tier-badge tier-${j.tier}">${tierLabel(j.tier)}</span>` +
         `<a class="applylink" href="${escAttr(safeUrl(j.link))}" target="_blank" rel="noopener">Apply →</a>` +
@@ -435,6 +517,20 @@ function render(){
   // One delegated listener instead of one per row.
   if(!rowsEl.dataset.bound){
     rowsEl.dataset.bound = '1';
+    rowsEl.addEventListener('click', (e)=>{
+      const id = e.target.getAttribute && e.target.getAttribute('data-tailor');
+      if(!id) return;
+      e.preventDefault();
+      const job = JOBS.find(x => x.id === id);
+      if(!job) return;
+      const text = tailorPrompt(job);
+      const done = () => { e.target.textContent = 'copied'; setTimeout(()=>{ e.target.textContent = 'tailor'; }, 1400); };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, ()=>window.prompt('Copy this prompt:', text));
+      } else {
+        window.prompt('Copy this prompt:', text);
+      }
+    });
     rowsEl.addEventListener('change', (e)=>{
       if(!e.target.classList.contains('chk')) return;
       appliedMap[e.target.getAttribute('data-id')] = e.target.checked;
@@ -454,6 +550,34 @@ function render(){
   document.getElementById('tab-cnt-pipeline').textContent = '(' + pipeline.length + ')';
 
   renderPipeline();
+  renderResumes();
+}
+
+function renderResumes(){
+  const el = document.getElementById('resume-list');
+  if(!el) return;
+  document.getElementById('tab-cnt-resumes').textContent = '(' + RESUMES.length + ')';
+  if(!RESUMES.length){
+    el.innerHTML = '<div class="empty">No resumes built yet. Run '
+                 + '<code>py -3 site/resumes/build.py --all</code>.</div>';
+    return;
+  }
+  el.innerHTML = RESUMES.map(r => {
+    const full = Math.round((r.fill || 0) * 100);
+    const warn = (r.pages !== 2 || full < 93) ? ' warn' : '';
+    return `<div class="rcard">
+      <div>
+        <div class="rname">${esc(r.label)}</div>
+        <div class="rmeta">${esc(r.id)} &middot; updated ${esc((r.updated||'').slice(0,10))}</div>
+        <div class="rmatch">Best for: ${esc((r.match||[]).join(', '))}</div>
+      </div>
+      <div class="rfill${warn}">${r.pages} pages<br>${full}% full</div>
+      <div>
+        <a class="rdl" href="${escAttr(r.pdf)}" download>Download PDF</a>
+        <a class="rtex" href="${escAttr(r.tex)}" target="_blank" rel="noopener">.tex source</a>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 function renderPipeline(){
@@ -510,6 +634,15 @@ function isoDaysAgo(n){
   const d = new Date();
   d.setDate(d.getDate() - n);
   return d.toISOString().slice(0,10);
+}
+
+function resumeLink(j){
+  const r = resumeFor(j);
+  if(!r) return '';
+  return `<a class="cvlink" href="${escAttr(r.pdf)}" target="_blank" rel="noopener"`
+       + ` title="${escAttr(r.label)} — two pages, built from your content library">`
+       + `CV: ${esc(r.id)}</a>`
+       + `<a class="cvlink" href="#" data-tailor="${escAttr(j.id)}" title="Copy a tailoring prompt for this role">tailor</a>`;
 }
 
 function sponFlag(j){
@@ -594,6 +727,7 @@ document.getElementById('p-add').addEventListener('click', ()=>{
 (async function init(){
   loadLastSeen();
   loadLocal();
+  await loadResumes();
   await loadJobs();
   render();
 })();

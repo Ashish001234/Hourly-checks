@@ -1,0 +1,43 @@
+id: sde-general
+label: SDE -- General
+voice: sde          # which phrasing key to prefer (sde / ml)
+pdf_title: Ashish Molakalapalli -- Software Engineer
+
+# Which listings this variant should be suggested for, matched against the
+# role title on the dashboard.
+match:
+  - software engineer
+  - software developer
+  - sde
+  - backend
+  - full stack
+  - fullstack
+  - programmer
+
+# Section order. Names must exist in content.yaml (plus the literal "skills").
+sections:
+  - education
+  - experience
+  - projects
+  - skills
+  - research
+  - achievements
+
+# Tags this profile boosts when scoring bullets.
+emphasis:
+  backend: 3
+  api: 3
+  systems: 3
+  distributed: 2
+  scale: 2
+  aws: 2
+  sql: 2
+  docker: 2
+  async: 2
+  production: 2
+  reliability: 1
+
+# Entities to drop entirely for this variant (kept for others).
+exclude:
+  - cdac          # RL research reads as off-topic on a pure SDE resume
+  - multimodal
