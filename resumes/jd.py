@@ -47,14 +47,31 @@ def _json(url, payload=None):
 
 
 def clean(raw):
-    """HTML (or plain text) to readable prose."""
+    """HTML (or plain text) to readable prose.
+
+    Unescape *before* stripping tags, and repeat. Greenhouse returns the
+    description double-encoded -- the JSON string holds `&lt;p&gt;` -- so a
+    strip-then-unescape order leaves live <p> and <strong> tags in the output,
+    which then reach the model as noise and waste prompt budget.
+    """
     if not raw:
         return ""
-    txt = re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", raw)
-    txt = re.sub(r"(?i)<(br|/p|/div|/li|/h[1-6])[^>]*>", "\n", txt)
+    txt = raw
+    for _ in range(3):                       # &amp;lt; -> &lt; -> <
+        nxt = html.unescape(txt)
+        if nxt == txt:
+            break
+        txt = nxt
+    txt = re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", txt)
+    txt = re.sub(r"(?i)<(br|/p|/div|/li|/h[1-6]|/tr)[^>]*>", "\n", txt)
     txt = re.sub(r"<[^>]+>", " ", txt)
-    txt = html.unescape(txt)
-    txt = txt.replace(" ", " ")
+    txt = html.unescape(txt)                 # entities revealed by tag removal
+    # Smart punctuation often arrives as Windows-1252 mislabelled UTF-8 and
+    # renders as U+FFFD mid-sentence; normalise so the model sees clean prose.
+    for a, b in (("\u00a0", " "), ("\u2019", "'"), ("\u2018", "'"),
+                 ("\u201c", '"'), ("\u201d", '"'),
+                 ("\u2013", "-"), ("\u2014", " -- "), ("\ufffd", "")):
+        txt = txt.replace(a, b)
     txt = re.sub(r"[ \t]+", " ", txt)
     txt = re.sub(r"\n\s*\n\s*\n+", "\n\n", txt)
     return txt.strip()

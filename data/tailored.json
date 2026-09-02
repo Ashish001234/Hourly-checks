@@ -1,0 +1,28 @@
+[
+ {
+  "job_id": "intersystems|software engineer rotational program early career",
+  "company": "InterSystems",
+  "role": "Software Engineer Rotational Program - Early Career",
+  "link": "https://job-boards.greenhouse.io/intersystems/jobs/7827894003",
+  "pdf": "resumes/out/tailored/intersystems-software-engineer-rotational-program-early-care.pdf",
+  "tex": "resumes/out/tailored/intersystems-software-engineer-rotational-program-early-care.tex",
+  "jd_match": 84.0,
+  "jd_source": "greenhouse",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "full stack",
+   "spring"
+  ],
+  "gaps": [
+   "No C# or Java experience in the library; JD lists them as acceptable languages alongside JavaScript, Python and C++, which he does have",
+   "No exposure to InterSystems-specific platforms (IRIS, HealthShare, interoperability/HL7 standards)",
+   "No direct healthcare-domain software experience; the closest is a multimodal clinical-notes research project, not production healthcare systems"
+  ],
+  "summary": "Led with full-stack and object-oriented engineering to match the rotation structure (front-end, back-end, full stack), foregrounded data structures and algorithms because they are called out explicitly, and kept the AI/agentic work prominent since InterSystems lists AI competencies as a hiring criterion and that is his strongest differentiator. Financial-services and healthcare-adjacent data work surfaced to match their product lines. Every figure is unchanged from the library.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T03:34:46Z"
+ }
+]

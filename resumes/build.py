@@ -450,6 +450,13 @@ def compile_tex(pdflatex, tex, jobname):
 
     # zref y is measured from the page bottom in sp (65536 sp = 1pt).
     fill = 0.0
+    if zm is None and pages == TARGET_PAGES:
+        # The marker sits after the last content, so when the page fills
+        # exactly it is pushed past the final line and never ships -- no label
+        # is written. Reading that as 0% fill is precisely backwards, and made
+        # the tuner keep adding content to an already-full page. The only way
+        # the marker fails to fit is that there was no room left.
+        return pages, 1.0, os.path.join(BUILD, jobname + ".pdf")
     if zm:
         end_y_pt = int(zm.group(1)) / 65536.0
         # Text block height: 11in page - top and bottom margins (0.5in each).

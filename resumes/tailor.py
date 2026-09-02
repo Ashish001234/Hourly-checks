@@ -33,6 +33,7 @@ import score as scoring  # noqa: E402
 
 TAILORED_DIR = os.path.join(HERE, "out", "tailored")
 MANIFEST = os.path.join(SITE, "data", "tailored.json")
+JOBS_DIR = os.path.join(HERE, ".jobs")   # prompt packs + answers, not committed
 JOBS = os.path.join(SITE, "data", "jobs.json")
 
 MODEL = "claude-opus-5"
@@ -120,12 +121,22 @@ def library_prompt(content, voice):
 NUM = re.compile(r"\d[\d,\.]*\s*(?:%|x|\+)?", re.I)
 # Capitalised technology-ish tokens, minus sentence-initial noise.
 PROPER = re.compile(r"\b(?:[A-Z][a-zA-Z0-9]*(?:\.[a-z]+)?(?:-[A-Za-z0-9]+)*)\b")
+# Sentence-initial verbs and articles. A rewrite legitimately starts with a
+# different verb than the source, and flagging those buries the real
+# inventions -- "Debugged" is not a claim about experience, "Kubernetes" is.
 COMMON = {"The", "A", "An", "In", "On", "At", "For", "With", "And", "Or", "But",
           "This", "That", "These", "Those", "Built", "Designed", "Engineered",
           "Implemented", "Developed", "Created", "Led", "Ran", "Applied", "Used",
           "Trained", "Deployed", "Delivered", "Architected", "Constructed",
           "Extended", "Optimized", "Reduced", "Improved", "Scaled", "Wrote",
-          "Showed", "Proposed", "Resolved", "Instrumented", "Surfaced", "I"}
+          "Showed", "Proposed", "Resolved", "Instrumented", "Surfaced", "I",
+          "Debugged", "Automated", "Migrated", "Refactored", "Shipped",
+          "Owned", "Drove", "Partnered", "Collaborated", "Investigated",
+          "Profiled", "Benchmarked", "Validated", "Measured", "Analyzed",
+          "Analysed", "Introduced", "Established", "Maintained", "Integrated",
+          "Orchestrated", "Containerized", "Conducted", "Authored", "Advised",
+          "Grew", "Hosted", "Directed", "Mentored", "Won", "Achieved",
+          "Selected", "Graduating", "Focus", "Coursework", "Top"}
 
 
 def _facts(text):
@@ -264,79 +275,221 @@ def call_claude(client, lib_text, job, jd_text, retry_missing=None):
 
 # ---------------------------------------------------------------- pipeline
 
+
 def slug(job):
     s = "%s-%s" % (job.get("company", ""), job.get("role", ""))
     s = re.sub(r"[^A-Za-z0-9]+", "-", s).strip("-").lower()
     return s[:60] or "job"
 
 
+def profile_for(job):
+    pid = "ml-research" if job.get("is_ml") else "sde-general"
+    return build.load(os.path.join(HERE, "profiles", pid + ".yaml"))
+
+
+# --------------------------------------------------------------------------
+# Rendering. Shared by both the API path and the Claude Code path, so a resume
+# is built and checked identically no matter which produced the content.
+# --------------------------------------------------------------------------
+
+def render_and_score(content, index, lib_terms, job, info, profile, data, ident,
+                     attempt_note=""):
+    problems = verify(data.get("selected", []), index, lib_terms)
+    rewrites = {x["id"]: x["text"] for x in data.get("selected", [])
+                if x.get("id") in index}
+    prefer = set(rewrites)
+    if data.get("voice") in ("sde", "ml"):
+        profile = dict(profile, voice=data["voice"])
+
+    jd_terms = build.jd_keywords(info["text"])
+    items = build.build_items(content, profile, jd_terms, rewrites, prefer)
+    preamble = open(os.path.join(HERE, "templates", "preamble.tex"),
+                    encoding="utf-8").read()
+    tex, pdf, pages, fill, _ = build.tune(
+        build.find_pdflatex(), content, profile, items, preamble, ident)
+
+    os.makedirs(TAILORED_DIR, exist_ok=True)
+    open(os.path.join(TAILORED_DIR, ident + ".tex"), "w",
+         encoding="utf-8", newline="\n").write(tex)
+    pdf_out = os.path.join(TAILORED_DIR, ident + ".pdf")
+    import shutil
+    shutil.copyfile(pdf, pdf_out)
+
+    sc = scoring.score_pdf(pdf_out, info["text"], job, pages)
+    print("    %sjd_match=%.1f  pages=%d fill=%.0f%%  rewrites=%d  flags=%d"
+          % (attempt_note, sc["score"], pages, fill * 100, len(rewrites), len(problems)))
+    if problems:
+        print("    UNVERIFIED -- claims the content library does not support:")
+        for p in problems[:6]:
+            print("      %-16s %-12s %s" % (p["id"], p["kind"], p["detail"]))
+
+    return {
+        "job_id": job.get("id"), "company": job.get("company"),
+        "role": job.get("role"), "link": job.get("link"),
+        "pdf": "resumes/out/tailored/%s.pdf" % ident,
+        "tex": "resumes/out/tailored/%s.tex" % ident,
+        "jd_match": sc["score"], "jd_source": info["source"],
+        "jd_confidence": info["confidence"],
+        "verified": not problems, "flags": problems,
+        "missing": sc["missing"], "gaps": data.get("gaps", []),
+        "summary": data.get("summary", ""),
+        "pages": pages, "fill": round(fill, 3),
+        "updated": datetime.datetime.now(datetime.timezone.utc)
+                   .replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+    }
+
+
+def write_manifest(results):
+    if not results:
+        return
+    prev = []
+    if os.path.exists(MANIFEST):
+        try:
+            prev = json.load(open(MANIFEST, encoding="utf-8"))
+        except ValueError:
+            prev = []
+    keep = {r["job_id"] for r in results}
+    merged = [p for p in prev if p.get("job_id") not in keep] + results
+    merged.sort(key=lambda r: r.get("updated", ""), reverse=True)
+    os.makedirs(os.path.dirname(MANIFEST), exist_ok=True)
+    with open(MANIFEST, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(merged, f, indent=1)
+        f.write("\n")
+    ok = sum(1 for r in results if r["jd_match"] >= TARGET_SCORE)
+    print("\n%d tailored, %d at or above %.0f, %d unverified -> %s"
+          % (len(results), ok, TARGET_SCORE,
+             sum(1 for r in results if not r["verified"]), MANIFEST))
+
+
+# --------------------------------------------------------------------------
+# Claude Code path (--emit / --apply)
+#
+# A Claude Max subscription covers Claude Code but not the Developer API, and
+# the model call is the only step that needs a model. So emit a self-contained
+# prompt pack per job, let the Claude Code session answer it, and apply the
+# answers through exactly the same verify/render/score path the API uses.
+# --------------------------------------------------------------------------
+
+def emit(targets, content):
+    os.makedirs(JOBS_DIR, exist_ok=True)
+    manifest = []
+    for job in targets:
+        info = jdmod.fetch_jd(job)
+        profile = profile_for(job)
+        ident = slug(job)
+        lib = library_prompt(content, profile["voice"])
+
+        pack = "\n".join([
+            "<!-- Generated by tailor.py --emit. Answer this in %s.json -->" % ident,
+            "",
+            "# Tailoring request: %s -- %s" % (job.get("company", ""), job.get("role", "")),
+            "",
+            "Location: %s" % job.get("location", ""),
+            "Apply:    %s" % job.get("link", ""),
+            "JD source: %s (confidence: %s, %d chars)"
+            % (info["source"], info["confidence"], len(info["text"])),
+            "",
+            "## Instructions",
+            "",
+            SYSTEM,
+            "",
+            "## Content library (voice: %s)" % profile["voice"],
+            lib,
+            "",
+            "## Job description",
+            "",
+            info["text"][:14000],
+            "",
+            "## Required answer",
+            "",
+            "Write `resumes/.jobs/%s.json` containing exactly:" % ident,
+            "",
+            "```json",
+            json.dumps({
+                "voice": profile["voice"],
+                "selected": [{"id": "<library id>", "text": "<rewritten bullet>"}],
+                "summary": "<one line on what you emphasised and why>",
+                "gaps": ["<JD requirement his experience does not cover>"],
+            }, indent=1),
+            "```",
+            "",
+            "Select 26-32 bullets. Obey every hard rule above -- the pipeline "
+            "verifies each rewrite against the library and marks the resume "
+            "unverified if a number or technology is not supported.",
+        ])
+        path = os.path.join(JOBS_DIR, ident + ".md")
+        with open(path, "w", encoding="utf-8", newline="\n") as f:
+            f.write(pack)
+        manifest.append({"ident": ident, "job_id": job.get("id"),
+                         "jd": info, "profile": profile["id"]})
+        print("  %-46s JD %s/%s %d chars -> %s.md"
+              % ((job.get("company", "") + " " + (job.get("role") or ""))[:46],
+                 info["source"], info["confidence"], len(info["text"]), ident))
+
+    with open(os.path.join(JOBS_DIR, "_manifest.json"), "w",
+              encoding="utf-8", newline="\n") as f:
+        json.dump(manifest, f, indent=1)
+    print("\n%d prompt pack(s) in %s" % (len(manifest), JOBS_DIR))
+    print("Next: have Claude Code read each .md and write the matching .json,")
+    print("then run:  py -3 resumes/tailor.py --apply")
+
+
+def apply_answers(content, index, lib_terms, jobs_by_id):
+    mpath = os.path.join(JOBS_DIR, "_manifest.json")
+    if not os.path.exists(mpath):
+        sys.exit("no prompt packs found; run --emit first")
+    manifest = json.load(open(mpath, encoding="utf-8"))
+
+    results, waiting = [], []
+    for entry in manifest:
+        ident = entry["ident"]
+        ans = os.path.join(JOBS_DIR, ident + ".json")
+        if not os.path.exists(ans):
+            waiting.append(ident)
+            continue
+        job = jobs_by_id.get(entry["job_id"]) or {"id": entry["job_id"]}
+        try:
+            data = json.load(open(ans, encoding="utf-8"))
+        except ValueError as e:
+            print("  %s: answer is not valid JSON (%s)" % (ident, e))
+            continue
+        print("%s -- %s" % (job.get("company", "?"), (job.get("role") or "")[:52]))
+        try:
+            results.append(render_and_score(
+                content, index, lib_terms, job, entry["jd"],
+                profile_for(job), data, ident))
+        except Exception as e:
+            print("    FAILED: %s" % e)
+
+    if waiting:
+        print("\nstill waiting on answers for: %s" % ", ".join(waiting))
+    write_manifest(results)
+
+
+# --------------------------------------------------------------------------
+# API path
+# --------------------------------------------------------------------------
+
 def tailor_one(client, content, index, lib_terms, job, dry_run=False):
     info = jdmod.fetch_jd(job)
-    profile_id = "ml-research" if job.get("is_ml") else "sde-general"
-    profile = build.load(os.path.join(HERE, "profiles", profile_id + ".yaml"))
+    profile = profile_for(job)
     lib = library_prompt(content, profile["voice"])
+    ident = slug(job)
 
     print("  JD: %s (%s, %d chars)" % (info["source"], info["confidence"], len(info["text"])))
     if dry_run:
         return None
 
-    pdflatex = build.find_pdflatex()
-    jd_terms = build.jd_keywords(info["text"])
-    ident = slug(job)
     missing, best = None, None
-
     for attempt in range(1, MAX_ATTEMPTS + 1):
         data, usage = call_claude(client, lib, job, info["text"], missing)
-        problems = verify(data.get("selected", []), index, lib_terms)
-
-        rewrites = {x["id"]: x["text"] for x in data.get("selected", [])
-                    if x.get("id") in index}
-        prefer = set(rewrites)
-        if data.get("voice") in ("sde", "ml"):
-            profile = dict(profile, voice=data["voice"])
-
-        items = build.build_items(content, profile, jd_terms, rewrites, prefer)
-        preamble = open(os.path.join(HERE, "templates", "preamble.tex"),
-                        encoding="utf-8").read()
-        tex, pdf, pages, fill, _ = build.tune(
-            pdflatex, content, profile, items, preamble, ident)
-
-        os.makedirs(TAILORED_DIR, exist_ok=True)
-        tex_out = os.path.join(TAILORED_DIR, ident + ".tex")
-        pdf_out = os.path.join(TAILORED_DIR, ident + ".pdf")
-        open(tex_out, "w", encoding="utf-8", newline="\n").write(tex)
-        import shutil
-        shutil.copyfile(pdf, pdf_out)
-
-        sc = scoring.score_pdf(pdf_out, info["text"], job, pages)
         cached = getattr(usage, "cache_read_input_tokens", 0) if usage else 0
-        print("    attempt %d: jd_match=%.1f  pages=%d fill=%.0f%%  "
-              "rewrites=%d  flags=%d  cache_read=%s"
-              % (attempt, sc["score"], pages, fill * 100, len(rewrites),
-                 len(problems), cached))
-
-        best = {
-            "job_id": job.get("id"), "company": job.get("company"),
-            "role": job.get("role"), "link": job.get("link"),
-            "pdf": "resumes/out/tailored/%s.pdf" % ident,
-            "tex": "resumes/out/tailored/%s.tex" % ident,
-            "jd_match": sc["score"], "jd_source": info["source"],
-            "jd_confidence": info["confidence"],
-            "verified": not problems, "flags": problems,
-            "missing": sc["missing"], "gaps": data.get("gaps", []),
-            "summary": data.get("summary", ""),
-            "pages": pages, "fill": round(fill, 3),
-            "updated": datetime.datetime.now(datetime.timezone.utc)
-                       .replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-        }
-        if sc["score"] >= TARGET_SCORE:
+        best = render_and_score(content, index, lib_terms, job, info, profile,
+                                data, ident, "attempt %d: " % attempt)
+        best["cache_read_tokens"] = cached
+        if best["jd_match"] >= TARGET_SCORE:
             break
-        missing = sc["missing"]
-
-    if best and not best["verified"]:
-        print("    UNVERIFIED -- claims not found in the content library:")
-        for p in best["flags"][:6]:
-            print("      %s  %s: %s" % (p["id"], p["kind"], p["detail"]))
+        missing = best["missing"]
     return best
 
 
@@ -346,11 +499,24 @@ def main():
     ap.add_argument("--job-id", help="a single job id from data/jobs.json")
     ap.add_argument("--url", help="a single apply URL (JD fetch test)")
     ap.add_argument("--dry-run", action="store_true",
-                    help="fetch JDs and report, make no API calls")
+                    help="fetch JDs and report, make no model calls")
+    ap.add_argument("--emit", action="store_true",
+                    help="write prompt packs for a Claude Code session (no API key)")
+    ap.add_argument("--apply", action="store_true",
+                    help="build resumes from the answers written next to the packs")
     args = ap.parse_args()
 
     jobs_all = json.load(open(JOBS, encoding="utf-8"))
     by_id = {j["id"]: j for j in jobs_all}
+
+    content = build.load(os.path.join(HERE, "content.yaml"))
+    build.collect_tags(content)
+    index = library_index(content)
+    lib_terms = library_terms(content, index)
+
+    if args.apply:
+        apply_answers(content, index, lib_terms, by_id)
+        return
 
     if args.url:
         targets = [{"id": "adhoc", "link": args.url, "company": "", "role": "",
@@ -366,12 +532,11 @@ def main():
             print("note: %d shortlisted job(s) no longer on the board"
                   % (len(picks) - len(targets)))
     else:
-        ap.error("pass --shortlist, --job-id, or --url")
+        ap.error("pass --shortlist, --job-id, --url, or --apply")
 
-    content = build.load(os.path.join(HERE, "content.yaml"))
-    build.collect_tags(content)
-    index = library_index(content)
-    lib_terms = library_terms(content, index)
+    if args.emit:
+        emit(targets, content)
+        return
 
     client = None
     if not args.dry_run:
@@ -382,7 +547,11 @@ def main():
         try:
             client = anthropic.Anthropic()
         except Exception as e:
-            sys.exit("no Anthropic credentials (set ANTHROPIC_API_KEY): %s" % e)
+            sys.exit("No Anthropic API credentials. A Claude Pro/Max plan does not\n"
+                     "include API access -- they are billed separately. Either set\n"
+                     "ANTHROPIC_API_KEY, or use the Claude Code path instead:\n"
+                     "    py -3 resumes/tailor.py --shortlist shortlist.json --emit\n"
+                     "(%s)" % e)
 
     results = []
     for job in targets:
@@ -394,25 +563,7 @@ def main():
             continue
         if r:
             results.append(r)
-
-    if results:
-        prev = []
-        if os.path.exists(MANIFEST):
-            try:
-                prev = json.load(open(MANIFEST, encoding="utf-8"))
-            except ValueError:
-                prev = []
-        keep = {r["job_id"] for r in results}
-        merged = [p for p in prev if p.get("job_id") not in keep] + results
-        merged.sort(key=lambda r: r.get("updated", ""), reverse=True)
-        os.makedirs(os.path.dirname(MANIFEST), exist_ok=True)
-        with open(MANIFEST, "w", encoding="utf-8", newline="\n") as f:
-            json.dump(merged, f, indent=1)
-            f.write("\n")
-        ok = sum(1 for r in results if r["jd_match"] >= TARGET_SCORE)
-        print("\n%d tailored, %d at or above %.0f, %d unverified -> %s"
-              % (len(results), ok, TARGET_SCORE,
-                 sum(1 for r in results if not r["verified"]), MANIFEST))
+    write_manifest(results)
 
 
 if __name__ == "__main__":
