@@ -1546,26 +1546,10 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Expedia Group",
-  "role": "Software Development Engineer 1",
-  "location": "Seattle, WA",
-  "link": "https://expedia.wd108.myworkdayjobs.com/search/job/Washington---Seattle-Campus/Software-Development-Engineer-I_R-108739",
-  "posted": "2026-09-01",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "expedia group|software development engineer 1",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "SpaceX",
-  "role": "Software Security Engineer New Grad - Software Security - Starlink",
-  "location": "Hawthorne, CA",
-  "link": "https://boards.greenhouse.io/spacex/jobs/8724316002",
+  "role": "Software Security New Grad - Starlink",
+  "location": "Redmond, WA",
+  "link": "https://boards.greenhouse.io/spacex/jobs/8696143002",
   "posted": "2026-09-01",
   "salary": null,
   "sponsorship": "unknown",
@@ -1575,7 +1559,7 @@
   ],
   "tier": 3,
   "is_ml": false,
-  "id": "spacex|software security engineer new grad software security starlink",
+  "id": "spacex|software security new grad starlink",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -2562,6 +2546,22 @@
   "tier": 3,
   "is_ml": false,
   "id": "cerity partners|investment analyst",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Expedia Group",
+  "role": "Software Development Engineer 1",
+  "location": "Seattle, WA",
+  "link": "https://expedia.wd108.myworkdayjobs.com/private/job/Washington---Seattle-Campus/Software-Development-Engineer-I_R-108739-2",
+  "posted": "2026-09-01",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "expedia group|software development engineer 1",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -4178,22 +4178,6 @@
   "first_seen": "2026-09-02T03:08:16Z"
  },
  {
-  "company": "iCapital Network",
-  "role": "Full Stack Engineer - Associate",
-  "location": "Salt Lake City, Utah, United States",
-  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8452448002",
-  "posted": "2026-08-31",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "icapital network|full stack engineer associate",
-  "first_seen": "2026-09-02T03:08:16Z"
- },
- {
   "company": "Empower",
   "role": "Software Engineer",
   "location": "United States",
@@ -4256,6 +4240,24 @@
   "tier": 3,
   "is_ml": false,
   "id": "wyetech|software engineer 1",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "iCapital Network",
+  "role": "Associate Full Stack Engineer",
+  "location": "NYC",
+  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8549590002",
+  "posted": "2026-08-31",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "simplify",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "icapital network|associate full stack engineer",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -6190,22 +6192,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "johnson johnson medtech|quality digital deploy op spring 2027",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Captivation",
-  "role": "Software Engineer 1/2 - PostgreSQL/CI/CD/SpringBoot/Angular/MongoDB/Oracle/Docker/Kubernetes/JSON/XML/Jira",
-  "location": "Annapolis Junction, MD",
-  "link": "https://job-boards.greenhouse.io/captivation/jobs/5410733008",
-  "posted": "2026-08-31",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "captivation|software engineer 1 2 postgresql ci cd springboot angular mongodb oracle docker kubernetes json xml jira",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -13967,6 +13953,22 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
+  "company": "SpaceX",
+  "role": "Software Security Engineer New Grad - Software Security - Starlink",
+  "location": "Hawthorne, CA",
+  "link": "https://boards.greenhouse.io/spacex/jobs/8724316002",
+  "posted": "2026-08-24",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "spacex|software security engineer new grad software security starlink",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
   "company": "General Dynamics Mission Systems",
   "role": "Software Systems Engineer - Surface Ship Systems Programs",
   "location": "Manassas, VA",
@@ -16147,23 +16149,6 @@
   "tier": 3,
   "is_ml": true,
   "id": "caci|ai prompt engineer",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Tax Relief Advocates",
-  "role": "Junior Machine Learning Engineer",
-  "location": "Irvine, CA",
-  "link": "https://job-boards.greenhouse.io/taxreliefadvocates/jobs/4759563008",
-  "posted": "2026-08-19",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "tax relief advocates|junior machine learning engineer",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -19242,22 +19227,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "fidelity investments|systems analyst leap program",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "SpaceX",
-  "role": "Software Security New Grad - Starlink",
-  "location": "Redmond, WA",
-  "link": "https://boards.greenhouse.io/spacex/jobs/8696143002",
-  "posted": "2026-08-14",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "spacex|software security new grad starlink",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -24085,23 +24054,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "ace it careers|qa tester entry level remote",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Innodata",
-  "role": "Generative AI Associate",
-  "location": "Louisiana",
-  "link": "https://job-boards.greenhouse.io/innodatainc/jobs/4266660009",
-  "posted": "2026-08-06",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "innodata|generative ai associate",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -29708,6 +29660,22 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
+  "company": "Tax Relief Advocates",
+  "role": "Junior Machine Learning Engineer",
+  "location": "Irvine, CA",
+  "link": "https://job-boards.greenhouse.io/taxreliefadvocates/jobs/4759563008",
+  "posted": "2026-07-27",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": true,
+  "id": "tax relief advocates|junior machine learning engineer",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
   "company": "Pattern Data",
   "role": "Software Engineer - Entry",
   "location": "Richmond, VA",
@@ -31691,22 +31659,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Innodata",
-  "role": "Generative AI Associate(PHD) - Flexible Hours",
-  "location": "Remote - United States",
-  "link": "https://job-boards.greenhouse.io/innodatainc/jobs/4323350009",
-  "posted": "2026-07-20",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "innodata|generative ai associate phd flexible hours",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "Relay",
   "role": "Associate QA Engineer",
   "location": "Raleigh, NC",
@@ -31849,6 +31801,22 @@
   "tier": 3,
   "is_ml": true,
   "id": "pgtek|associate cloud ai engineer ts sci clearance travel",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Innodata",
+  "role": "Generative AI Associate",
+  "location": "Louisiana",
+  "link": "https://job-boards.greenhouse.io/innodatainc/jobs/4266660009",
+  "posted": "2026-07-17",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": true,
+  "id": "innodata|generative ai associate",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -33882,22 +33850,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Innodata",
-  "role": "Generative AI Associate - Flexible Hours",
-  "location": "Remote - Massachusetts",
-  "link": "https://job-boards.greenhouse.io/innodatainc/jobs/4307427009",
-  "posted": "2026-07-08",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "innodata|generative ai associate flexible hours",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "Revenue Analytics",
   "role": "Data Scientist",
   "location": "Atlanta, GA",
@@ -35475,23 +35427,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Innodata",
-  "role": "Applied AI Associate",
-  "location": "West Virginia",
-  "link": "https://job-boards.greenhouse.io/innodatainc/jobs/4266634009",
-  "posted": "2026-06-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "innodata|applied ai associate",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "Nidec",
   "role": "Application Engineer 1",
   "location": "St. Louis, MO",
@@ -35668,22 +35603,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "university of texas at austin|career success reporting and insights graduate assistant",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Innodata",
-  "role": "AI Workflow Associate - Flexible Hours",
-  "location": "Remote - Virginia",
-  "link": "https://job-boards.greenhouse.io/innodatainc/jobs/4266794009",
-  "posted": "2026-06-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "innodata|ai workflow associate flexible hours",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -36945,23 +36864,6 @@
   "first_seen": "2026-08-28T23:31:08Z"
  },
  {
-  "company": "Aquatic Capital Management",
-  "role": "Software Engineer \u2013 Early Career",
-  "location": "Chicago, IL, NYC",
-  "link": "https://job-boards.greenhouse.io/aquaticcapitalmanagement/jobs/8489226002",
-  "posted": "2026-06-16",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "aquatic capital management|software engineer early career",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "People Culture Talent",
   "role": "Full-Stack Engineer",
   "location": "San Francisco, CA",
@@ -37472,6 +37374,22 @@
   "tier": 3,
   "is_ml": true,
   "id": "applied materials|data scientist agentic ai ml",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Innodata",
+  "role": "Applied AI Associate",
+  "location": "West Virginia",
+  "link": "https://job-boards.greenhouse.io/innodatainc/jobs/4266634009",
+  "posted": "2026-06-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": true,
+  "id": "innodata|applied ai associate",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -39078,23 +38996,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "iCapital Network",
-  "role": "Associate Full Stack Engineer",
-  "location": "NYC",
-  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8549590002",
-  "posted": "2026-05-22",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "icapital network|associate full stack engineer",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "SpaceX",
   "role": "Software Engineer - Flight Software - Starship",
   "location": "Texas",
@@ -39961,23 +39862,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "royal bank of canada|real estate investment analyst community investments",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Aquatic Capital Management",
-  "role": "Quantitative Researcher",
-  "location": "Chicago, IL, NYC",
-  "link": "https://job-boards.greenhouse.io/aquaticcapitalmanagement/jobs/8489150002",
-  "posted": "2026-04-30",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "aquatic capital management|quantitative researcher",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -41005,6 +40889,38 @@
   "tier": 3,
   "is_ml": false,
   "id": "bytedance|research scientist in speech foundation model graduates multiple teams",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Aquatic Capital Management",
+  "role": "Software Engineer \u2013 Early Career",
+  "location": "Chicago, IL, NYC",
+  "link": "https://job-boards.greenhouse.io/aquaticcapitalmanagement/jobs/8489226002",
+  "posted": "2026-04-01",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "aquatic capital management|software engineer early career",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Aquatic Capital Management",
+  "role": "Quantitative Researcher",
+  "location": "Chicago, IL, NYC",
+  "link": "https://job-boards.greenhouse.io/aquaticcapitalmanagement/jobs/8489150002",
+  "posted": "2026-04-01",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": true,
+  "id": "aquatic capital management|quantitative researcher",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
