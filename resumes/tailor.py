@@ -169,7 +169,24 @@ def library_terms(content, index):
     return terms
 
 
-def verify(selected, index, lib_terms):
+def descriptive_ids(content):
+    """Bullets that describe interests rather than claim work performed.
+
+    Education lines are lists of coursework and focus areas, so their capitalised
+    phrases ("Low-Latency Services", "Secure API Design") are category labels,
+    not assertions about experience. Every flag in the first 27-resume batch came
+    from a Focus line and none from an experience bullet, which is the guard
+    being over-broad rather than the resumes being wrong. Numbers are still
+    checked here -- a misstated GPA is exactly the kind of error that matters.
+    """
+    ids = set()
+    for ent in content.get("education", []):
+        for b in ent.get("bullets", []):
+            ids.add(b["id"])
+    return ids
+
+
+def verify(selected, index, lib_terms, descriptive=()):
     """Flag any claim in a rewrite that the library does not support.
 
     Numbers are checked against the *source bullet* -- inflating 950 to 5000 is
@@ -193,6 +210,8 @@ def verify(selected, index, lib_terms):
         new_nums, new_props = _facts(new)
         for n in sorted(new_nums - src_nums):
             problems.append({"id": bid, "kind": "new_number", "detail": n})
+        if bid in descriptive:
+            continue                      # interests, not experience claims
         for p in sorted(new_props - lib_terms):
             problems.append({"id": bid, "kind": "new_term", "detail": p})
     return problems
@@ -292,9 +311,9 @@ def profile_for(job):
 # is built and checked identically no matter which produced the content.
 # --------------------------------------------------------------------------
 
-def render_and_score(content, index, lib_terms, job, info, profile, data, ident,
+def render_and_score(content, index, lib_terms, descriptive, job, info, profile, data, ident,
                      attempt_note=""):
-    problems = verify(data.get("selected", []), index, lib_terms)
+    problems = verify(data.get("selected", []), index, lib_terms, descriptive)
     rewrites = {x["id"]: x["text"] for x in data.get("selected", [])
                 if x.get("id") in index}
     prefer = set(rewrites)
@@ -373,8 +392,15 @@ def write_manifest(results):
 def emit(targets, content):
     os.makedirs(JOBS_DIR, exist_ok=True)
     manifest = []
-    for job in targets:
-        info = jdmod.fetch_jd(job)
+
+    # Fetch descriptions concurrently. Sequentially this is ~3s of network per
+    # job, which is fine for a handful and unusable for a couple of hundred.
+    from concurrent.futures import ThreadPoolExecutor
+    print("fetching %d job descriptions..." % len(targets))
+    with ThreadPoolExecutor(max_workers=10) as pool:
+        infos = list(pool.map(jdmod.fetch_jd, targets))
+
+    for job, info in zip(targets, infos):
         profile = profile_for(job)
         ident = slug(job)
         lib = library_prompt(content, profile["voice"])
@@ -434,7 +460,7 @@ def emit(targets, content):
     print("then run:  py -3 resumes/tailor.py --apply")
 
 
-def apply_answers(content, index, lib_terms, jobs_by_id):
+def apply_answers(content, index, lib_terms, descriptive, jobs_by_id):
     mpath = os.path.join(JOBS_DIR, "_manifest.json")
     if not os.path.exists(mpath):
         sys.exit("no prompt packs found; run --emit first")
@@ -456,7 +482,7 @@ def apply_answers(content, index, lib_terms, jobs_by_id):
         print("%s -- %s" % (job.get("company", "?"), (job.get("role") or "")[:52]))
         try:
             results.append(render_and_score(
-                content, index, lib_terms, job, entry["jd"],
+                content, index, lib_terms, descriptive, job, entry["jd"],
                 profile_for(job), data, ident))
         except Exception as e:
             print("    FAILED: %s" % e)
@@ -470,7 +496,7 @@ def apply_answers(content, index, lib_terms, jobs_by_id):
 # API path
 # --------------------------------------------------------------------------
 
-def tailor_one(client, content, index, lib_terms, job, dry_run=False):
+def tailor_one(client, content, index, lib_terms, descriptive, job, dry_run=False):
     info = jdmod.fetch_jd(job)
     profile = profile_for(job)
     lib = library_prompt(content, profile["voice"])
@@ -484,7 +510,7 @@ def tailor_one(client, content, index, lib_terms, job, dry_run=False):
     for attempt in range(1, MAX_ATTEMPTS + 1):
         data, usage = call_claude(client, lib, job, info["text"], missing)
         cached = getattr(usage, "cache_read_input_tokens", 0) if usage else 0
-        best = render_and_score(content, index, lib_terms, job, info, profile,
+        best = render_and_score(content, index, lib_terms, descriptive, job, info, profile,
                                 data, ident, "attempt %d: " % attempt)
         best["cache_read_tokens"] = cached
         if best["jd_match"] >= TARGET_SCORE:
@@ -513,9 +539,10 @@ def main():
     build.collect_tags(content)
     index = library_index(content)
     lib_terms = library_terms(content, index)
+    descriptive = descriptive_ids(content)
 
     if args.apply:
-        apply_answers(content, index, lib_terms, by_id)
+        apply_answers(content, index, lib_terms, descriptive, by_id)
         return
 
     if args.url:
@@ -557,7 +584,7 @@ def main():
     for job in targets:
         print("%s -- %s" % (job.get("company", "?"), (job.get("role") or "")[:56]))
         try:
-            r = tailor_one(client, content, index, lib_terms, job, args.dry_run)
+            r = tailor_one(client, content, index, lib_terms, descriptive, job, args.dry_run)
         except Exception as e:
             print("    FAILED: %s" % e)
             continue

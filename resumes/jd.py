@@ -142,13 +142,61 @@ def _workday(url):
     return ((d.get("jobPostingInfo") or {}).get("jobDescription")) or None
 
 
+def _oracle(url):
+    """Oracle Cloud HCM (CandidateExperience) -- American Express and many
+    other large employers. The careers page is a JS app that scrapes to
+    nothing, but the REST API behind it is public."""
+    m = re.search(
+        r"https://([^/]+\.oraclecloud\.com)/hcmUI/CandidateExperience/[^/]+/sites/([^/]+)/job/(\d+)",
+        url, re.I)
+    if not m:
+        return None
+    host, site, jid = m.groups()
+    d = _json("https://%s/hcmRestApi/resources/latest/"
+              "recruitingCEJobRequisitionDetails?expand=all&"
+              "finder=ById;Id=%%22%s%%22,siteNumber=%s" % (host, jid, site))
+    items = d.get("items") or []
+    if not items:
+        return None
+    it = items[0]
+    return it.get("ExternalDescriptionStr") or it.get("ShortDescriptionStr")
+
+
 ADAPTERS = [
     ("greenhouse", _greenhouse),
     ("lever", _lever),
     ("ashby", _ashby),
     ("smartrecruiters", _smartrecruiters),
     ("workday", _workday),
+    ("oracle", _oracle),
 ]
+
+
+# Pages that return HTTP 200 but carry no job description: bot walls, JS
+# shells, login gates, dead links. These are worse than an empty result --
+# jobright's bot check reads as a JD full of "JavaScript ... security", which
+# scored as a real keyword profile and would have tailored 31 resumes to a
+# CAPTCHA page.
+JUNK = re.compile(
+    r"security check|are you a human|enable javascript|javascript is required"
+    r"|please turn on javascript|verify you are human|checking your browser"
+    r"|cloudflare|access denied|403 forbidden|404 not found|page not found"
+    r"|sign in to continue|log in to view|cookies? (are )?(required|disabled)"
+    r"|this job is no longer|position (has been )?filled|no longer accepting",
+    re.I)
+
+
+def looks_like_jd(txt):
+    """Reject pages that loaded fine but contain no job description."""
+    if not txt or len(txt) < MIN_USABLE:
+        return False
+    if JUNK.search(txt[:1200]):
+        return False
+    # A real posting names responsibilities or requirements somewhere.
+    return bool(re.search(
+        r"responsibilit|qualificat|requirement|you will|we are looking"
+        r"|what you|experience with|skills|role|team|degree",
+        txt, re.I))
 
 
 def _scrape(url):
@@ -176,10 +224,11 @@ def fetch_jd(job):
                 return {"text": txt, "source": name, "confidence": "low"}
     try:
         txt = _scrape(url)
-        if len(txt) >= MIN_USABLE:
+        if looks_like_jd(txt):
             return {"text": txt, "source": "scrape", "confidence": "medium"}
-        if txt:
-            return {"text": txt, "source": "scrape", "confidence": "low"}
+        # Short, or a bot wall / JS shell / dead link. Either way it is not a
+        # job description, and passing it downstream is worse than admitting we
+        # have nothing: the tailoring would target whatever words the wall used.
     except (urllib.error.URLError, ValueError, OSError, TimeoutError):
         pass
 

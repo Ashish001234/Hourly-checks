@@ -1,5 +1,714 @@
 [
  {
+  "job_id": "twitch|software engineer i commerce engineering",
+  "company": "Twitch",
+  "role": "Software Engineer I, Commerce Engineering",
+  "link": "https://job-boards.greenhouse.io/twitch/jobs/8457711002",
+  "pdf": "resumes/out/tailored/twitch-software-engineer-i-commerce-engineering.pdf",
+  "tex": "resumes/out/tailored/twitch-software-engineer-i-commerce-engineering.tex",
+  "jd_match": 89.0,
+  "jd_source": "greenhouse",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "golang",
+   "typescript"
+  ],
+  "gaps": [
+   "No Go, Kotlin or Swift experience in the library",
+   "No experience at Twitch-scale traffic; largest measured load is 500 concurrent users"
+  ],
+  "summary": "Led with AWS, scalable backend services and full-stack React/Node work; foregrounded high-concurrency load testing, horizontal scaling under traffic spikes, and REST API design to match the Discovery/Commerce platform focus.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:26:37Z"
+ },
+ {
+  "job_id": "twitch|software engineer i discovery",
+  "company": "Twitch",
+  "role": "Software Engineer I - Discovery",
+  "link": "https://job-boards.greenhouse.io/twitch/jobs/8623578002",
+  "pdf": "resumes/out/tailored/twitch-software-engineer-i-discovery.pdf",
+  "tex": "resumes/out/tailored/twitch-software-engineer-i-discovery.tex",
+  "jd_match": 78.0,
+  "jd_source": "greenhouse",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "golang",
+   "kotlin",
+   "swift",
+   "typescript"
+  ],
+  "gaps": [
+   "No Go, Kotlin or Swift experience in the library",
+   "No experience at Twitch-scale traffic; largest measured load is 500 concurrent users"
+  ],
+  "summary": "Led with AWS, scalable backend services and full-stack React/Node work; foregrounded high-concurrency load testing, horizontal scaling under traffic spikes, and REST API design to match the Discovery/Commerce platform focus.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:26:33Z"
+ },
+ {
+  "job_id": "twitch|software engineer i payments",
+  "company": "Twitch",
+  "role": "Software Engineer I - Payments",
+  "link": "https://job-boards.greenhouse.io/twitch/jobs/8700578002",
+  "pdf": "resumes/out/tailored/twitch-software-engineer-i-payments.pdf",
+  "tex": "resumes/out/tailored/twitch-software-engineer-i-payments.tex",
+  "jd_match": 87.8,
+  "jd_source": "greenhouse",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "code review",
+   "ruby"
+  ],
+  "gaps": [
+   "No Go, Kotlin or Swift experience in the library",
+   "No experience at Twitch-scale traffic; largest measured load is 500 concurrent users"
+  ],
+  "summary": "Led with AWS, scalable backend services and full-stack React/Node work; foregrounded high-concurrency load testing, horizontal scaling under traffic spikes, and REST API design to match the Discovery/Commerce platform focus.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:26:29Z"
+ },
+ {
+  "job_id": "twitch|software engineer i memberships",
+  "company": "Twitch",
+  "role": "Software Engineer I - Memberships",
+  "link": "https://job-boards.greenhouse.io/twitch/jobs/8748320002",
+  "pdf": "resumes/out/tailored/twitch-software-engineer-i-memberships.pdf",
+  "tex": "resumes/out/tailored/twitch-software-engineer-i-memberships.tex",
+  "jd_match": 92.1,
+  "jd_source": "greenhouse",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "golang",
+   "typescript"
+  ],
+  "gaps": [
+   "No Go, Kotlin or Swift experience in the library",
+   "No experience at Twitch-scale traffic; largest measured load is 500 concurrent users"
+  ],
+  "summary": "Led with AWS, scalable backend services and full-stack React/Node work; foregrounded high-concurrency load testing, horizontal scaling under traffic spikes, and REST API design to match the Discovery/Commerce platform focus.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:26:25Z"
+ },
+ {
+  "job_id": "google|software engineer",
+  "company": "Google",
+  "role": "Software Engineer",
+  "link": "https://www.google.com/about/careers/applications/jobs/results/106684387621249734",
+  "pdf": "resumes/out/tailored/google-software-engineer.pdf",
+  "tex": "resumes/out/tailored/google-software-engineer.tex",
+  "jd_match": 86.2,
+  "jd_source": "scrape",
+  "jd_confidence": "medium",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "code review",
+   "market",
+   "risk",
+   "testing"
+  ],
+  "gaps": [
+   "No production C++ at scale; C++ appears as coursework and competitive programming"
+  ],
+  "summary": "Led with algorithms and data structures, which the JD calls out explicitly, then distributed systems and large-scale infrastructure; kept the research work to show depth without crowding out core engineering.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:26:20Z"
+ },
+ {
+  "job_id": "american express|ai engineer 1 graduate",
+  "company": "American Express",
+  "role": "AI Engineer 1 - Graduate",
+  "link": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26013255",
+  "pdf": "resumes/out/tailored/american-express-ai-engineer-1-graduate.pdf",
+  "tex": "resumes/out/tailored/american-express-ai-engineer-1-graduate.tex",
+  "jd_match": 84.3,
+  "jd_source": "oracle",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "data pipeline",
+   "risk"
+  ],
+  "gaps": [
+   "No experience operating LLM systems under financial-services regulatory constraints"
+  ],
+  "summary": "Led with the two production LLM agents on AWS Bedrock and the schema-driven evaluation work, which map almost one-to-one onto this role's agentic and evaluation requirements.",
+  "pages": 2,
+  "fill": 0.949,
+  "updated": "2026-09-02T04:26:16Z"
+ },
+ {
+  "job_id": "american express|data engineer 1 enterprise technology services",
+  "company": "American Express",
+  "role": "Data Engineer 1 - Enterprise Technology Services",
+  "link": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26013286",
+  "pdf": "resumes/out/tailored/american-express-data-engineer-1-enterprise-technology-servi.pdf",
+  "tex": "resumes/out/tailored/american-express-data-engineer-1-enterprise-technology-servi.tex",
+  "jd_match": 89.1,
+  "jd_source": "oracle",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "risk"
+  ],
+  "gaps": [
+   "No Spark, Kafka or warehouse-scale ETL experience; pipelines are Python and Pandas"
+  ],
+  "summary": "Led with data pipelines, feature engineering and database work; foregrounded the 941-job telemetry pipeline and the financial-document search system.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:25:56Z"
+ },
+ {
+  "job_id": "american express|data engineer 2 enterprise technology services",
+  "company": "American Express",
+  "role": "Data Engineer 2 - Enterprise Technology Services",
+  "link": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26013289",
+  "pdf": "resumes/out/tailored/american-express-data-engineer-2-enterprise-technology-servi.pdf",
+  "tex": "resumes/out/tailored/american-express-data-engineer-2-enterprise-technology-servi.tex",
+  "jd_match": 89.1,
+  "jd_source": "oracle",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "risk"
+  ],
+  "gaps": [
+   "No Spark, Kafka or warehouse-scale ETL experience; pipelines are Python and Pandas"
+  ],
+  "summary": "Led with data pipelines, feature engineering and database work; foregrounded the 941-job telemetry pipeline and the financial-document search system.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:25:52Z"
+ },
+ {
+  "job_id": "american express|ai engineer",
+  "company": "American Express",
+  "role": "AI Engineer",
+  "link": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26013254",
+  "pdf": "resumes/out/tailored/american-express-ai-engineer.pdf",
+  "tex": "resumes/out/tailored/american-express-ai-engineer.tex",
+  "jd_match": 84.3,
+  "jd_source": "oracle",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "data pipeline",
+   "risk"
+  ],
+  "gaps": [
+   "No experience operating LLM systems under financial-services regulatory constraints"
+  ],
+  "summary": "Led with the two production LLM agents on AWS Bedrock and the schema-driven evaluation work, which map almost one-to-one onto this role's agentic and evaluation requirements.",
+  "pages": 2,
+  "fill": 0.949,
+  "updated": "2026-09-02T04:25:48Z"
+ },
+ {
+  "job_id": "travelers|engineering development program software engineering",
+  "company": "Travelers",
+  "role": "Engineering Development Program - Software Engineering",
+  "link": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Engineering-Development-Program--EDP----Software-Engineering_R-52271",
+  "pdf": "resumes/out/tailored/travelers-engineering-development-program-software-engineeri.pdf",
+  "tex": "resumes/out/tailored/travelers-engineering-development-program-software-engineeri.tex",
+  "jd_match": 74.9,
+  "jd_source": "workday",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "agile",
+   "debugging",
+   "fine-tun",
+   "graphql",
+   "market",
+   "nosql",
+   "testing"
+  ],
+  "gaps": [
+   "No GraphQL experience",
+   "No insurance-domain experience"
+  ],
+  "summary": "Led with data pipelines, cloud infrastructure and algorithms to match the Engineering Development Program's data and software tracks.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:25:27Z"
+ },
+ {
+  "job_id": "travelers|engineering development program data engineering",
+  "company": "Travelers",
+  "role": "Engineering Development Program - Data Engineering",
+  "link": "https://travelers.wd5.myworkdayjobs.com/External/job/CT---Hartford/Engineering-Development-Program--EDP----Data-Engineering_R-52272",
+  "pdf": "resumes/out/tailored/travelers-engineering-development-program-data-engineering.pdf",
+  "tex": "resumes/out/tailored/travelers-engineering-development-program-data-engineering.tex",
+  "jd_match": 71.2,
+  "jd_source": "workday",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "agile",
+   "etl",
+   "fine-tun",
+   "market",
+   "testing"
+  ],
+  "gaps": [
+   "No GraphQL experience",
+   "No insurance-domain experience"
+  ],
+  "summary": "Led with data pipelines, cloud infrastructure and algorithms to match the Engineering Development Program's data and software tracks.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:25:23Z"
+ },
+ {
+  "job_id": "rtx|software engineer 1",
+  "company": "RTX",
+  "role": "Software Engineer 1",
+  "link": "https://globalhr.wd5.myworkdayjobs.com/fr-CA/Private_Posting_No_TMP/job/US-IA-CEDAR-RAPIDS-182--1100-Cimmie-Ave-Ne--BLDG-182/Conversion--Software-Engineer-I--Onsite-_01867853",
+  "pdf": "resumes/out/tailored/rtx-software-engineer-1.pdf",
+  "tex": "resumes/out/tailored/rtx-software-engineer-1.tex",
+  "jd_match": 74.6,
+  "jd_source": "workday",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "debugging",
+   "linux",
+   "market",
+   "portfolio",
+   "testing",
+   "unix"
+  ],
+  "gaps": [
+   "No security clearance",
+   "No production C++ or real-time embedded systems work"
+  ],
+  "summary": "Led with systems, operating systems and debugging depth; foregrounded C++ coursework, Linux, and production release engineering.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:25:19Z"
+ },
+ {
+  "job_id": "google|software engineer campus",
+  "company": "Google",
+  "role": "Software Engineer - Campus",
+  "link": "https://www.google.com/about/careers/applications/jobs/results/78703249065943750",
+  "pdf": "resumes/out/tailored/google-software-engineer-campus.pdf",
+  "tex": "resumes/out/tailored/google-software-engineer-campus.tex",
+  "jd_match": 86.2,
+  "jd_source": "scrape",
+  "jd_confidence": "medium",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "linux",
+   "market",
+   "natural language",
+   "risk",
+   "unix"
+  ],
+  "gaps": [
+   "No production C++ at scale; C++ appears as coursework and competitive programming"
+  ],
+  "summary": "Led with algorithms and data structures, which the JD calls out explicitly, then distributed systems and large-scale infrastructure; kept the research work to show depth without crowding out core engineering.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:25:15Z"
+ },
+ {
+  "job_id": "lockheed martin|software engineer asc e1",
+  "company": "Lockheed Martin",
+  "role": "Software Engineer Asc - E1",
+  "link": "https://jobright.ai/jobs/info/6a973e73246d697dcee0462f?utm_campaign=Software%20Engineering",
+  "pdf": "resumes/out/tailored/lockheed-martin-software-engineer-asc-e1.pdf",
+  "tex": "resumes/out/tailored/lockheed-martin-software-engineer-asc-e1.tex",
+  "jd_match": 82.5,
+  "jd_source": "scrape",
+  "jd_confidence": "medium",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "debugging",
+   "testing"
+  ],
+  "gaps": [
+   "No security clearance; several defence roles require one",
+   "No C# experience"
+  ],
+  "summary": "Led with Java/JavaScript/Python, SQL, Docker and REST to match the stated stack; foregrounded testing, debugging and secure development practice.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:25:11Z"
+ },
+ {
+  "job_id": "american express|campus undergraduate full time engineer 2027 software engineer i enterprise technology services phoenix az",
+  "company": "American Express",
+  "role": "Campus Undergraduate Full-Time Engineer - 2027 Software Engineer I, Enterprise Technology Services- Phoenix, AZ",
+  "link": "https://jobright.ai/jobs/info/6a972026f5337b2cf73202ab?utm_campaign=Software%20Engineering",
+  "pdf": "resumes/out/tailored/american-express-campus-undergraduate-full-time-engineer-202.pdf",
+  "tex": "resumes/out/tailored/american-express-campus-undergraduate-full-time-engineer-202.tex",
+  "jd_match": 72.2,
+  "jd_source": "scrape",
+  "jd_confidence": "medium",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "agile",
+   "code review",
+   "data pipeline",
+   "embedding",
+   "evaluation",
+   "frontend",
+   "kotlin",
+   "reliability",
+   "spring",
+   "swift",
+   "testing",
+   "typescript",
+   "unit test",
+   "version control"
+  ],
+  "gaps": [
+   "No Java or C# experience in the library"
+  ],
+  "summary": "Led with backend and cloud engineering, CI/CD and code-review practice to match the graduate programme's rotation structure and agile emphasis.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:25:07Z"
+ },
+ {
+  "job_id": "american express|campus graduate masters full time engineer 2027 software engineer ii enterprise technology services new york ny",
+  "company": "American Express",
+  "role": "Campus Graduate Masters Full-Time Engineer - 2027 Software Engineer II, Enterprise Technology Services- New York, NY",
+  "link": "https://jobright.ai/jobs/info/6a97775a455eaf6a08c1cb0b?utm_campaign=Software%20Engineering",
+  "pdf": "resumes/out/tailored/american-express-campus-graduate-masters-full-time-engineer-.pdf",
+  "tex": "resumes/out/tailored/american-express-campus-graduate-masters-full-time-engineer-.tex",
+  "jd_match": 73.2,
+  "jd_source": "scrape",
+  "jd_confidence": "medium",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "agile",
+   "code review",
+   "data pipeline",
+   "embedding",
+   "evaluation",
+   "frontend",
+   "kotlin",
+   "reliability",
+   "risk",
+   "spring",
+   "swift",
+   "testing",
+   "typescript",
+   "unit test",
+   "version control"
+  ],
+  "gaps": [
+   "No Java or C# experience in the library"
+  ],
+  "summary": "Led with backend and cloud engineering, CI/CD and code-review practice to match the graduate programme's rotation structure and agile emphasis.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:25:03Z"
+ },
+ {
+  "job_id": "rtx|software engineer i hybrid arlington va cambridge ma",
+  "company": "RTX",
+  "role": "Software Engineer I (Hybrid) Arlington, VA & Cambridge, MA",
+  "link": "https://globalhr.wd5.myworkdayjobs.com/private_posting_no_tmp/job/US-VA-ARLINGTON-111--1300-17Th-St-N--BBN-ARLINGTON/Software-Engineer-I--Hybrid--Arlington--VA---Cambridge--MA_01870647",
+  "pdf": "resumes/out/tailored/rtx-software-engineer-i-hybrid-arlington-va-cambridge-ma.pdf",
+  "tex": "resumes/out/tailored/rtx-software-engineer-i-hybrid-arlington-va-cambridge-ma.tex",
+  "jd_match": 77.7,
+  "jd_source": "workday",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "evaluation",
+   "market"
+  ],
+  "gaps": [
+   "No security clearance",
+   "No production C++ or real-time embedded systems work"
+  ],
+  "summary": "Led with systems, operating systems and debugging depth; foregrounded C++ coursework, Linux, and production release engineering.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:24:58Z"
+ },
+ {
+  "job_id": "blackrock|blackrock investment institute ai solutions research associate",
+  "company": "BlackRock",
+  "role": "BlackRock Investment Institute, AI Solutions, Research Associate",
+  "link": "https://blackrock.wd1.myworkdayjobs.com/blackrock_professional/job/New-York-NY/BlackRock-Investment-Institute--AI-Solutions--Research-Associate_R265120",
+  "pdf": "resumes/out/tailored/blackrock-blackrock-investment-institute-ai-solutions-resear.pdf",
+  "tex": "resumes/out/tailored/blackrock-blackrock-investment-institute-ai-solutions-resear.tex",
+  "jd_match": 64.0,
+  "jd_source": "workday",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "database",
+   "large language model",
+   "market",
+   "portfolio",
+   "recommendation",
+   "risk",
+   "scalab"
+  ],
+  "gaps": [
+   "No capital-markets or portfolio-construction domain experience"
+  ],
+  "summary": "Led with the production RAG system over financial prospectuses and the LLM agent work, which map directly onto an AI Solutions research engineering role in an investment institute.",
+  "pages": 2,
+  "fill": 0.994,
+  "updated": "2026-09-02T04:24:54Z"
+ },
+ {
+  "job_id": "spacex|new graduate engineer software starship",
+  "company": "SpaceX",
+  "role": "New Graduate Engineer, Software (Starship)",
+  "link": "https://boards.greenhouse.io/spacex/jobs/8729121002?gh_jid=8729121002",
+  "pdf": "resumes/out/tailored/spacex-new-graduate-engineer-software-starship.pdf",
+  "tex": "resumes/out/tailored/spacex-new-graduate-engineer-software-starship.tex",
+  "jd_match": 79.3,
+  "jd_source": "greenhouse",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "rust",
+   "testing"
+  ],
+  "gaps": [
+   "No Rust or production C++ experience; library shows Python, JavaScript, Java and C++ coursework",
+   "No embedded/flight-software or hardware-in-the-loop experience"
+  ],
+  "summary": "Led with distributed systems, concurrency and low-latency backend work; foregrounded the self-directed production ingestion platform since SpaceX weights demonstrated initiative, and surfaced embedded hardware ingestion and multi-GPU distributed training as the closest systems-level evidence.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:24:50Z"
+ },
+ {
+  "job_id": "spacex|new graduate engineer software application software",
+  "company": "SpaceX",
+  "role": "New Graduate Engineer, Software (Application Software)",
+  "link": "https://jobright.ai/jobs/info/6a8604262f4f0014cae278fd?utm_campaign=Software%20Engineering",
+  "pdf": "resumes/out/tailored/spacex-new-graduate-engineer-software-application-software.pdf",
+  "tex": "resumes/out/tailored/spacex-new-graduate-engineer-software-application-software.tex",
+  "jd_match": 86.2,
+  "jd_source": "scrape",
+  "jd_confidence": "medium",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "code review",
+   "debugging"
+  ],
+  "gaps": [
+   "No Rust or production C++ experience; library shows Python, JavaScript, Java and C++ coursework",
+   "No embedded/flight-software or hardware-in-the-loop experience"
+  ],
+  "summary": "Led with distributed systems, concurrency and low-latency backend work; foregrounded the self-directed production ingestion platform since SpaceX weights demonstrated initiative, and surfaced embedded hardware ingestion and multi-GPU distributed training as the closest systems-level evidence.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:24:46Z"
+ },
+ {
+  "job_id": "spacex|new graduate engineer software 26 27 starlink",
+  "company": "SpaceX",
+  "role": "New Graduate Engineer, Software - '26/'27 (Starlink)",
+  "link": "https://jobright.ai/jobs/info/6a7f484fe2030208f276cd13?utm_campaign=Software%20Engineering",
+  "pdf": "resumes/out/tailored/spacex-new-graduate-engineer-software-26-27-starlink.pdf",
+  "tex": "resumes/out/tailored/spacex-new-graduate-engineer-software-26-27-starlink.tex",
+  "jd_match": 95.0,
+  "jd_source": "scrape",
+  "jd_confidence": "medium",
+  "verified": true,
+  "flags": [],
+  "missing": [],
+  "gaps": [
+   "No Rust or production C++ experience; library shows Python, JavaScript, Java and C++ coursework",
+   "No embedded/flight-software or hardware-in-the-loop experience"
+  ],
+  "summary": "Led with distributed systems, concurrency and low-latency backend work; foregrounded the self-directed production ingestion platform since SpaceX weights demonstrated initiative, and surfaced embedded hardware ingestion and multi-GPU distributed training as the closest systems-level evidence.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:24:42Z"
+ },
+ {
+  "job_id": "mastercard|software engineer launch program 2027 united states",
+  "company": "Mastercard",
+  "role": "Software Engineer, Launch Program 2027 \u2013 United States",
+  "link": "https://jobright.ai/jobs/info/6a96e09bd13b4819f39dd6ff?utm_campaign=Software%20Engineering",
+  "pdf": "resumes/out/tailored/mastercard-software-engineer-launch-program-2027-united-stat.pdf",
+  "tex": "resumes/out/tailored/mastercard-software-engineer-launch-program-2027-united-stat.tex",
+  "jd_match": 80.0,
+  "jd_source": "scrape",
+  "jd_confidence": "medium",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "testing",
+   "version control"
+  ],
+  "gaps": [
+   "No payments-domain or PCI experience"
+  ],
+  "summary": "Led with algorithms, data structures and secure API design; foregrounded the payments-adjacent checkout/order API work and authentication and access control.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:24:38Z"
+ },
+ {
+  "job_id": "spacex|new graduate engineer software",
+  "company": "SpaceX",
+  "role": "New Graduate Engineer, Software",
+  "link": "https://jobright.ai/jobs/info/69cfed37366bb95ba5519b76?utm_campaign=Software%20Engineering",
+  "pdf": "resumes/out/tailored/spacex-new-graduate-engineer-software.pdf",
+  "tex": "resumes/out/tailored/spacex-new-graduate-engineer-software.tex",
+  "jd_match": 78.0,
+  "jd_source": "scrape",
+  "jd_confidence": "medium",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "rust",
+   "testing"
+  ],
+  "gaps": [
+   "No Rust or production C++ experience; library shows Python, JavaScript, Java and C++ coursework",
+   "No embedded/flight-software or hardware-in-the-loop experience"
+  ],
+  "summary": "Led with distributed systems, concurrency and low-latency backend work; foregrounded the self-directed production ingestion platform since SpaceX weights demonstrated initiative, and surfaced embedded hardware ingestion and multi-GPU distributed training as the closest systems-level evidence.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:24:34Z"
+ },
+ {
+  "job_id": "american express|data analytics analyst enterprise technology services",
+  "company": "American Express",
+  "role": "Data & Analytics Analyst - Enterprise Technology Services",
+  "link": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26013281",
+  "pdf": "resumes/out/tailored/american-express-data-analytics-analyst-enterprise-technolog.pdf",
+  "tex": "resumes/out/tailored/american-express-data-analytics-analyst-enterprise-technolog.tex",
+  "jd_match": 62.0,
+  "jd_source": "oracle",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "portfolio",
+   "recommendation",
+   "risk"
+  ],
+  "gaps": [
+   "No Spark, Kafka or warehouse-scale ETL experience; pipelines are Python and Pandas"
+  ],
+  "summary": "Led with data pipelines, feature engineering and database work; foregrounded the 941-job telemetry pipeline and the financial-document search system.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:24:30Z"
+ },
+ {
+  "job_id": "american express|ai engineer 1 enterprise technology services",
+  "company": "American Express",
+  "role": "AI Engineer 1 - Enterprise Technology Services",
+  "link": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26013256",
+  "pdf": "resumes/out/tailored/american-express-ai-engineer-1-enterprise-technology-service.pdf",
+  "tex": "resumes/out/tailored/american-express-ai-engineer-1-enterprise-technology-service.tex",
+  "jd_match": 84.3,
+  "jd_source": "oracle",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "data pipeline",
+   "risk"
+  ],
+  "gaps": [
+   "No experience operating LLM systems under financial-services regulatory constraints"
+  ],
+  "summary": "Led with the two production LLM agents on AWS Bedrock and the schema-driven evaluation work, which map almost one-to-one onto this role's agentic and evaluation requirements.",
+  "pages": 2,
+  "fill": 0.949,
+  "updated": "2026-09-02T04:24:26Z"
+ },
+ {
+  "job_id": "spacex|software security new grad starlink",
+  "company": "SpaceX",
+  "role": "Software Security New Grad - Starlink",
+  "link": "https://boards.greenhouse.io/spacex/jobs/8696143002",
+  "pdf": "resumes/out/tailored/spacex-software-security-new-grad-starlink.pdf",
+  "tex": "resumes/out/tailored/spacex-software-security-new-grad-starlink.tex",
+  "jd_match": 82.8,
+  "jd_source": "greenhouse",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "golang",
+   "recommendation"
+  ],
+  "gaps": [
+   "No Rust or production C++ experience; library shows Python, JavaScript, Java and C++ coursework",
+   "No embedded/flight-software or hardware-in-the-loop experience"
+  ],
+  "summary": "Led with distributed systems, concurrency and low-latency backend work; foregrounded the self-directed production ingestion platform since SpaceX weights demonstrated initiative, and surfaced embedded hardware ingestion and multi-GPU distributed training as the closest systems-level evidence.",
+  "pages": 2,
+  "fill": 1.0,
+  "updated": "2026-09-02T04:24:05Z"
+ },
+ {
+  "job_id": "american express|software engineer 1 enterprise technology services",
+  "company": "American Express",
+  "role": "Software Engineer 1 - Enterprise Technology Services",
+  "link": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26012796",
+  "pdf": "resumes/out/tailored/american-express-software-engineer-1-enterprise-technology-s.pdf",
+  "tex": "resumes/out/tailored/american-express-software-engineer-1-enterprise-technology-s.tex",
+  "jd_match": 77.0,
+  "jd_source": "oracle",
+  "jd_confidence": "high",
+  "verified": true,
+  "flags": [],
+  "missing": [
+   "agile",
+   "code review",
+   "frontend",
+   "unit test"
+  ],
+  "gaps": [
+   "No Java or C# experience in the library"
+  ],
+  "summary": "Led with full-stack and microservices work spanning React front-end and Node.js back-end, matching the role's front-to-back scope.",
+  "pages": 2,
+  "fill": 0.986,
+  "updated": "2026-09-02T04:24:01Z"
+ },
+ {
   "job_id": "intersystems|software engineer rotational program early career",
   "company": "InterSystems",
   "role": "Software Engineer Rotational Program - Early Career",

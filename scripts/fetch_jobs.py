@@ -171,6 +171,11 @@ def rec(company, role, location, link, posted, source,
     # supplying ~325 UK/Canada/India roles that are not applicable.
     if not ats.is_us(where):
         return None
+    # Same gap for internships. ats.relevant() has always dropped them, but the
+    # trackers do not, so "Software Engineer Intern" and "Spring 2027
+    # Internships" were sitting on a new-grad board next to full-time roles.
+    if ats.INTERN.search(role):
+        return None
     return {
         "company": company,
         "role": role,

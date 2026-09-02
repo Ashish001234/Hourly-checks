@@ -1,0 +1,214 @@
+%=============================================================================
+%  Shared resume preamble -- macros lifted verbatim from the original
+%  main.tex so generated output is visually identical to the hand-written
+%  resumes, and Overleaf still compiles it with plain pdflatex.
+%
+%  Do not edit the @@KNOB@@ lines by hand: build.py substitutes them while
+%  hunting for a layout that fills exactly two pages.
+%=============================================================================
+\documentclass[letterpaper]{article}
+
+%----- Packages ---------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[default]{sourcesanspro}
+\usepackage[margin=0.55in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+% microtype is deliberately NOT loaded. With Source Sans it wants generated
+% "--base" font instances for expansion and protrusion, and when those are not
+% in the font map pdfTeX treats it as a *fatal* error rather than a warning --
+% no PDF at all. Its benefit on a resume is negligible next to that fragility,
+% and dropping it keeps one source compiling locally, in CI, and on Overleaf.
+\usepackage{array}
+\usepackage{tabularx}
+% Records the y position of the end of the content so build.py can measure how
+% much of page two is actually filled, rather than guessing from page count.
+\usepackage{zref-savepos}
+
+%----- Base font size & leading -----------------------------------------------
+\renewcommand{\normalsize}{\fontsize{9.60pt}{12.60pt}\selectfont}
+\normalsize
+
+%----- Colours ----------------------------------------------------------------
+\definecolor{navy}{HTML}{1B3A5C}
+\definecolor{lightgray}{HTML}{5A5A5A}
+\definecolor{rulecol}{HTML}{B8C8D8}
+
+%----- Hyperref ---------------------------------------------------------------
+\hypersetup{colorlinks=true, urlcolor=navy, linkcolor=navy, pdfborder={0 0 0},
+            pdftitle={Ashish Molakalapalli -- Machine Learning}, pdfauthor={Ashish Molakalapalli}}
+
+%----- Section headers --------------------------------------------------------
+\newcommand{\sectionrule}{%
+  \vspace{0.5pt}{\color{rulecol}\hrule height 0.4pt}\vspace{3pt}}
+
+\titleformat{\section}
+  {\color{navy}\bfseries\fontsize{8.6pt}{10pt}\selectfont\MakeUppercase}
+  {}{0em}{}
+\titlespacing{\section}{0pt}{8.00pt}{0pt}
+
+\newcommand{\rsection}[1]{\section{#1}\sectionrule}
+
+%----- List style -------------------------------------------------------------
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=1.20pt,
+  parsep=0pt,
+  topsep=2pt,
+  partopsep=0pt,
+  label={\textcolor{navy}{\footnotesize$\bullet$}}
+}
+
+%----- No page numbers --------------------------------------------------------
+\pagestyle{empty}
+
+%----- Helpers ----------------------------------------------------------------
+% #1 Role  #2 Organisation  #3 Location  #4 Dates
+\newcommand{\entry}[4]{%
+  \vspace{4.00pt}%
+  \noindent
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    {\bfseries\fontsize{9.8pt}{11.5pt}\selectfont #1} &
+    {\fontsize{9pt}{11pt}\selectfont\textcolor{lightgray}{\textit{#4}}}\\[-1pt]
+    {\fontsize{9.2pt}{11pt}\selectfont\textcolor{navy}{\bfseries #2}} &
+    {\fontsize{9pt}{11pt}\selectfont\textcolor{lightgray}{\textit{#3}}}
+  \end{tabular*}%
+  \vspace{1.5pt}%
+}
+
+% Project header: #1 Name  #2 Stack
+\newcommand{\proj}[2]{%
+  \vspace{5.00pt}%
+  \noindent
+  {\bfseries\fontsize{9.6pt}{11.5pt}\selectfont #1}%
+  \enspace{\fontsize{8.8pt}{10.5pt}\selectfont\textcolor{lightgray}{\textit{| #2}}}%
+  \vspace{1.5pt}%
+}
+
+% Skill row: #1 Category  #2 Items
+\newcommand{\sk}[2]{%
+  \noindent
+  {\bfseries\fontsize{9.2pt}{12pt}\selectfont #1:\enspace}%
+  {\fontsize{9.2pt}{12pt}\selectfont #2}\par
+  \vspace{1.8pt}%
+}
+
+\begin{document}
+\begin{center}
+  {\fontsize{23pt}{27pt}\selectfont\bfseries\color{navy} Ashish Molakalapalli}
+  \vspace{5pt}\\
+  {\fontsize{9pt}{11pt}\selectfont\textcolor{lightgray}{%
+    \href{mailto:ashish.molakalapalli@gmail.com}{ashish.molakalapalli@gmail.com}%
+    \enspace\textcolor{rulecol}{|}\enspace
+    (945) 232 0866%
+    \enspace\textcolor{rulecol}{|}\enspace
+    \href{https://linkedin.com/in/ashish-molakalapalli}{linkedin.com/in/ashish-molakalapalli}%
+    \enspace\textcolor{rulecol}{|}\enspace
+    \href{https://github.com/Ashish001234}{github.com/Ashish001234}%
+  }}
+\end{center}
+\vspace{3pt}
+
+\rsection{Education}
+
+\entry{Master of Science in Computer Science}{Texas A\&M University}{College Station, TX}{Aug 2025 -- May 2027}
+\begin{itemize}
+  \item GPA: 3.833\,/\,4.0\enspace|\enspace Graduating \textbf{May 2027}\enspace|\enspace Coursework: Machine Learning, NLP Foundations \& Tech, Artificial Intelligence, Information Storage \& Retrieval, Analysis of Algorithms, Operating Systems
+  \item Research focus: LLM Agents and Evaluation, Retrieval-Augmented Generation, Production AI Systems, Foundation Models
+\end{itemize}
+
+\entry{Bachelor of Technology in Computer Science \& Engineering}{IIIT Kottayam}{India}{Dec 2021 -- Apr 2025}
+\begin{itemize}
+  \item GPA: 9.34\,/\,10.0\enspace|\enspace Selected Research Scholar, IoT Cloud Research Group -- Top 5 of 150+ applicants
+\end{itemize}
+
+\rsection{Industry Experience}
+
+\entry{AI for Security Operations Engineer, Intern}{ServiceNow}{San Diego, CA}{May 2025 -- Aug 2025}
+\begin{itemize}
+  \item Architected two production LLM agents for automated monitoring and incident investigation across global security infrastructure, deployed via the Now Assist Skill Kit and backed by Claude Sonnet on AWS Bedrock.
+  \item Designed a 14-field JSON schema with confidence-based tier escalation (items below 0.85 auto-promote severity) and few-shot prompt strategies ensuring reproducible, structured LLM output at production quality.
+  \item Engineered a 14-tool parallel data-collection layer covering MID server health, certificate expiry, VA scanning, and Tenable hygiene; surfaced real critical findings including a MID server offline since March 2026.
+  \item Engineered a real-time alerting service delivering health summaries to Microsoft Teams via webhooks, replacing a manual multi-instance review process and cutting incident response latency from hours to minutes.
+\end{itemize}
+
+\entry{AI Engineer}{Shipsy}{Gurugram, India}{Sep 2024 -- Jul 2025}
+\begin{itemize}
+  \item Designed LLM summarization and classification pipelines processing 10K+ support tickets daily for DTDC, integrating Slack, Gmail, and GitHub APIs to automate triage and reduce backlog by 35\%.
+  \item Built an enterprise knowledge graph with structured entity linking and RAG over internal documentation, improving query response latency by 40\%; won Best Idea Award at Shipsy Hackathon 2025.
+\end{itemize}
+
+\entry{Research Intern, Reinforcement Learning}{CDAC (Centre for Development of Advanced Computing)}{Remote}{May 2024 -- Nov 2024}
+\begin{itemize}
+  \item Proposed and implemented a Multi-Agent RL scheduler using PPO on simulated HPC workloads, achieving 15\% lower energy consumption and 12\% faster job makespan versus baseline schedulers.
+  \item Applied centralized training with decentralized execution (CTDE) and cooperative reward shaping; ran ablation studies isolating the contribution of each design choice against independent baselines.
+\end{itemize}
+
+\entry{AI/ML Intern}{UST Global}{Kochi, India}{Jun 2024 -- Aug 2024}
+\begin{itemize}
+  \item Developed SmartChat, an LLM-powered enterprise chatbot with intent recognition and entity extraction achieving 95\% accuracy; fine-tuned GPT-4o on domain-specific data, improving factual correctness by 30\% over a zero-shot baseline.
+  \item Optimized request routing and introduced query-time caching, reducing average resolution latency by 30\% and improving end-to-end accuracy by 25\% under sustained load.
+\end{itemize}
+
+\rsection{Research Experience}
+
+\entry{Research Assistant, NLP Lab}{Texas A\&M University}{College Station, TX}{Feb 2026 -- Present}
+\begin{itemize}
+  \item Constructed a 941-job deep learning runtime benchmark spanning 37 model architectures across 9 GPU configurations, with a 37-feature schema capturing batch size, sequence length, precision, parallelism, and optimizer configuration.
+  \item Extended the benchmark with a 1,884-run LLM inference dataset capturing prefill/decode split timing, TTFT, TPOT, and KV-cache pressure across 22 models and 4 GPU types.
+  \item Trained GBDT, Random Forest, and neural regressors reaching 23.7\% MAPE (R\textsuperscript{2}\,=\,0.881) on training runtime and 8.8\% MAPE (R\textsuperscript{2}\,=\,0.982) on inference latency; systematic evaluation identified log-transform of the target as worth 40--70\% relative MAPE improvement.
+  \item Ran out-of-distribution analysis exposing catastrophic cross-architecture failure (CNN to Transformer, 454\% MAPE) while per-architecture models held 7--19\%, motivating a hybrid analytical-plus-learned approach over a purely learned one.
+\end{itemize}
+
+\entry{Graduate Researcher, NLP Lab}{Texas A\&M University}{College Station, TX}{Sep 2025 -- Feb 2026}
+\begin{itemize}
+  \item Designed an 8-stage automated data processing pipeline converting engineering schematics to structured JSON graph outputs; integrated YOLOv8 for component detection, PaddleOCR with EasyOCR for text extraction, and HDBSCAN with UMAP for clustering.
+  \item Containerized the pipeline as a REST API service with structured JSON output contracts, enabling integration with downstream reasoning and knowledge graph construction systems.
+\end{itemize}
+
+\rsection{Projects}
+
+\proj{Second Thoughts: When LLM Self-Correction Helps vs Hurts}{Llama-3.1-8B, Mistral-7B, Qwen-2.5-7B, LoRA, GSM8K, HumanEval, MBPP}
+\begin{itemize}
+  \item Ran a controlled 3-model $\times$ 5-strategy $\times$ 4-dataset evaluation (96 conditions, 71,595 question-strategy pairs); correction broke 14.7\% of correct answers while helping only 4.4\% -- a 3.4$\times$ damage ratio -- with self-consistency dominating correction in 11 of 12 compute-matched comparisons.
+  \item Showed the same recipe regresses on code (MBPP $-$10.27, HumanEval $-$5.87, Codeforces-A $-$15.22), arguing intrinsic supervision interferes where an external verifier already exists.
+\end{itemize}
+
+\proj{Real-Time Job Ingestion and Deduplication Platform}{Python, GitHub Actions, Concurrent I/O, REST APIs, JavaScript}
+\begin{itemize}
+  \item Built a concurrent data-ingestion service in Python polling 950+ external REST APIs across 6 platforms, sweeping 52K+ records per run with a bounded thread pool and per-source fault isolation.
+  \item Deployed on an hourly CI/CD schedule with tiered polling, byte-stable output to avoid churn commits, and write guards that refuse to overwrite good data when upstream sources degrade.
+\end{itemize}
+
+\proj{Financial Document Intelligence: Production RAG System}{RAG, GPT-4o, FAISS, BM25 Hybrid Search, Python, Flask, Docker, AWS EC2}
+\begin{itemize}
+  \item Designed a production RAG pipeline over 100+ financial prospectuses using dense FAISS embeddings with BM25 hybrid re-ranking and GPT-4o generation, improving retrieval precision by 32\% over a TF-IDF baseline.
+  \item Deployed low-latency REST endpoints with per-answer source attribution and confidence scoring, reducing analyst document retrieval time by 50\%.
+\end{itemize}
+
+\proj{Multimodal Medical AI: Chest X-Ray and Clinical Notes}{ViT-B/16, ClinicalBERT, PyTorch, Cross-Attention, MIMIC-III}
+\begin{itemize}
+  \item Developed a multimodal disease prediction system fusing chest X-ray features (ViT-B/16) with clinical note embeddings (ClinicalBERT) via cross-attention, achieving F1\,=\,0.89 on MIMIC-III and outperforming unimodal baselines by 14\%.
+  \item Ran ablations across early, late, and cross-attention fusion; applied class-weighted loss and threshold calibration for MIMIC-III label imbalance, reducing false negatives on critical findings by 18\%.
+\end{itemize}
+
+\rsection{Technical Skills}
+\sk{Languages}{Python, C++, Java, JavaScript (Node.js), R, SQL, CUDA (basic)}
+\sk{AI / ML}{PyTorch, TensorFlow, HuggingFace Transformers, JAX (basic), LoRA / PEFT, DeepSpeed ZeRO, Scikit-learn, XGBoost, OpenCV}
+\sk{LLM \& Agents}{Fine-tuning (SFT, LoRA, QLoRA), Prompt Engineering, Chain-of-Thought, RAG, Tool-use, Agentic Pipelines, AWS Bedrock, OpenAI API, Anthropic API}
+\sk{Evaluation \& Alignment}{Self-Correction Analysis, Per-instance Correction Matrix, Ablation Design, Reward Modeling, ROUGE, BERTScore, Hallucination Detection}
+\sk{MLOps}{AWS (EC2, S3, Bedrock, SageMaker), Docker, Git, FAISS, SLURM, Weights \& Biases, Experiment Tracking, REST APIs}
+\sk{Research Areas}{LLM Alignment, Foundation Models, Multimodal Learning, Efficient Inference (Quantization, LoRA), Agentic AI, NLP}
+
+\rsection{Achievements \& Publications}
+\begin{itemize}
+  \item \textbf{Second Thoughts: When LLM Self-Correction Helps vs Hurts} -- Course paper (CSCE 638, NLP), Texas A\&M; 96-condition study across 71,595 pairs, novel D1/D2 SFT datasets with DeepSeek-R1 attribution-conditioned LoRA fine-tuning, +17.82 GSM8K gain on Mistral-7B.
+  \item \textbf{AI/ML Club Sub-Lead}, IIIT Kottayam (2024) -- Directed 8 ML workshops and 3 hackathons; grew active membership by 40\% and mentored 30+ students. \textbf{IEEE Event Organizer} (2023) -- Hosted the IoT Cloud Research Symposium with 200+ attendees across 6 research sessions.
+  \item \textbf{Hackathon Winner} -- Best Idea Award, Shipsy Hackathon 2025 (40+ teams) for an autonomous standup-to-Jira pipeline; National Finalist, Smart India Hackathon competing against 500K+ participants across institute, regional, and national rounds.
+  \item \textbf{Findings of EMNLP 2026 (Accepted)} -- \textit{Deep Learning Job Runtime Prediction for GPU Cluster Scheduling}; co-authored survey on deep learning job runtime prediction for GPU cluster scheduling, in collaboration with XPerf and Texas A\&M University, grounded in a 941-job, 37-feature benchmark across 9 GPU configurations plus a 1,884-run inference dataset.
+\end{itemize}
+
+\zsaveposy{endofcontent}
+\end{document}
