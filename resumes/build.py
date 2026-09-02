@@ -81,14 +81,21 @@ def pick(entry, voice):
     return entry.get(voice) or entry.get("text")
 
 
-def score(item, emphasis, jd_terms):
+def score(item, emphasis, jd, text=""):
     """Higher is more likely to survive the trim."""
     s = float(item.get("weight", 5))
-    tags = item.get("tags") or []
-    for t in tags:
+    for t in (item.get("tags") or []):
         s += emphasis.get(t, 0)
-        if jd_terms and t in jd_terms:
+        if jd and t in jd:
             s += 4
+    # Reward bullets whose own text speaks the JD's vocabulary. Scoring tags
+    # alone was near useless: internal tags are implementation jargon ("lora",
+    # "gbdt", "websockets") while a JD says "Python", "distributed systems",
+    # "data structures". Capped so one keyword-dense bullet cannot crowd out
+    # everything else on the page.
+    if jd and text:
+        low = text.lower()
+        s += min(sum(1 for t in jd if t in low) * 1.5, 7.0)
     return s
 
 
@@ -113,19 +120,77 @@ def end_date_key(dates):
     return (int(m.group(1)), 0) if m else (0, 0)
 
 
+# Vocabulary a job description actually uses. Curated rather than "every token
+# in the JD" -- raw tokens match common English and turn scoring into noise.
+# Multi-word entries are matched as substrings.
+TECH_VOCAB = [
+    # languages / runtimes
+    "python", "c++", "java", "javascript", "typescript", "golang", "rust", "scala",
+    "kotlin", "swift", "ruby", "matlab", "bash", "sql", "cuda",
+    # web / backend
+    "rest", "api", "microservice", "backend", "back-end", "frontend", "front-end",
+    "full stack", "full-stack", "react", "node.js", "django", "flask", "spring",
+    "graphql", "grpc", "websocket",
+    # data / storage
+    "postgres", "mysql", "database", "nosql", "mongodb", "redis", "kafka", "spark",
+    "hadoop", "etl", "data pipeline", "data warehouse", "indexing", "transactions",
+    # cloud / infra
+    "aws", "azure", "gcp", "cloud", "docker", "kubernetes", "terraform", "ci/cd",
+    "linux", "unix", "distributed", "scalab", "high availability", "reliability",
+    "observability", "monitoring", "latency", "throughput", "concurrency",
+    "concurrent", "multithread", "async", "infrastructure", "devops",
+    "site reliability", "load balanc", "caching",
+    # cs fundamentals
+    "algorithms", "data structures", "operating systems", "computer science",
+    "system design", "networking", "compilers", "optimization",
+    # ml / ai
+    "machine learning", "deep learning", "neural", "pytorch", "tensorflow",
+    "huggingface", "hugging face", "transformer", "llm", "large language model",
+    "nlp", "natural language", "computer vision", "reinforcement learning",
+    "fine-tun", "finetun", "lora", "rag", "retrieval augmented", "embedding",
+    "inference", "benchmark", "statistics", "statistical", "probability",
+    "regression", "classification", "clustering", "feature engineering", "scikit",
+    "numpy", "pandas", "xgboost", "gpu", "quantization", "recommendation",
+    "ranking", "anomaly detection", "time series", "evaluation",
+    # quant
+    "quantitative", "trading", "market", "risk", "portfolio", "derivatives",
+    "signal", "backtest", "low latency", "high frequency",
+    # practice
+    "testing", "unit test", "code review", "agile", "git", "version control",
+    "debugging", "profiling", "security", "authentication",
+]
+
+
+# Technology names that are also ordinary English or prefixes of other words:
+# "react" in *reactions*, "spring" in *spring/summer 2027*, "scala" in
+# *scalability*. These need a closing boundary as well as an opening one.
+AMBIGUOUS = {"react", "spring", "scala", "rust", "swift", "ruby", "signal",
+             "alpha", "node", "spark", "go", "market", "risk", "code", "data"}
+
+
+def _mentions(term, low):
+    """Does the JD really use this term?
+
+    Word boundaries matter more than they look: a bare substring test made
+    "ci" match *de-ci-sion*, "rag" match *prog-ram*, and "cv" match *cvs*,
+    which quietly poisoned the scoring with terms the JD never used.
+    """
+    if re.search(r"[^a-z0-9 \-]", term):        # c++, ci/cd, node.js
+        return term in low
+    if len(term) <= 3 or term in AMBIGUOUS:     # need both edges
+        return re.search(r"\b" + re.escape(term) + r"\b", low) is not None
+    # Leading boundary only, so stems like "scalab" still catch "scalability".
+    return re.search(r"\b" + re.escape(term), low) is not None
+
+
 def jd_keywords(text):
-    """Crude but effective: tag vocabulary that literally appears in the JD."""
-    words = set(re.findall(r"[a-z][a-z0-9+#.-]{1,}", (text or "").lower()))
-    # Multi-word tags need a substring check rather than a token match.
-    lowered = (text or "").lower()
-    vocab = set()
+    """Technical terms the JD actually mentions, plus any internal tags present."""
+    low = " " + re.sub(r"\s+", " ", (text or "").lower()) + " "
+    found = {t for t in TECH_VOCAB if _mentions(t, low)}
     for t in ALL_TAGS:
-        if " " in t or "-" in t:
-            if t.replace("-", " ") in lowered or t in lowered:
-                vocab.add(t)
-        elif t in words:
-            vocab.add(t)
-    return vocab
+        if _mentions(t.replace("-", " "), low) or _mentions(t, low):
+            found.add(t)
+    return found
 
 
 ALL_TAGS = set()
@@ -164,8 +229,16 @@ def resolve_paper(text, content):
 
 # ---------------------------------------------------------------- assembly
 
-def build_items(content, profile, jd_terms):
-    """Flatten everything into scored, renderable units, honouring the profile."""
+def build_items(content, profile, jd_terms, rewrites=None, prefer=None):
+    """Flatten everything into scored, renderable units, honouring the profile.
+
+    `rewrites` maps bullet id -> replacement text, and `prefer` is a set of ids
+    to keep. Together they let tailor.py hand back JD-specific phrasings while
+    this module still owns layout, so an LLM cannot emit broken LaTeX and the
+    two-page guarantee is unaffected.
+    """
+    rewrites = rewrites or {}
+    prefer = set(prefer or ())
     voice = profile["voice"]
     emphasis = profile.get("emphasis", {})
     exclude = set(profile.get("exclude", []))
@@ -190,8 +263,11 @@ def build_items(content, profile, jd_terms):
                 txt = resolve_paper(pick(b, voice), content)
                 if not txt:
                     continue
-                bullets.append({"id": b["id"], "text": txt, "idx": bi,
-                                "score": score(b, emphasis, jd_terms)})
+                txt = rewrites.get(b["id"], txt)
+                sc = score(b, emphasis, jd_terms, txt)
+                if b["id"] in prefer:
+                    sc += 100          # keep what the tailoring step chose
+                bullets.append({"id": b["id"], "text": txt, "idx": bi, "score": sc})
             if not bullets:
                 continue
             bullets.sort(key=lambda x: -x["score"])
@@ -218,8 +294,11 @@ def build_items(content, profile, jd_terms):
             txt = resolve_paper(pick(b, voice), content)
             if not txt:
                 continue
-            bullets.append({"id": b["id"], "text": txt, "idx": bi,
-                            "score": score(b, emphasis, jd_terms)})
+            txt = rewrites.get(b["id"], txt)
+            sc = score(b, emphasis, jd_terms, txt)
+            if b["id"] in prefer:
+                sc += 100
+            bullets.append({"id": b["id"], "text": txt, "idx": bi, "score": sc})
         if not bullets:
             continue
         bullets.sort(key=lambda x: -x["score"])
@@ -227,7 +306,7 @@ def build_items(content, profile, jd_terms):
             "id": p["id"], "kind": "proj", "name": p["name"], "stack": p["stack"],
             "idx": len(projects),
             "bullets": bullets,
-            "score": score(p, emphasis, jd_terms) + max(b["score"] for b in bullets),
+            "score": score(p, emphasis, jd_terms, p["name"] + " " + p["stack"]) + max(b["score"] for b in bullets),
         })
     projects.sort(key=lambda b: -b["score"])
     out["projects"] = projects
@@ -237,8 +316,11 @@ def build_items(content, profile, jd_terms):
         txt = resolve_paper(pick(a, voice), content)
         if not txt:
             continue
-        ach.append({"id": a["id"], "text": txt,
-                    "score": score(a, emphasis, jd_terms)})
+        txt = rewrites.get(a["id"], txt)
+        sc = score(a, emphasis, jd_terms, txt)
+        if a["id"] in prefer:
+            sc += 100
+        ach.append({"id": a["id"], "text": txt, "score": sc})
     ach.sort(key=lambda x: -x["score"])
     out["achievements"] = ach
     out["skills"] = content["skills"][voice]

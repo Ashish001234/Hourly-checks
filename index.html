@@ -173,6 +173,17 @@ select{
   border-bottom:1px dotted rgba(79,182,168,.5);
 }
 .cvlink:hover{color:var(--amber); border-bottom-color:var(--amber);}
+.star{
+  cursor:pointer; user-select:none; margin-left:6px; font-size:12px;
+  color:var(--line); vertical-align:1px;
+}
+.star:hover{color:var(--amber);}
+.star.on{color:var(--amber);}
+.tailored-badge{
+  font-family:var(--mono); font-size:9px; padding:1px 5px; border-radius:3px;
+  margin-left:6px; background:rgba(79,182,168,.16); color:var(--teal);
+}
+.tailored-badge.low{background:rgba(232,93,76,.16); color:var(--coral);}
 .rcard{
   border:1px solid var(--line); border-radius:8px; background:var(--panel);
   padding:14px 16px; margin-bottom:10px;
@@ -338,6 +349,21 @@ select{
       Use <b>Tailor</b> on a listing to copy a prompt for a bespoke build.
     </div>
     <div id="resume-list"></div>
+
+    <div style="margin-top:22px; border-top:1px solid var(--line); padding-top:16px;">
+      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
+        <b style="font-size:13.5px;">Tailoring shortlist</b>
+        <span class="srcs" id="shortlist-count" style="margin-left:0;"></span>
+        <button class="btn" id="export-shortlist" style="padding:6px 12px; font-size:11px;">Export shortlist.json</button>
+      </div>
+      <div class="note" style="margin-top:0; border-top:none; padding-top:0;">
+        Star listings on the Listings tab, export the file, then run
+        <b>run.bat tailor</b>. Each starred role gets its own r&eacute;sum&eacute;
+        rewritten against that job&rsquo;s description, scored, and checked for
+        claims your content library does not support.
+      </div>
+      <div id="shortlist-list" style="margin-top:12px;"></div>
+    </div>
   </div>
 
   <div class="note">
@@ -353,6 +379,8 @@ let pipeline = [];
 let state = { search:'', tier:'all', sort:'date', age:'all', mlOnly:false, hideApplied:false, newOnly:false, sponOnly:false };
 let lastSeenAt = null;
 let RESUMES = [];
+let TAILORED = {};      // job id -> tailored resume record
+let starred = {};       // job id -> true, persisted locally
 const RENDER_CAP = 5000;   // effectively the whole board; a guard, not a page size
 
 async function loadResumes(){
@@ -360,6 +388,40 @@ async function loadResumes(){
     const res = await fetch('data/resumes.json', {cache:'no-store'});
     RESUMES = await res.json();
   }catch(e){ RESUMES = []; }
+  // Optional: only present once tailor.py has run at least once.
+  try{
+    const res = await fetch('data/tailored.json', {cache:'no-store'});
+    const list = await res.json();
+    TAILORED = {};
+    for(const t of list) TAILORED[t.job_id] = t;
+  }catch(e){ TAILORED = {}; }
+}
+
+function loadStarred(){
+  try{ starred = JSON.parse(localStorage.getItem('shortlist') || '{}'); }
+  catch(e){ starred = {}; }
+}
+function saveStarred(){
+  try{ localStorage.setItem('shortlist', JSON.stringify(starred)); }catch(e){}
+}
+function starredJobs(){
+  return JOBS.filter(j => starred[j.id])
+             .map(j => ({id:j.id, company:j.company, role:j.role,
+                         link:j.link, posted:j.posted}));
+}
+
+// The board is a static page with no server, so the shortlist reaches the
+// local pipeline as a downloaded file rather than an API call.
+function exportShortlist(){
+  const picks = starredJobs();
+  if(!picks.length){ window.alert('Star some listings first.'); return; }
+  const blob = new Blob([JSON.stringify(picks, null, 1)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'shortlist.json';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url), 2000);
 }
 
 // Pick the variant whose match terms best fit a listing's role title. Falls
@@ -501,7 +563,7 @@ function render(){
       parts.push(
         `<div class="row${applied ? ' applied' : ''}">` +
         `<span class="date">${esc(dateLabel(j))}</span>` +
-        `<span class="role-cell">${isNew(j) ? '<span class="badge-new">NEW</span>' : ''}<span class="company">${esc(j.company)}</span><span class="role">${esc(j.role)}</span>${sponFlag(j)}${j.salary ? `<span class="salary">${esc(j.salary)}</span>` : ''}${(j.sources&&j.sources.length>1) ? `<span class="srcs">${j.sources.length}× confirmed</span>` : ''}${resumeLink(j)}</span>` +
+        `<span class="role-cell">${isNew(j) ? '<span class="badge-new">NEW</span>' : ''}<span class="company">${esc(j.company)}</span><span class="role">${esc(j.role)}</span>${sponFlag(j)}${j.salary ? `<span class="salary">${esc(j.salary)}</span>` : ''}${(j.sources&&j.sources.length>1) ? `<span class="srcs">${j.sources.length}× confirmed</span>` : ''}${resumeLink(j)}${starLink(j)}</span>` +
         `<span class="loc">${esc(j.location)}</span>` +
         `<span class="tier-badge tier-${j.tier}">${tierLabel(j.tier)}</span>` +
         `<a class="applylink" href="${escAttr(safeUrl(j.link))}" target="_blank" rel="noopener">Apply →</a>` +
@@ -518,6 +580,14 @@ function render(){
   if(!rowsEl.dataset.bound){
     rowsEl.dataset.bound = '1';
     rowsEl.addEventListener('click', (e)=>{
+      const star = e.target.getAttribute && e.target.getAttribute('data-star');
+      if(star){
+        e.preventDefault();
+        if(starred[star]) delete starred[star]; else starred[star] = true;
+        saveStarred();
+        render();
+        return;
+      }
       const id = e.target.getAttribute && e.target.getAttribute('data-tailor');
       if(!id) return;
       e.preventDefault();
@@ -551,6 +621,34 @@ function render(){
 
   renderPipeline();
   renderResumes();
+  renderShortlist();
+}
+
+function renderShortlist(){
+  const el = document.getElementById('shortlist-list');
+  if(!el) return;
+  const picks = starredJobs();
+  document.getElementById('shortlist-count').textContent =
+    picks.length + ' starred';
+  if(!picks.length){
+    el.innerHTML = '<div class="empty" style="padding:16px;">Nothing starred yet.</div>';
+    return;
+  }
+  el.innerHTML = picks.map(p => {
+    const t = TAILORED[p.id];
+    const state = t
+      ? `<span class="tailored-badge${(t.jd_match < 80 || !t.verified) ? ' low' : ''}">jd_match ${t.jd_match}${t.verified ? '' : ' · unverified'}</span>`
+      : '<span class="srcs" style="margin-left:0;">not built yet</span>';
+    return `<div class="rcard" style="grid-template-columns:1fr 200px;">
+      <div>
+        <div class="rname" style="font-size:13px;">${esc(p.company)}</div>
+        <div class="rmatch" style="margin-top:2px;">${esc(p.role)}</div>
+      </div>
+      <div style="text-align:right;">${state}
+        ${t ? `<a class="rtex" href="${escAttr(t.pdf)}" target="_blank" rel="noopener">open PDF</a>` : ''}
+      </div>
+    </div>`;
+  }).join('');
 }
 
 function renderResumes(){
@@ -645,6 +743,22 @@ function resumeLink(j){
        + `<a class="cvlink" href="#" data-tailor="${escAttr(j.id)}" title="Copy a tailoring prompt for this role">tailor</a>`;
 }
 
+function starLink(j){
+  const on = !!starred[j.id];
+  const t = TAILORED[j.id];
+  let out = `<span class="star${on ? ' on' : ''}" data-star="${escAttr(j.id)}"`
+          + ` title="${on ? 'Remove from' : 'Add to'} the tailoring shortlist">`
+          + `${on ? '\u2605' : '\u2606'}</span>`;
+  if(t){
+    const low = t.jd_match < 80 || !t.verified;
+    out += `<a class="tailored-badge${low ? ' low' : ''}" href="${escAttr(t.pdf)}"`
+         + ` target="_blank" rel="noopener"`
+         + ` title="Tailored to this JD. jd_match ${t.jd_match}${t.verified ? '' : ' — UNVERIFIED claims'}">`
+         + `CV ${Math.round(t.jd_match)}${t.verified ? '' : '!'}</a>`;
+  }
+  return out;
+}
+
 function sponFlag(j){
   if(j.sponsorship === 'none')    return '<span class="flag flag-none">no sponsorship</span>';
   if(j.sponsorship === 'citizen') return '<span class="flag flag-citizen">US citizen req</span>';
@@ -695,6 +809,7 @@ document.getElementById('mlChip').addEventListener('click', e=>{ state.mlOnly = 
 document.getElementById('newChip').addEventListener('click', e=>{ state.newOnly = !state.newOnly; e.target.classList.toggle('on'); render(); });
 document.getElementById('sponChip').addEventListener('click', e=>{ state.sponOnly = !state.sponOnly; e.target.classList.toggle('on'); render(); });
 document.getElementById('markSeen').addEventListener('click', markAllSeen);
+document.getElementById('export-shortlist').addEventListener('click', exportShortlist);
 document.getElementById('hideAppliedChip').addEventListener('click', e=>{ state.hideApplied = !state.hideApplied; e.target.classList.toggle('on'); render(); });
 
 document.querySelectorAll('.tab').forEach(t=>{
@@ -727,6 +842,7 @@ document.getElementById('p-add').addEventListener('click', ()=>{
 (async function init(){
   loadLastSeen();
   loadLocal();
+  loadStarred();
   await loadResumes();
   await loadJobs();
   render();

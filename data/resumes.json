@@ -1,23 +1,5 @@
 [
  {
-  "id": "ml-applied",
-  "label": "AI/ML -- Applied / MLE",
-  "pdf": "resumes/out/ml-applied.pdf",
-  "tex": "resumes/out/ml-applied.tex",
-  "match": [
-   "machine learning engineer",
-   "mle",
-   "applied scientist",
-   "ai engineer",
-   "data scientist",
-   "perception",
-   "computer vision"
-  ],
-  "pages": 2,
-  "fill": 0.959,
-  "updated": "2026-09-01T23:56:07Z"
- },
- {
   "id": "ml-research",
   "label": "AI/ML -- Research",
   "pdf": "resumes/out/ml-research.pdf",
@@ -32,23 +14,8 @@
    "ai resident"
   ],
   "pages": 2,
-  "fill": 0.936,
-  "updated": "2026-09-01T23:56:10Z"
- },
- {
-  "id": "quant",
-  "label": "Quant / Research Engineering",
-  "pdf": "resumes/out/quant.pdf",
-  "tex": "resumes/out/quant.tex",
-  "match": [
-   "quant",
-   "quantitative",
-   "trading",
-   "algorithmic"
-  ],
-  "pages": 2,
-  "fill": 0.936,
-  "updated": "2026-09-01T23:56:14Z"
+  "fill": 0.935,
+  "updated": "2026-09-02T02:54:36Z"
  },
  {
   "id": "sde-general",
@@ -66,24 +33,6 @@
   ],
   "pages": 2,
   "fill": 0.948,
-  "updated": "2026-09-01T23:56:17Z"
- },
- {
-  "id": "sde-infra",
-  "label": "SDE -- Infrastructure / Platform",
-  "pdf": "resumes/out/sde-infra.pdf",
-  "tex": "resumes/out/sde-infra.tex",
-  "match": [
-   "infrastructure",
-   "platform engineer",
-   "site reliability",
-   "sre",
-   "devops",
-   "cloud engineer",
-   "distributed systems"
-  ],
-  "pages": 2,
-  "fill": 0.948,
-  "updated": "2026-09-01T23:56:21Z"
+  "updated": "2026-09-02T02:54:43Z"
  }
 ]

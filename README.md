@@ -133,6 +133,47 @@ actually changed, or on a push / manual run.
 activity** on public repos. Whether the bot's own commits reset that clock is
 undocumented, so if refreshes ever stop, check the Actions tab and re-enable.
 
+## Per-job résumé tailoring
+
+`run.bat tailor` builds one résumé per starred listing, rewritten against that
+job's actual description.
+
+**Why not the pre-built variants.** They select from a fixed library, and
+selection cannot reframe. Measured: scoring a real InterSystems JD moved project
+ranks (jobboard 39 → 47.5) but produced a *byte-identical* PDF, because with six
+projects and four slots the same four always win. Only a model rewriting bullet
+text does what hand-tailoring does.
+
+**Division of labour.** Claude selects and rewrites bullet *content* via
+structured output; it never emits LaTeX. `build.py` still renders and compiles,
+so the two-page guarantee holds and a model slip cannot break the document.
+
+**Truthfulness is enforced, not requested.** `tailor.py:verify()` extracts every
+number and proper noun from each rewrite and checks it against the library:
+figures against the source bullet (so 950 cannot become 5000), technology names
+against the whole library including the skills list (so a legitimate reframe
+naming Python is not flagged). Anything unsupported marks the résumé
+**unverified** and is listed in the output. Five guard cases are covered by tests
+— inflated metric, invented technology, invented employer, unknown bullet id, and
+a faithful reframe that must stay clean.
+
+**JD fetching** (`resumes/jd.py`) reaches ~79% of listings — measured, not
+estimated: Greenhouse/Lever/SmartRecruiters 100%, Workday and Ashby ~83%, and a
+scrape fallback that recovers ~83% of the arbitrary career pages. Workable is the
+one gap (no public per-job endpoint, ~2% of the board). Anything thin is labelled
+`low` or `none` confidence rather than silently tailored against nothing.
+
+**`jd_match` is our own score, not an ATS score.** No major ATS publishes one.
+It measures JD keyword coverage, title alignment, section presence,
+`pdftotext` parseability, and length. Useful for comparing two drafts of the same
+résumé; not a prediction of any employer's software. Untailored résumés score
+64–73 against real JDs, which is the headroom tailoring closes. A JD naming no
+technologies scores the neutral midpoint rather than zero — that says
+"uninformative JD", not "bad résumé".
+
+Cost is ~$0.05–0.11 per résumé on Claude Opus 5, with the system prompt and
+content library cached across jobs.
+
 ## Adding a source
 
 Each source lives in its own `from_*()` returning records through the shared
