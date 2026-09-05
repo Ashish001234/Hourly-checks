@@ -1,5 +1,37 @@
 [
  {
+  "company": "Amentum",
+  "role": "C or C++ Junior Developer",
+  "location": "US-VA-Dahlgren, United States of America",
+  "link": "https://jobright.ai/jobs/info/6a5679dae9b77f668bd638d1?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-05",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "amentum|c or c junior developer",
+  "first_seen": "2026-09-05T20:24:42Z"
+ },
+ {
+  "company": "Capgemini",
+  "role": "Junior Oracle PL/SQL Developer Job Details / Capgemini",
+  "location": "Jersey City, NJ, United States",
+  "link": "https://jobright.ai/jobs/info/6a848f9ee459fa3baa85f34d?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-05",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": true,
+  "id": "capgemini|junior oracle pl sql developer job details capgemini",
+  "first_seen": "2026-09-05T20:24:42Z"
+ },
+ {
   "company": "SpaceX",
   "role": "New Graduate Engineer, Software - '26/'27 (Starlink)",
   "location": "Redmond, WA, United States",
@@ -19,8 +51,8 @@
  {
   "company": "Neuralink",
   "role": "Embedded Software Engineer, Implant Embedded Systems",
-  "location": "South San Francisco, CA",
-  "link": "https://jobright.ai/jobs/info/6a2a2599c07d4b6ae1c44369?utm_campaign=Software%20Engineering",
+  "location": "Austin, TX, United States",
+  "link": "https://jobright.ai/jobs/info/6a2a24310c4972328e7e70ef?utm_campaign=Software%20Engineering",
   "posted": "2026-09-05",
   "salary": null,
   "sponsorship": "unknown",
@@ -286,6 +318,22 @@
   "tier": 3,
   "is_ml": false,
   "id": "aiprise|software engineer 1",
+  "first_seen": "2026-09-05T09:03:30Z"
+ },
+ {
+  "company": "Applied Materials",
+  "role": "Software QA Engineer",
+  "location": "Santa Clara, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6a9ba47d68f82b40367352ea?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-05",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "applied materials|software qa engineer",
   "first_seen": "2026-09-05T09:03:30Z"
  },
  {
@@ -594,6 +642,23 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
+  "company": "Amentum",
+  "role": "Software Developer",
+  "location": "Dahlgren, VA",
+  "link": "https://pae.wd1.myworkdayjobs.com/en-US/amentum_careers/job/US-VA-Dahlgren/Software-Developer_R0168140",
+  "posted": "2026-09-05",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "amentum|software developer",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
   "company": "Verkada",
   "role": "Backend Engineer - Connectivity",
   "location": "San Mateo, CA",
@@ -626,6 +691,22 @@
   "tier": 3,
   "is_ml": false,
   "id": "whoop|software engineer i frontend growth",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Albertsons Companies",
+  "role": "Front End Entry Level",
+  "location": "Joliet, IL, United States",
+  "link": "https://jobright.ai/jobs/info/6a7379276a034212ea027be3?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-05",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "albertsons companies|front end entry level",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -1786,8 +1867,8 @@
  {
   "company": "MANTECH",
   "role": "Junior Software Developer",
-  "location": "USA-MD-Saint Inigoes",
-  "link": "https://jobright.ai/jobs/info/6a454ab74f64ba41dcb4ce7e?utm_campaign=Software%20Engineering",
+  "location": "Saint Inigoes, MD, United States",
+  "link": "https://jobright.ai/jobs/info/6a58ee534da96a42cfd8e0f0?utm_campaign=Software%20Engineering",
   "posted": "2026-09-04",
   "salary": null,
   "sponsorship": "unknown",
@@ -2721,22 +2802,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Albertsons Companies",
-  "role": "Front End Entry Level",
-  "location": "Joliet, IL, United States",
-  "link": "https://jobright.ai/jobs/info/6a7379276a034212ea027be3?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-04",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "albertsons companies|front end entry level",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "SpaceX",
   "role": "Full Stack Engineer (Application Software)",
   "location": "Hawthorne, CA, United States",
@@ -2799,22 +2864,6 @@
   "is_ml": true,
   "id": "celonis|associate value engineer ai driven data science analytics orbit program",
   "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Applied Materials",
-  "role": "Software QA Engineer",
-  "location": "Santa Clara, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a9ba47d68f82b40367352ea?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-03",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "applied materials|software qa engineer",
-  "first_seen": "2026-09-05T09:03:30Z"
  },
  {
   "company": "Capgemini",
@@ -2974,23 +3023,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "oklahoma state government|applications developer",
-  "first_seen": "2026-09-04T18:23:30Z"
- },
- {
-  "company": "Boeing",
-  "role": "Associate Software Engineer",
-  "location": "Berkeley, MO",
-  "link": "https://boeing.wd1.myworkdayjobs.com/en-US/external_subsidiary/job/USA---Berkeley-MO/Associate-Software-Engineer_JR2026522810",
-  "posted": "2026-09-03",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "boeing|associate software engineer",
   "first_seen": "2026-09-04T18:23:30Z"
  },
  {
@@ -4032,8 +4064,8 @@
  {
   "company": "Lockheed Martin",
   "role": "Software Engineer - E2",
-  "location": "Marietta, GA, United States",
-  "link": "https://jobright.ai/jobs/info/6a907b822e254e06fb9f11f7?utm_campaign=Software%20Engineering",
+  "location": "Orlando, FL, United States",
+  "link": "https://jobright.ai/jobs/info/6a954042c12c90443efce68c?utm_campaign=Software%20Engineering",
   "posted": "2026-09-03",
   "salary": null,
   "sponsorship": "unknown",
@@ -4581,6 +4613,40 @@
   "first_seen": "2026-09-02T18:41:05Z"
  },
  {
+  "company": "Boeing",
+  "role": "Software Engineer - Associate or Experienced",
+  "location": "Colorado Springs, CO",
+  "link": "https://boeing.wd1.myworkdayjobs.com/en-US/external_careers/job/USA---Colorado-Springs-CO/Software-Engineer--Associate-or-Experienced-_JR2026523054-1",
+  "posted": "2026-09-03",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "boeing|software engineer associate or experienced",
+  "first_seen": "2026-09-02T18:41:05Z"
+ },
+ {
+  "company": "Amentum",
+  "role": "Simulink Software Developer",
+  "location": "Dahlgren, VA",
+  "link": "https://pae.wd1.myworkdayjobs.com/en-US/amentum_careers/job/US-VA-Dahlgren/Simulink-Software-Developer_R0168128-1",
+  "posted": "2026-09-03",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "amentum|simulink software developer",
+  "first_seen": "2026-09-02T18:41:05Z"
+ },
+ {
   "company": "Booz Allen Hamilton",
   "role": "Test Engineer",
   "location": "Annapolis Junction, MD, United States",
@@ -4787,23 +4853,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Amentum",
-  "role": "Software Developer",
-  "location": "Dahlgren, VA",
-  "link": "https://pae.wd1.myworkdayjobs.com/en-US/amentum_careers/job/US-VA-Dahlgren/Software-Developer_R0168140",
-  "posted": "2026-09-03",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "amentum|software developer",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "Guidehouse",
   "role": "DevSecOps Cloud Engineer",
   "location": "Remote - San Antonio, TX",
@@ -4908,7 +4957,7 @@
   "company": "K2 Space Corporation",
   "role": "Application Software Engineer",
   "location": "Los Angeles, CA",
-  "link": "https://jobright.ai/jobs/info/6a0703d29f57175bd581e742?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/69b850bc56973837413d789c?utm_campaign=Software%20Engineering",
   "posted": "2026-09-03",
   "salary": null,
   "sponsorship": "unknown",
@@ -4999,6 +5048,22 @@
   "tier": 1,
   "is_ml": false,
   "id": "nvidia|security software engineer vulnerability operations",
+  "first_seen": "2026-09-04T18:23:30Z"
+ },
+ {
+  "company": "Boeing",
+  "role": "Associate Software Engineer",
+  "location": "Berkeley, MO",
+  "link": "https://boeing.wd1.myworkdayjobs.com/en-US/external_subsidiary/job/USA---Berkeley-MO/Associate-Software-Engineer_JR2026522810",
+  "posted": "2026-09-02",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "boeing|associate software engineer",
   "first_seen": "2026-09-04T18:23:30Z"
  },
  {
@@ -5823,23 +5888,6 @@
   "first_seen": "2026-09-02T18:41:05Z"
  },
  {
-  "company": "Boeing",
-  "role": "Software Engineer - Associate or Experienced",
-  "location": "Colorado Springs, CO",
-  "link": "https://boeing.wd1.myworkdayjobs.com/en-US/external_careers/job/USA---Colorado-Springs-CO/Software-Engineer--Associate-or-Experienced-_JR2026523054-1",
-  "posted": "2026-09-02",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "boeing|software engineer associate or experienced",
-  "first_seen": "2026-09-02T18:41:05Z"
- },
- {
   "company": "PagerDuty",
   "role": "Site Reliability Engineer I",
   "location": "Atlanta, GA",
@@ -5957,7 +6005,7 @@
   "company": "Snail Games USA",
   "role": "Front-End/UI Engineer \u2013 Egofold (Junior to Mid-Level)",
   "location": "Culver City, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a567cdde9b77f668bd63a51?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a6bb0bfca1f9338465fbd9f?utm_campaign=Software%20Engineering",
   "posted": "2026-09-02",
   "salary": null,
   "sponsorship": "unknown",
@@ -6116,8 +6164,8 @@
  {
   "company": "Uber",
   "role": "Software Engineer I",
-  "location": "San Francisco, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a840e8771574661bc51f904?utm_campaign=Software%20Engineering",
+  "location": "Sunnyvale, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6a840ea06cd9495f310749e3?utm_campaign=Software%20Engineering",
   "posted": "2026-09-02",
   "salary": null,
   "sponsorship": "unknown",
@@ -6720,7 +6768,7 @@
   "company": "Uber",
   "role": "Software Engineer",
   "location": "Seattle, WA, United States",
-  "link": "https://jobright.ai/jobs/info/6a840e9f6cd9495f310749e0?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a7e37a0e51a1e18a240ccdd?utm_campaign=Software%20Engineering",
   "posted": "2026-09-02",
   "salary": null,
   "sponsorship": "unknown",
@@ -6832,7 +6880,7 @@
   "company": "Boeing",
   "role": "Full-Stack Software Engineer (Associate/Experienced)",
   "location": "Chantilly, VA, United States",
-  "link": "https://jobright.ai/jobs/info/6a8f637b0bd89e205d246a11?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a8f2d56382b237ac80c4ae0?utm_campaign=Software%20Engineering",
   "posted": "2026-09-02",
   "salary": null,
   "sponsorship": "unknown",
@@ -6926,9 +6974,9 @@
  },
  {
   "company": "RTX",
-  "role": "2026 Raytheon Full Time-Software Engineer I \u2013 EOIR Advanced Products and Solutions (Onsite)",
+  "role": "Software Engineer I (On-Site)",
   "location": "McKinney, TX, United States",
-  "link": "https://jobright.ai/jobs/info/6a98842ddd171c7285792a4d?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a97ed35c8ed473c5c76197c?utm_campaign=Software%20Engineering",
   "posted": "2026-09-01",
   "salary": null,
   "sponsorship": "unknown",
@@ -6937,8 +6985,8 @@
   ],
   "tier": 3,
   "is_ml": false,
-  "id": "rtx|2026 raytheon full time software engineer i eoir advanced products and solutions onsite",
-  "first_seen": "2026-09-05T12:41:50Z"
+  "id": "rtx|software engineer i on site",
+  "first_seen": "2026-09-05T20:24:42Z"
  },
  {
   "company": "Amazon",
@@ -11618,8 +11666,8 @@
  {
   "company": "Zone 5 Technologies",
   "role": "Embedded Software Engineer I/II",
-  "location": "San Luis Obispo, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a576c00f7517b519ad5a4e8?utm_campaign=Software%20Engineering",
+  "location": "San Luis Obispo, California",
+  "link": "https://jobright.ai/jobs/info/69f9015ddb88714bcdfbd0ba?utm_campaign=Software%20Engineering",
   "posted": "2026-08-31",
   "salary": null,
   "sponsorship": "unknown",
@@ -11712,26 +11760,10 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Avalore.ai",
-  "role": "Innovation Engineer",
-  "location": "Arlington, VA, United States",
-  "link": "https://jobright.ai/jobs/info/6a95b35b9fcec5442372e8d0?utm_campaign=Software%20Engineering",
-  "posted": "2026-08-30",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "avalore ai|innovation engineer",
-  "first_seen": "2026-09-05T18:16:38Z"
- },
- {
   "company": "Curtiss-Wright Corporation",
-  "role": "Quality Assurance Engineer, Assoc",
-  "location": "US-NY-Lansing (ST-800)",
-  "link": "https://jobright.ai/jobs/info/6966d0895ad3a93f823235af?utm_campaign=Software%20Engineering",
+  "role": "Quality Assurance Engineer, Assoc.",
+  "location": "US-CT-East Windsor (ST-700), United States of America",
+  "link": "https://jobright.ai/jobs/info/6a5128ff02522b5b722e80ee?utm_campaign=Software%20Engineering",
   "posted": "2026-08-30",
   "salary": null,
   "sponsorship": "unknown",
@@ -11943,8 +11975,8 @@
  {
   "company": "Swift",
   "role": "Associate Test Engineer",
-  "location": "Manassas, VA, United States",
-  "link": "https://jobright.ai/jobs/info/6a5245a69fbdab22fe13ad76?utm_campaign=Software%20Engineering",
+  "location": "Manassas, United States, US",
+  "link": "https://jobright.ai/jobs/info/69fcf45fb113035a9f8ed1a5?utm_campaign=Software%20Engineering",
   "posted": "2026-08-30",
   "salary": null,
   "sponsorship": "unknown",
@@ -12356,22 +12388,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "simbe|robot software qa test engineer",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "JPMorganChase",
-  "role": "2027 Software Engineer Program - Full-Time - United States - July Start",
-  "location": "Chicago, IL, United States",
-  "link": "https://jobright.ai/jobs/info/6a70171fad0fe2053dba0467?utm_campaign=Software%20Engineering",
-  "posted": "2026-08-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "jpmorganchase|2027 software engineer program full time united states july start",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -21448,22 +21464,6 @@
   "is_ml": false,
   "id": "w w grainger|market pricing analyst",
   "first_seen": "2026-09-03T14:33:19Z"
- },
- {
-  "company": "Amentum",
-  "role": "Simulink Software Developer",
-  "location": "Dahlgren, VA",
-  "link": "https://pae.wd1.myworkdayjobs.com/en-US/amentum_careers/job/US-VA-Dahlgren/Simulink-Software-Developer_R0168128-1",
-  "posted": "2026-08-12",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "amentum|simulink software developer",
-  "first_seen": "2026-09-02T18:41:05Z"
  },
  {
   "company": "ByteDance",
