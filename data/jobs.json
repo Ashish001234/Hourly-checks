@@ -1,5 +1,53 @@
 [
  {
+  "company": "Amazon",
+  "role": "Software Privacy Engineer - Multiple Teams",
+  "location": "Bellevue, WA",
+  "link": "https://amazon.jobs/en/jobs/10538147/software-privacy-engineer-trust-platform-automation-devices-services-trust-privacy-and-accessibility-tpa",
+  "posted": "2026-09-12",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 1,
+  "is_ml": false,
+  "id": "amazon|software privacy engineer multiple teams",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Acuity",
+  "role": "Data & AI Specialist - BUILD Leadership Program",
+  "location": "Atlanta, GA",
+  "link": "https://careers.acuityinc.com/job/Atlanta-Specialist-Data-&-AI-BUILD-Leadership-Program-GA-30309/1429285300/?ats=successfactors",
+  "posted": "2026-09-12",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": true,
+  "id": "acuity|data ai specialist build leadership program",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Acuity",
+  "role": "Software Engineering Specialist - Growth & Transformation - BUILD Leadership Program",
+  "location": "Atlanta, GA",
+  "link": "https://careers.acuityinc.com/job/Atlanta-Specialist-Growth-&-Transformation-Software-Engineering-BUILD-Leadership-Program-GA-30309/1429282700/?ats=successfactors",
+  "posted": "2026-09-12",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "acuity|software engineering specialist growth transformation build leadership program",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
   "company": "Bright Vision Technologies",
   "role": "Java Developer with IES experience",
   "location": "Mechanisburg, PA",
@@ -114,6 +162,214 @@
   "is_ml": false,
   "id": "nightwing intelligence solutions|software engineer 1",
   "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "DiDi Global",
+  "role": "Software Engineer - Planning Selection Autonomy",
+  "location": "San Jose, CA",
+  "link": "https://job-boards.greenhouse.io/didi/jobs/8198298",
+  "posted": "2026-09-12",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "didi global|software engineer planning selection autonomy",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Selector",
+  "role": "Software Engineer",
+  "location": "Santa Clara, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa486bbc1928370a285e4b7?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "selector|software engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Peraton",
+  "role": "Cloud Engineer",
+  "location": "Springfield, VA, United States",
+  "link": "https://jobright.ai/jobs/info/6a96493fc8763a3a87fff1f1?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "peraton|cloud engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Alpha Omega",
+  "role": "Javascript Developer",
+  "location": "Vienna, VA, United States",
+  "link": "https://jobright.ai/jobs/info/6a96e68b455eaf6a08c19369?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "alpha omega|javascript developer",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Government Tactical Solutions, LLC",
+  "role": "Software Developer",
+  "location": "Bethesda, MD, United States",
+  "link": "https://jobright.ai/jobs/info/6a4d60a4c643fd23fed3cbed?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "government tactical solutions|software developer",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "PayPal",
+  "role": "Software Engineer",
+  "location": "San Jose, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa48855422289703bd66f2a?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 2,
+  "is_ml": false,
+  "id": "paypal|software engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Thrivent",
+  "role": "Assoc Engineer",
+  "location": "United States",
+  "link": "https://jobright.ai/jobs/info/6aa4b2f2f7baf881567cfbd4?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "thrivent|assoc engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Venmo",
+  "role": "Software Engineer",
+  "location": "San Jose, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa491ef1d92e2d05d11547d?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "venmo|software engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Post Consumer Brands",
+  "role": "Quality Assurance Technician",
+  "location": "Meadville, PA, United States",
+  "link": "https://jobright.ai/jobs/info/6a8214ecb56bea5779c1ccdd?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "post consumer brands|quality assurance technician",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "EY",
+  "role": "Service Delivery Center, Workflow Platform Frontend Engineer - Analyst",
+  "location": "Alpharetta, GA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa4b336f3aa936e2cdb2427?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "ey|service delivery center workflow platform frontend engineer analyst",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "QODE",
+  "role": "Application Development Associate (Azure)",
+  "location": "Tampa, FL, United States",
+  "link": "https://jobright.ai/jobs/info/6aa49ef58275e3a21176114b?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "qode|application development associate azure",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "LinkedIn",
+  "role": "Software Engineer - Applications",
+  "location": "Mountain View, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa4981ef3aa936e2cdb1db0?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 2,
+  "is_ml": false,
+  "id": "linkedin|software engineer applications",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Capgemini",
+  "role": "Embedded Integration Engineer",
+  "location": "Modena, UT, United States",
+  "link": "https://jobright.ai/jobs/info/6aa48202f3aa936e2cdb17df?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "capgemini|embedded integration engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
  },
  {
   "company": "Motorola",
@@ -268,6 +524,7 @@
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
+   "jobright",
    "simplify"
   ],
   "tier": 3,
@@ -934,22 +1191,6 @@
   "first_seen": "2026-09-11T18:31:06Z"
  },
  {
-  "company": "Torentify",
-  "role": "Software Engineer II (Remote)",
-  "location": "United States",
-  "link": "https://jobright.ai/jobs/info/6aa4083df7baf881567ccdee?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-11",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "torentify|software engineer ii remote",
-  "first_seen": "2026-09-11T18:31:06Z"
- },
- {
   "company": "General Atomics Aeronautical Systems",
   "role": "Software Developer",
   "location": "Poway, CA, United States",
@@ -1276,21 +1517,20 @@
   "first_seen": "2026-09-11T04:37:03Z"
  },
  {
-  "company": "Optiver",
-  "role": "Graduate Software Engineer",
-  "location": "Chicago, IL",
-  "link": "https://www.optiver.com/join-us/jobs/8401042002/?gh_jid=8401042002",
+  "company": "John Gore Organization",
+  "role": "Software Engineer",
+  "location": "Boca Raton, FL",
+  "link": "https://johngore.wd1.myworkdayjobs.com/Careers/job/Boca-Raton-FL-Mon---Th-in-Office/Software-Engineer_R100723",
   "posted": "2026-09-11",
-  "salary": "$201k/yr",
+  "salary": null,
   "sponsorship": "unknown",
   "sources": [
    "jobright",
-   "simplify",
-   "speedyapply"
+   "simplify"
   ],
   "tier": 3,
   "is_ml": false,
-  "id": "optiver|graduate software engineer",
+  "id": "john gore organization|software engineer",
   "first_seen": "2026-09-11T00:08:45Z"
  },
  {
@@ -1329,6 +1569,23 @@
   "first_seen": "2026-09-11T00:08:45Z"
  },
  {
+  "company": "Optiver",
+  "role": "Graduate Software Engineer - 2027 Start",
+  "location": "Chicago, IL",
+  "link": "https://www.optiver.com/join-us/jobs/8401042002/?gh_jid=8401042002",
+  "posted": "2026-09-11",
+  "salary": "$201k/yr",
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "optiver|graduate software engineer 2027 start",
+  "first_seen": "2026-09-11T00:08:45Z"
+ },
+ {
   "company": "Echo Global Logistics",
   "role": "Associate Software Engineer",
   "location": "Chicago, IL",
@@ -1358,6 +1615,22 @@
   "tier": 3,
   "is_ml": true,
   "id": "bti solutions|korean bilingual jr ai developer",
+  "first_seen": "2026-09-10T21:36:57Z"
+ },
+ {
+  "company": "IBM",
+  "role": "Entry Level Software Developer 2027",
+  "location": "Poughkeepsie, NY, United States",
+  "link": "https://jobright.ai/jobs/info/6a9e29e175edfa11b47106c5?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 2,
+  "is_ml": false,
+  "id": "ibm|entry level software developer 2027",
   "first_seen": "2026-09-10T21:36:57Z"
  },
  {
@@ -1412,7 +1685,7 @@
   "company": "Boeing",
   "role": "Software Engineer (Associate or Experienced)",
   "location": "Colorado Springs, CO, United States",
-  "link": "https://jobright.ai/jobs/info/6a9866de11f73b6462c8e6bd?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a986500af954907d65731a1?utm_campaign=Software%20Engineering",
   "posted": "2026-09-11",
   "salary": null,
   "sponsorship": "unknown",
@@ -1475,6 +1748,22 @@
   "first_seen": "2026-09-10T00:13:26Z"
  },
  {
+  "company": "Amazon",
+  "role": "Software Development Engineer - 2026 (US)",
+  "location": "Seattle, WA, United States",
+  "link": "https://jobright.ai/jobs/info/6a5852203330ca6f993c3f98?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 1,
+  "is_ml": false,
+  "id": "amazon|software development engineer 2026 us",
+  "first_seen": "2026-09-10T00:13:26Z"
+ },
+ {
   "company": "Palantir Technologies",
   "role": "Software Engineer, New Grad - Production Infrastructure",
   "location": "Washington, D.C., United States",
@@ -1493,8 +1782,8 @@
  {
   "company": "MANTECH",
   "role": "Software Developer",
-  "location": "USA-MD-Saint Inigoes",
-  "link": "https://jobright.ai/jobs/info/6a521b278ef95364ead8cde4?utm_campaign=Software%20Engineering",
+  "location": "Saint Inigoes, MD, USA",
+  "link": "https://jobright.ai/jobs/info/6a34202df6b55d12c791b1df?utm_campaign=Software%20Engineering",
   "posted": "2026-09-11",
   "salary": null,
   "sponsorship": "unknown",
@@ -1509,8 +1798,8 @@
  {
   "company": "Booz Allen Hamilton",
   "role": "Software Engineer",
-  "location": "Rome, NY, United States",
-  "link": "https://jobright.ai/jobs/info/6a887e6fe8b6601d12906ff1?utm_campaign=Software%20Engineering",
+  "location": "Chantilly, VA, United States",
+  "link": "https://jobright.ai/jobs/info/6a8da619581f2d7bfdfe80ee?utm_campaign=Software%20Engineering",
   "posted": "2026-09-11",
   "salary": null,
   "sponsorship": "unknown",
@@ -1521,6 +1810,22 @@
   "is_ml": false,
   "id": "booz allen hamilton|software engineer",
   "first_seen": "2026-09-10T00:13:26Z"
+ },
+ {
+  "company": "Safeway",
+  "role": "Front End Entry Level",
+  "location": "Bothell, WA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa080e8500b01124c779812?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "safeway|front end entry level",
+  "first_seen": "2026-09-09T04:40:18Z"
  },
  {
   "company": "True Anomaly",
@@ -1590,6 +1895,22 @@
   "first_seen": "2026-09-04T18:23:30Z"
  },
  {
+  "company": "Uber",
+  "role": "Software Engineer I",
+  "location": "New York City, NY, United States",
+  "link": "https://jobright.ai/jobs/info/6a8e95552808f771d52887bd?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 2,
+  "is_ml": false,
+  "id": "uber|software engineer i",
+  "first_seen": "2026-09-02T14:28:23Z"
+ },
+ {
   "company": "Intuit",
   "role": "Software Engineer 1",
   "location": "NYC, Mountain View, CA, Atlanta, GA, San Diego, CA",
@@ -1605,6 +1926,41 @@
   "tier": 3,
   "is_ml": false,
   "id": "intuit|software engineer 1",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Leidos",
+  "role": "Software Engineer",
+  "location": "Annapolis Junction, MD",
+  "link": "https://leidos.wd5.myworkdayjobs.com/External/job/Annapolis-Junction-MD/Software-Engineer-TS-SCI-Polygraph_R-00186603",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright",
+   "simplify",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "leidos|software engineer",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Conduent",
+  "role": "Java Developer \u2013 Entry Level",
+  "location": "Atlanta, GA",
+  "link": "https://egua.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/22738",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright",
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "conduent|java developer entry level",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -1641,6 +1997,23 @@
   "tier": 3,
   "is_ml": true,
   "id": "chicago trading company|quant trading associate",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Hewlett Packard Enterprise",
+  "role": "Software Engineer Graduate",
+  "location": "Andover, MA, Bloomington, MN, San Jose, CA, Spring, TX, Durham, NC, Westford, MA, Chippewa Falls, WI, Fort Collins, CO, Sunnyvale, CA, Roseville, CA",
+  "link": "https://hpe.wd5.myworkdayjobs.com/acjobsite/job/Spring-Texas-United-States-of-America/Software-Engineer-Graduate_1213624",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright",
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "hewlett packard enterprise|software engineer graduate",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -1762,6 +2135,41 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
+  "company": "Notion",
+  "role": "Software Engineer - New Grad - Dec 2026",
+  "location": "San Francisco, CA",
+  "link": "https://jobs.ashbyhq.com/notion/e32799d2-8ef8-4803-8189-c72514afa816",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "jobright",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "notion|software engineer new grad dec 2026",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Book of the Month",
+  "role": "Associate Software Engineer - Frontend",
+  "location": "New York City, NY",
+  "link": "http://bookofthemonth.applytojob.com/apply/ByZkWONsJH/Associate-Software-Engineer-Frontend",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "book of month|associate software engineer frontend",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
   "company": "Confido",
   "role": "New Grad Software Engineer",
   "location": "New York City, NY",
@@ -1777,6 +2185,39 @@
   "tier": 3,
   "is_ml": false,
   "id": "confido|new grad software engineer",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Revolutional",
+  "role": "Associate Full Stack Engineer",
+  "location": "McLean, VA",
+  "link": "https://revolutional.com/job-openings/?gh_jid=7801406003",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "revolutional|associate full stack engineer",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Albertsons Companies",
+  "role": "Front End Entry Level",
+  "location": "Puyallup, WA, United States",
+  "link": "https://jobright.ai/jobs/info/6a8390b1379c304e892f840d?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-11",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "albertsons companies|front end entry level",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -1814,22 +2255,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Albertsons Companies",
-  "role": "Front End Entry Level",
-  "location": "Bolingbrook, IL, United States",
-  "link": "https://jobright.ai/jobs/info/6a7150ac9a0ca4480c7d3d50?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-11",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "albertsons companies|front end entry level",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "Impact",
   "role": "Associate QA Engineer",
   "location": "Santa Barbara, CA",
@@ -1844,6 +2269,70 @@
   "is_ml": false,
   "id": "impact|associate qa engineer",
   "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Commure",
+  "role": "Software Engineer, Early Career 2027",
+  "location": "Los Angeles, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa4c736654b2a9424cf1434?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-10",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "commure|software engineer early career 2027",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Cisco",
+  "role": "Software Engineer I (Full Time) - United States",
+  "location": "Milpitas, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa481f98275e3a2117609cb?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-10",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 2,
+  "is_ml": false,
+  "id": "cisco|software engineer i full time united states",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Boeing",
+  "role": "Entry-Level Simulation Software Engineer",
+  "location": "Berkeley, MO, United States",
+  "link": "https://jobright.ai/jobs/info/6aa4c28ba77a53f5a156def6?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-10",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "boeing|entry level simulation software engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Interplay",
+  "role": "Junior Forward Deployed Engineer",
+  "location": "New York, NY, United States",
+  "link": "https://jobright.ai/jobs/info/6aa4a604f7baf881567cf885?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-10",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "interplay|junior forward deployed engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
  },
  {
   "company": "Super Micro Computer Spain, S.L.",
@@ -1875,22 +2364,6 @@
   "tier": 3,
   "is_ml": true,
   "id": "rtx|software engineer i gen4 tactical airborne radar",
-  "first_seen": "2026-09-11T21:42:47Z"
- },
- {
-  "company": "Netrolynx AI",
-  "role": ".Net Engineer",
-  "location": "United States",
-  "link": "https://jobright.ai/jobs/info/6aa43079f7baf881567cdaf1?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-10",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "netrolynx ai|net engineer",
   "first_seen": "2026-09-11T21:42:47Z"
  },
  {
@@ -2006,6 +2479,22 @@
   "first_seen": "2026-09-11T18:31:06Z"
  },
  {
+  "company": "Clera",
+  "role": "Founding Product Engineer",
+  "location": "San Francisco, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa3c644959a10d7230d3edc?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-10",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "clera|founding product engineer",
+  "first_seen": "2026-09-11T14:24:58Z"
+ },
+ {
   "company": "Calumet Carton Company",
   "role": "Quality Assurance Technician",
   "location": "South Holland, Illinois, United States",
@@ -2099,22 +2588,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "l3harris technologies|associate software engineering",
-  "first_seen": "2026-09-11T14:24:58Z"
- },
- {
-  "company": "Clera",
-  "role": "Founding Product Engineer",
-  "location": "San Francisco, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6aa3c644959a10d7230d3edc?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-10",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "clera|founding product engineer",
   "first_seen": "2026-09-11T14:24:58Z"
  },
  {
@@ -2534,23 +3007,6 @@
   "first_seen": "2026-09-11T00:08:45Z"
  },
  {
-  "company": "John Gore Organization",
-  "role": "Software Engineer",
-  "location": "Boca Raton, FL",
-  "link": "https://johngore.wd1.myworkdayjobs.com/Careers/job/Boca-Raton-FL-Mon---Th-in-Office/Software-Engineer_R100723",
-  "posted": "2026-09-10",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "john gore organization|software engineer",
-  "first_seen": "2026-09-11T00:08:45Z"
- },
- {
   "company": "ALTEN Technology",
   "role": "Data Collection Operator 1",
   "location": "SF",
@@ -2791,22 +3247,6 @@
   "first_seen": "2026-09-11T00:08:45Z"
  },
  {
-  "company": "LendingClub",
-  "role": "Credit Strategy & Pricing Analyst",
-  "location": "SF",
-  "link": "https://lendingclub.wd1.myworkdayjobs.com/external/job/San-Francisco-CA/Credit-Strategy---Pricing-Analyst_R0007469",
-  "posted": "2026-09-10",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "lendingclub|credit strategy pricing analyst",
-  "first_seen": "2026-09-11T00:08:45Z"
- },
- {
   "company": "American Century Investments",
   "role": "Software Engineer",
   "location": "Kansas City, MO",
@@ -2971,7 +3411,7 @@
   "company": "SpaceX",
   "role": "Full Stack Software Engineer (Starlink)",
   "location": "Palo Alto, CA",
-  "link": "https://jobright.ai/jobs/info/69dda83fe34484770f19e656?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a1554a3554b0e12c0581b12?utm_campaign=Software%20Engineering",
   "posted": "2026-09-10",
   "salary": null,
   "sponsorship": "unknown",
@@ -2986,8 +3426,8 @@
  {
   "company": "Palantir Technologies",
   "role": "Software Engineer, New Grad - Infrastructure",
-  "location": "Palo Alto, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a4cb2ef35e45603c4bb1b4c?utm_campaign=Software%20Engineering",
+  "location": "New York, NY, United States",
+  "link": "https://jobright.ai/jobs/info/6a5529bd2084cd792b4768ea?utm_campaign=Software%20Engineering",
   "posted": "2026-09-10",
   "salary": null,
   "sponsorship": "unknown",
@@ -3013,22 +3453,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "san diego state university|web developer i",
-  "first_seen": "2026-09-10T21:36:57Z"
- },
- {
-  "company": "IBM",
-  "role": "Entry Level Software Developer 2027",
-  "location": "Poughkeepsie, NY, United States",
-  "link": "https://jobright.ai/jobs/info/6a9e29e175edfa11b47106c5?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-10",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 2,
-  "is_ml": false,
-  "id": "ibm|entry level software developer 2027",
   "first_seen": "2026-09-10T21:36:57Z"
  },
  {
@@ -3428,7 +3852,6 @@
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
-   "jobright",
    "speedyapply"
   ],
   "tier": 3,
@@ -3825,8 +4248,8 @@
  {
   "company": "Applied Intuition",
   "role": "Android Software Engineer - Applications",
-  "location": "Sunnyvale, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a560d91f7517b519ad53695?utm_campaign=Software%20Engineering",
+  "location": "Sunnyvale, California, United States",
+  "link": "https://jobright.ai/jobs/info/6a3dc1f2d261407de9801c87?utm_campaign=Software%20Engineering",
   "posted": "2026-09-10",
   "salary": null,
   "sponsorship": "unknown",
@@ -3936,22 +4359,6 @@
   "first_seen": "2026-09-10T00:13:26Z"
  },
  {
-  "company": "Amazon",
-  "role": "Software Development Engineer - 2026 (US)",
-  "location": "Seattle, WA, United States",
-  "link": "https://jobright.ai/jobs/info/6a5852203330ca6f993c3f98?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-10",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 1,
-  "is_ml": false,
-  "id": "amazon|software development engineer 2026 us",
-  "first_seen": "2026-09-10T00:13:26Z"
- },
- {
   "company": "Marshall Wace",
   "role": "Software/Infrastructure Graduate - 2027 - New York",
   "location": "New York, NY, United States",
@@ -4047,6 +4454,22 @@
   "is_ml": false,
   "id": "icf|associate servicenow developer secret or ts clearance required",
   "first_seen": "2026-09-09T14:35:03Z"
+ },
+ {
+  "company": "L3Harris Technologies",
+  "role": "Associate, Software Engineer",
+  "location": "San Diego, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa498f6c1928370a285ea3a?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-10",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "l3harris technologies|associate software engineer",
+  "first_seen": "2026-09-09T04:40:18Z"
  },
  {
   "company": "MetLife",
@@ -4642,10 +5065,58 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
+  "company": "Consigli Construction Co., Inc.",
+  "role": "Self-Perform Project Engineer",
+  "location": "Milford, Massachusetts, United States",
+  "link": "https://jobright.ai/jobs/info/6a571ad110c4d945d864d02a?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-09",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "consigli construction|self perform project engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Lockheed Martin",
+  "role": "Software Engineer - E2",
+  "location": "Orlando, FL, United States",
+  "link": "https://jobright.ai/jobs/info/6a954042c12c90443efce68c?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-09",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "lockheed martin|software engineer e2",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "Hyundai America Technical Center, Inc. (HATCI)",
+  "role": "Infotainment Engineer I (North America Quality Center - NAQC)",
+  "location": "Irvine, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6a44d3d3dc1f8335cfdeb46e?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-09",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": true,
+  "id": "hyundai america technical center hatci|infotainment engineer i north america quality center naqc",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
   "company": "Emerson",
   "role": "Embedded Firmware Development Engineer",
   "location": "Eden Prairie, MN, United States",
-  "link": "https://jobright.ai/jobs/info/6aa3c2914233a2201a2b36a9?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6aa4a553f3aa936e2cdb20af?utm_campaign=Software%20Engineering",
   "posted": "2026-09-09",
   "salary": null,
   "sponsorship": "unknown",
@@ -4661,7 +5132,7 @@
   "company": "Infosys",
   "role": "Specialist Programmer",
   "location": "Austin, TX, United States",
-  "link": "https://jobright.ai/jobs/info/6a932365c12c90443efcbb5d?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a92fb8cd18f75674827cbc7?utm_campaign=Software%20Engineering",
   "posted": "2026-09-09",
   "salary": null,
   "sponsorship": "unknown",
@@ -4671,22 +5142,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "infosys|specialist programmer",
-  "first_seen": "2026-09-12T00:16:40Z"
- },
- {
-  "company": "Hyundai America Technical Center, Inc. (HATCI)",
-  "role": "Infotainment Engineer I (North America Quality Center - NAQC) Job Details / Hyundai Motor Company",
-  "location": "Irvine, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a46254a4f64ba41dcb50b69?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-09",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "hyundai america technical center hatci|infotainment engineer i north america quality center naqc job details hyundai motor company",
   "first_seen": "2026-09-12T00:16:40Z"
  },
  {
@@ -4703,22 +5158,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "demiurge studios|2027 associate software engineer",
-  "first_seen": "2026-09-11T21:42:47Z"
- },
- {
-  "company": "Lockheed Martin",
-  "role": "Software Engineer",
-  "location": "Colorado Springs, CO, United States",
-  "link": "https://jobright.ai/jobs/info/6a8cc3e41d96e6541c8c2e6a?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-09",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "lockheed martin|software engineer",
   "first_seen": "2026-09-11T21:42:47Z"
  },
  {
@@ -5329,6 +5768,22 @@
   "tier": 3,
   "is_ml": false,
   "id": "north carolina department of agriculture and consumer services|applications developer i",
+  "first_seen": "2026-09-10T04:41:58Z"
+ },
+ {
+  "company": "Clear Investment Group",
+  "role": "Technology Analyst",
+  "location": "Chicago, IL, United States",
+  "link": "https://jobright.ai/jobs/info/6aa49ff1422289703bd67573?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-09",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "clear investment group|technology analyst",
   "first_seen": "2026-09-10T04:41:58Z"
  },
  {
@@ -6407,26 +6862,10 @@
   "first_seen": "2026-09-09T04:40:18Z"
  },
  {
-  "company": "L3Harris Technologies",
-  "role": "Associate, Software Engineer",
-  "location": "Yorba Linda, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6aa078d45b2d5633ef3bedf9?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-09",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "l3harris technologies|associate software engineer",
-  "first_seen": "2026-09-09T04:40:18Z"
- },
- {
   "company": "RTX",
   "role": "Software Engineer I (Onsite)",
   "location": "Cedar Rapids, IA, United States",
-  "link": "https://jobright.ai/jobs/info/6aa390345c11cce360364d17?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6aa39f154238ea18d430cfd2?utm_campaign=Software%20Engineering",
   "posted": "2026-09-09",
   "salary": null,
   "sponsorship": "unknown",
@@ -6864,23 +7303,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Revolutional",
-  "role": "Associate Full Stack Engineer",
-  "location": "McLean, VA",
-  "link": "https://revolutional.com/job-openings/?gh_jid=7801406003",
-  "posted": "2026-09-09",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "revolutional|associate full stack engineer",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "Mach Industries",
   "role": "Flight Software Engineer",
   "location": "Huntington Beach, CA, United States",
@@ -6932,8 +7354,8 @@
  {
   "company": "Celonis",
   "role": "Associate Value Engineer (AI-Driven Data Science & Analytics) - Orbit Program",
-  "location": "Raleigh, US, North Carolina",
-  "link": "https://job-boards.greenhouse.io/celonis/jobs/7781716003?gh_jid=7781716003",
+  "location": "New York, US, New York",
+  "link": "https://job-boards.greenhouse.io/celonis/jobs/7725788003?gh_jid=7725788003",
   "posted": "2026-09-09",
   "salary": null,
   "sponsorship": "unknown",
@@ -6960,6 +7382,38 @@
   "is_ml": false,
   "id": "muon|hardware test engineer i testbeds egse",
   "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "The Cigna Group",
+  "role": "The Cigna Group's Technology Development Program - Infrastructure & Cloud Engineering Track",
+  "location": "Bloomfield, CT, United States",
+  "link": "https://jobright.ai/jobs/info/6aa1f86adbc0e60e37e14857?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-08",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "cigna group|cigna group s technology development program infrastructure cloud engineering track",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
+  "company": "RTX",
+  "role": "Software Engineering I (Onsite)",
+  "location": "Cedar Rapids, IA, United States",
+  "link": "https://jobright.ai/jobs/info/6aa182fb500b01124c77cf09?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-08",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "rtx|software engineering i onsite",
+  "first_seen": "2026-09-12T04:39:52Z"
  },
  {
   "company": "Moffitt Cancer Center",
@@ -7023,22 +7477,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "american honda motor company|quality assurance specialist",
-  "first_seen": "2026-09-10T04:41:58Z"
- },
- {
-  "company": "Clear Investment Group",
-  "role": "Technology Analyst",
-  "location": "Chicago, IL, United States",
-  "link": "https://jobright.ai/jobs/info/6aa1cbe73272060a8e3f23ba?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-08",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "clear investment group|technology analyst",
   "first_seen": "2026-09-10T04:41:58Z"
  },
  {
@@ -8503,7 +8941,7 @@
   "company": "Viasat",
   "role": "Embedded Software Engineer, Early Career",
   "location": "Carlsbad, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a96b8b4455eaf6a08c185de?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a96b8ee246d697dcee010ec?utm_campaign=Software%20Engineering",
   "posted": "2026-09-08",
   "salary": null,
   "sponsorship": "unknown",
@@ -8535,7 +8973,7 @@
   "company": "Medpace",
   "role": "Junior Software Engineer",
   "location": "Denver, CO, United States",
-  "link": "https://jobright.ai/jobs/info/6a8dd506d34f700f87fd64eb?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6aa05a58500b01124c778786?utm_campaign=Software%20Engineering",
   "posted": "2026-09-08",
   "salary": null,
   "sponsorship": "unknown",
@@ -8612,22 +9050,6 @@
   "first_seen": "2026-09-02T18:41:05Z"
  },
  {
-  "company": "Uber",
-  "role": "Software Engineer I",
-  "location": "San Francisco, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a8ce970d34f700f87fd32dd?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-08",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 2,
-  "is_ml": false,
-  "id": "uber|software engineer i",
-  "first_seen": "2026-09-02T14:28:23Z"
- },
- {
   "company": "ByteDance",
   "role": "Backend Development Engineer Graduate (Infrastructure Platform Delivery) - 2027 Start",
   "location": "San Jose, CA, United States",
@@ -8658,24 +9080,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "virtu financial|software engineer desktop frontend developer c winforms",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Leidos",
-  "role": "Software Engineer",
-  "location": "Annapolis Junction, MD",
-  "link": "https://leidos.wd5.myworkdayjobs.com/External/job/Annapolis-Junction-MD/Software-Engineer-TS-SCI-Polygraph_R-00186603",
-  "posted": "2026-09-08",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright",
-   "simplify",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "leidos|software engineer",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -8716,9 +9120,9 @@
  },
  {
   "company": "TikTok",
-  "role": "Mobile Software Engineer Graduate - Global E-commerce",
+  "role": "Frontend Software Engineer Graduate - Global CRM",
   "location": "San Jose, CA",
-  "link": "https://lifeattiktok.com/search/7668831181590513925",
+  "link": "https://lifeattiktok.com/search/7668561079544154373",
   "posted": "2026-09-08",
   "salary": "$202k/yr",
   "sponsorship": "unknown",
@@ -8729,7 +9133,7 @@
   ],
   "tier": 3,
   "is_ml": false,
-  "id": "tiktok|mobile software engineer graduate global e commerce",
+  "id": "tiktok|frontend software engineer graduate global crm",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -9020,22 +9424,6 @@
   "is_ml": true,
   "id": "nuclear company|ai engineer 1 platform integration ai data",
   "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Safeway",
-  "role": "Front End Entry Level",
-  "location": "Bothell, WA, United States",
-  "link": "https://jobright.ai/jobs/info/6aa080e8500b01124c779812?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-07",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "safeway|front end entry level",
-  "first_seen": "2026-09-09T04:40:18Z"
  },
  {
   "company": "North Carolina State University",
@@ -9505,24 +9893,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Notion",
-  "role": "Software Engineer - New Grad - Dec 2026",
-  "location": "San Francisco, CA",
-  "link": "https://jobs.ashbyhq.com/notion/e32799d2-8ef8-4803-8189-c72514afa816",
-  "posted": "2026-09-07",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "jobright",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "notion|software engineer new grad dec 2026",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "K2 Space Corporation",
   "role": "Application Software Engineer",
   "location": "Los Angeles, CA, United States",
@@ -9752,7 +10122,7 @@
   "company": "SpaceX",
   "role": "Software Engineer (Starlink)",
   "location": "Redmond, WA, United States",
-  "link": "https://jobright.ai/jobs/info/6a8d82d125fc4e7ae3dbc21a?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a4323d438fa630841050552?utm_campaign=Software%20Engineering",
   "posted": "2026-09-06",
   "salary": null,
   "sponsorship": "unknown",
@@ -9859,22 +10229,6 @@
   "is_ml": false,
   "id": "wolverine trading|software engineer n tiered software developer",
   "first_seen": "2026-09-06T17:01:10Z"
- },
- {
-  "company": "Qualcomm",
-  "role": "Wireless Software Engineer",
-  "location": "Santa Clara, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a91ea1bd18f75674827aae9?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-06",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 2,
-  "is_ml": false,
-  "id": "qualcomm|wireless software engineer",
-  "first_seen": "2026-09-06T14:09:33Z"
  },
  {
   "company": "Skild AI",
@@ -10193,22 +10547,6 @@
   "first_seen": "2026-09-08T15:08:51Z"
  },
  {
-  "company": "SpaceX",
-  "role": "Full Stack Engineer, Flight Software",
-  "location": "Hawthorne, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a970608d13b4819f39de986?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-05",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "spacex|full stack engineer flight software",
-  "first_seen": "2026-09-08T05:57:22Z"
- },
- {
   "company": "BTI360",
   "role": "Backend Java Engineer - Clearance Required",
   "location": "Chantilly, VA",
@@ -10255,22 +10593,6 @@
   "is_ml": false,
   "id": "tata consultancy services|junior fde",
   "first_seen": "2026-09-06T00:55:30Z"
- },
- {
-  "company": "Valmont",
-  "role": "IT Associate Programmer Analyst",
-  "location": "Carrollton, TX, Omaha, NE",
-  "link": "https://valmont.wd1.myworkdayjobs.com/ValmontCareers/job/Omaha-NE/IT-Associate-Programmer-Analyst_R28670",
-  "posted": "2026-09-05",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "valmont|it associate programmer analyst",
-  "first_seen": "2026-09-05T22:53:48Z"
  },
  {
   "company": "4theweb",
@@ -10546,38 +10868,6 @@
   "first_seen": "2026-09-05T16:03:25Z"
  },
  {
-  "company": "US Pharmacopeia",
-  "role": "Software Engineer - Marketing Systems & Integrations",
-  "location": "Rockville, MD, United States",
-  "link": "https://jobright.ai/jobs/info/6a2a1f082cde2824469bfebc?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-05",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "us pharmacopeia|software engineer marketing systems integrations",
-  "first_seen": "2026-09-05T12:41:50Z"
- },
- {
-  "company": "Visionworks of America",
-  "role": "Quality Assurance Tech",
-  "location": "San Antonio, TX, United States",
-  "link": "https://jobright.ai/jobs/info/6a7f4b20927c79391ad07a0a?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-05",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "visionworks of america|quality assurance tech",
-  "first_seen": "2026-09-05T12:41:50Z"
- },
- {
   "company": "AiPrise",
   "role": "Software Engineer 1",
   "location": "San Jose, CA",
@@ -10592,23 +10882,6 @@
   "is_ml": false,
   "id": "aiprise|software engineer 1",
   "first_seen": "2026-09-05T09:03:30Z"
- },
- {
-  "company": "Edgehog Trading",
-  "role": "Graduate Software Engineer",
-  "location": "Chicago, IL",
-  "link": "https://ats.rippling.com/edgehog-trading/jobs/0d6b0e5c-be84-4324-8ee3-b875504e01d8",
-  "posted": "2026-09-05",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright",
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "edgehog trading|graduate software engineer",
-  "first_seen": "2026-09-05T00:03:45Z"
  },
  {
   "company": "Credence",
@@ -10746,7 +11019,7 @@
   "company": "CACI International Inc",
   "role": "Junior PeopleSoft Developer",
   "location": "Herndon, VA, United States",
-  "link": "https://jobright.ai/jobs/info/6a9b0677fe45b8490f606786?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a9aec772cdc5958f53e8f36?utm_campaign=Software%20Engineering",
   "posted": "2026-09-05",
   "salary": null,
   "sponsorship": "unknown",
@@ -10962,22 +11235,6 @@
   "is_ml": false,
   "id": "scientific research|software developer 1",
   "first_seen": "2026-09-11T14:24:58Z"
- },
- {
-  "company": "3Red Partners",
-  "role": "Graduate C++ Developer (2027 Incoming Graduate, Full-Time)",
-  "location": "Chicago, IL, United States",
-  "link": "https://jobright.ai/jobs/info/6a5a56a04da96a42cfd95477?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-04",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "3red partners|graduate c developer 2027 incoming graduate full time",
-  "first_seen": "2026-09-05T09:03:30Z"
  },
  {
   "company": "ZRS Management",
@@ -11233,6 +11490,22 @@
   "tier": 3,
   "is_ml": true,
   "id": "edgehog trading|graduate quantitative trader",
+  "first_seen": "2026-09-05T00:03:45Z"
+ },
+ {
+  "company": "Edgehog Trading",
+  "role": "Graduate Software Engineer",
+  "location": "Chicago, IL",
+  "link": "https://ats.rippling.com/edgehog-trading/jobs/0d6b0e5c-be84-4324-8ee3-b875504e01d8",
+  "posted": "2026-09-04",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "edgehog trading|graduate software engineer",
   "first_seen": "2026-09-05T00:03:45Z"
  },
  {
@@ -13562,22 +13835,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "DiDi Global",
-  "role": "Software Engineer - Planning Selection Autonomy",
-  "location": "San Jose, CA",
-  "link": "https://job-boards.greenhouse.io/didi/jobs/8131851",
-  "posted": "2026-09-01",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "didi global|software engineer planning selection autonomy",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "TRUCKING PEOPLE",
   "role": "Data Capture Technician - AI & Construction",
   "location": "Lubbock, TX",
@@ -14418,8 +14675,8 @@
  {
   "company": "SpaceX",
   "role": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
-  "location": "Redmond, WA",
-  "link": "https://boards.greenhouse.io/spacex/jobs/8696143002?gh_jid=8696143002",
+  "location": "Hawthorne, CA",
+  "link": "https://boards.greenhouse.io/spacex/jobs/8724316002?gh_jid=8724316002",
   "posted": "2026-09-01",
   "salary": null,
   "sponsorship": "unknown",
@@ -14430,22 +14687,6 @@
   "is_ml": false,
   "id": "spacex|new graduate engineer software security 26 27 starlink",
   "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "iCapital Network",
-  "role": "Full Stack Engineer - Associate",
-  "location": "Salt Lake City, Utah, United States",
-  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8452448002",
-  "posted": "2026-08-31",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "icapital network|full stack engineer associate",
-  "first_seen": "2026-09-12T00:16:40Z"
  },
  {
   "company": "Framatome",
@@ -14590,6 +14831,24 @@
   "is_ml": true,
   "id": "captivation|software engineer 1 2 postgresql ci cd springboot angular mongodb oracle docker kubernetes json xml jira",
   "first_seen": "2026-09-02T04:30:20Z"
+ },
+ {
+  "company": "iCapital Network",
+  "role": "Associate Full Stack Engineer",
+  "location": "NYC",
+  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8549590002",
+  "posted": "2026-08-31",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "simplify",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "icapital network|associate full stack engineer",
+  "first_seen": "2026-09-01T19:50:59Z"
  },
  {
   "company": "Booz Allen",
@@ -15429,22 +15688,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "verne robotics|robot pilot",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Hewlett Packard Enterprise",
-  "role": "Software Engineer Graduate",
-  "location": "Andover, MA, Bloomington, MN, San Jose, CA, Spring, TX, Durham, NC, Westford, MA, Chippewa Falls, WI, Fort Collins, CO, Sunnyvale, CA, Roseville, CA",
-  "link": "https://hpe.wd5.myworkdayjobs.com/acjobsite/job/Spring-Texas-United-States-of-America/Software-Engineer-Graduate_1213624",
-  "posted": "2026-08-28",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "hewlett packard enterprise|software engineer graduate",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -21374,6 +21617,22 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
+  "company": "Goldman Sachs",
+  "role": "Engineering New Analyst - Engineering",
+  "location": "Salt Lake City, UT",
+  "link": "https://higher.gs.com/roles/171570?type=students",
+  "posted": "2026-08-15",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "goldman sachs|engineering new analyst engineering",
+  "first_seen": "2026-09-12T04:39:52Z"
+ },
+ {
   "company": "Applied Intuition",
   "role": "Scenario Engineer New Grad",
   "location": "Sunnyvale, CA",
@@ -22451,22 +22710,6 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
-  "company": "Book of the Month",
-  "role": "Associate Software Engineer - Frontend",
-  "location": "New York City, NY",
-  "link": "http://bookofthemonth.applytojob.com/apply/ByZkWONsJH/Associate-Software-Engineer-Frontend",
-  "posted": "2026-08-14",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "book of month|associate software engineer frontend",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
   "company": "i3 Corps",
   "role": "COMPASS Associate Software Developer",
   "location": "Huntsville, AL",
@@ -23011,22 +23254,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "apollo mission critical engineering|business data analyst",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "United Smart Tech",
-  "role": "AI Engineer - Agents & Experimentation",
-  "location": "Carrollton, TX",
-  "link": "https://unitedsmarttech.bamboohr.com/careers/185/",
-  "posted": "2026-08-13",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "united smart tech|ai engineer agents experimentation",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -27026,23 +27253,6 @@
  },
  {
   "company": "TikTok",
-  "role": "Frontend Software Engineer Graduate - Global CRM",
-  "location": "San Jose, CA",
-  "link": "https://lifeattiktok.com/search/7668561079544154373",
-  "posted": "2026-08-04",
-  "salary": "$202k/yr",
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "tiktok|frontend software engineer graduate global crm",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "TikTok",
   "role": "Machine Learning Engineer Graduate - Data Search Recommendation Global E-Commerce",
   "location": "Seattle, WA",
   "link": "https://lifeattiktok.com/search/7668384123840514309",
@@ -27269,6 +27479,23 @@
   "tier": 3,
   "is_ml": false,
   "id": "tiktok|backend software engineer graduate global e commerce",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "TikTok",
+  "role": "Mobile Software Engineer Graduate - Global E-commerce",
+  "location": "San Jose, CA",
+  "link": "https://lifeattiktok.com/search/7668831181590513925",
+  "posted": "2026-08-04",
+  "salary": "$202k/yr",
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "tiktok|mobile software engineer graduate global e commerce",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -30227,22 +30454,6 @@
   "tier": 3,
   "is_ml": true,
   "id": "texas sports academy|junior software engineer ai forward",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Conduent",
-  "role": "Java Developer \u2013 Entry Level",
-  "location": "Atlanta, GA",
-  "link": "https://egua.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/22738",
-  "posted": "2026-07-29",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "conduent|java developer entry level",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -35208,6 +35419,22 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
+  "company": "Optiver",
+  "role": "Graduate Software Engineer",
+  "location": "Austin, TX",
+  "link": "https://www.optiver.com/join-us/jobs/8604899002/?gh_jid=8604899002",
+  "posted": "2026-07-01",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "optiver|graduate software engineer",
+  "first_seen": "2026-09-11T00:08:45Z"
+ },
+ {
   "company": "Internet Brands",
   "role": "Associate AI Software Engineer",
   "location": "Newark, NJ",
@@ -35677,6 +35904,22 @@
   "is_ml": false,
   "id": "university of texas at austin|career success reporting and insights graduate assistant",
   "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "Aptiv",
+  "role": "RTOS Development Engineer",
+  "location": "Walnut Creek, CA",
+  "link": "https://aptiv.wd5.myworkdayjobs.com/aptiv_careers/job/USA-Walnut-Creek-CA---WR/Engineer---RTOS-US_J000700368",
+  "posted": "2026-06-27",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "simplify"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "aptiv|rtos development engineer",
+  "first_seen": "2026-09-12T04:39:52Z"
  },
  {
   "company": "Prime Healthcare",
@@ -38600,23 +38843,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "university of texas at austin|software development engineer texas institute for electronics",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "iCapital Network",
-  "role": "Associate Full Stack Engineer",
-  "location": "NYC",
-  "link": "https://job-boards.greenhouse.io/icapitalnetwork/jobs/8549590002",
-  "posted": "2026-05-22",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "icapital network|associate full stack engineer",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -42391,14 +42617,15 @@
  },
  {
   "company": "Brain Co.",
-  "role": "Early Career Machine Learning Engineer, Applied AI",
-  "location": "San Francisco Bay Area",
-  "link": "https://jobs.ashbyhq.com/brainco/bb6e555b-8bb1-4cd7-9813-4f82a5ebe839",
+  "role": "Early Career Machine Learning Engineer - Applied AI",
+  "location": "SF",
+  "link": "https://jobs.ashbyhq.com/brainco/bb6e555b-8bb1-4cd7-9813-4f82a5ebe839/application?embed=true",
   "posted": "2026-01-21",
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
-   "ats"
+   "ats",
+   "simplify"
   ],
   "tier": 3,
   "is_ml": true,
