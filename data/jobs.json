@@ -1,5 +1,53 @@
 [
  {
+  "company": "IBM",
+  "role": "Application Developer - IT Service Management",
+  "location": "Baton Rouge, Louisiana, United States",
+  "link": "https://jobright.ai/jobs/info/6ab811c939fd8792cb73ed03?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-26",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 2,
+  "is_ml": false,
+  "id": "ibm|application developer it service management",
+  "first_seen": "2026-09-26T22:48:31Z"
+ },
+ {
+  "company": "ByteDance",
+  "role": "Software Development Engineer Graduate (Intent-Based Networking) - 2027 Start",
+  "location": "San Jose, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6ab82e3a62bb1fbd451deb9f?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-26",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "bytedance|software development engineer graduate intent based networking 2027 start",
+  "first_seen": "2026-09-26T22:48:31Z"
+ },
+ {
+  "company": "Wolverine Trading",
+  "role": "Entry Level C++ Software Engineer (December 2026 Graduates)",
+  "location": "Chicago, IL, United States",
+  "link": "https://jobright.ai/jobs/info/6a7f795ce2030208f276e6d6?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-26",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "wolverine trading|entry level c software engineer december 2026 graduates",
+  "first_seen": "2026-09-26T22:48:31Z"
+ },
+ {
   "company": "SpaceX",
   "role": "Full Stack Software Engineer (Build Reliability)",
   "location": "Hawthorne, CA, United States",
@@ -81,9 +129,9 @@
  },
  {
   "company": "Metropolitan Transportation Authority",
-  "role": "Application Developer Levels 1 - 5 -iOS",
+  "role": "Application Developer Levels 1-5 - iOS",
   "location": "New York, NY, United States",
-  "link": "https://jobright.ai/jobs/info/6aaaff86c85610f4a4842e93?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a599456856af468ab00471b?utm_campaign=Software%20Engineering",
   "posted": "2026-09-26",
   "salary": null,
   "sponsorship": "unknown",
@@ -98,8 +146,8 @@
  {
   "company": "Neuralink",
   "role": "Software Engineer, BCI Applications",
-  "location": "Fremont, California, United States",
-  "link": "https://jobright.ai/jobs/info/683df139abb1ff44979fe7bb?utm_campaign=Software%20Engineering",
+  "location": "South San Francisco, California, United States",
+  "link": "https://jobright.ai/jobs/info/6a1538b3128680351d96002d?utm_campaign=Software%20Engineering",
   "posted": "2026-09-26",
   "salary": null,
   "sponsorship": "unknown",
@@ -241,6 +289,22 @@
   "first_seen": "2026-09-25T22:18:31Z"
  },
  {
+  "company": "SpaceX",
+  "role": "Full Stack Software Engineer, Manufacturing Systems",
+  "location": "Hawthorne, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6a7d1c637c52154b59f5dfeb?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-26",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "spacex|full stack software engineer manufacturing systems",
+  "first_seen": "2026-09-25T18:34:47Z"
+ },
+ {
   "company": "Charles Schwab",
   "role": "Associate - Software Development & Engineering",
   "location": "Southlake, TX, United States",
@@ -368,22 +432,6 @@
   "is_ml": false,
   "id": "jacobs|junior software developer",
   "first_seen": "2026-09-20T18:46:11Z"
- },
- {
-  "company": "Safeway",
-  "role": "Front End Entry Level",
-  "location": "SeaTac, WA, United States",
-  "link": "https://jobright.ai/jobs/info/6ab44708d2f5fbd604be2993?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-26",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "safeway|front end entry level",
-  "first_seen": "2026-09-18T04:46:27Z"
  },
  {
   "company": "Garner Health",
@@ -528,8 +576,8 @@
  {
   "company": "Albertsons Companies",
   "role": "Front End Entry Level",
-  "location": "Pullman, WA, United States",
-  "link": "https://jobright.ai/jobs/info/6a7dd30f0cd4a0703257c03f?utm_campaign=Software%20Engineering",
+  "location": "New Lenox, IL, United States",
+  "link": "https://jobright.ai/jobs/info/6a7dfe2f0cd4a0703257cfe3?utm_campaign=Software%20Engineering",
   "posted": "2026-09-26",
   "salary": null,
   "sponsorship": "unknown",
@@ -540,6 +588,22 @@
   "is_ml": false,
   "id": "albertsons companies|front end entry level",
   "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
+  "company": "SpaceX",
+  "role": "Software Engineer (Flight Reliability)",
+  "location": "Redmond, WA, United States",
+  "link": "https://jobright.ai/jobs/info/6a9a059ead752e2ad5503637?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-25",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "spacex|software engineer flight reliability",
+  "first_seen": "2026-09-26T22:48:31Z"
  },
  {
   "company": "IBM",
@@ -560,8 +624,8 @@
  {
   "company": "Lockheed Martin",
   "role": "Software Engineer",
-  "location": "Offutt Air Force Base, NE, United States",
-  "link": "https://jobright.ai/jobs/info/6a905ab20bd89e205d249c9f?utm_campaign=Software%20Engineering",
+  "location": "Colorado Springs, CO, United States",
+  "link": "https://jobright.ai/jobs/info/6a8cc3e41d96e6541c8c2e6a?utm_campaign=Software%20Engineering",
   "posted": "2026-09-25",
   "salary": null,
   "sponsorship": "unknown",
@@ -1473,22 +1537,6 @@
   "first_seen": "2026-09-25T18:34:47Z"
  },
  {
-  "company": "SpaceX",
-  "role": "Full Stack Software Engineer, Manufacturing Systems",
-  "location": "Hawthorne, CA, United States",
-  "link": "https://jobright.ai/jobs/info/6a7d1c637c52154b59f5dfeb?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-25",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "spacex|full stack software engineer manufacturing systems",
-  "first_seen": "2026-09-25T18:34:47Z"
- },
- {
   "company": "IBM",
   "role": "Associate Application Developer IBM Tech & Red Hat - 2027",
   "location": "Baton Rouge, LA, United States",
@@ -2043,7 +2091,7 @@
   "company": "Mayo Clinic",
   "role": "Software Engineer - Omniverse Simulation",
   "location": "Rochester, MN, United States",
-  "link": "https://jobright.ai/jobs/info/6ab18e26d2a93d5a97ebb5da?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6ab18f1ad2a93d5a97ebb64b?utm_campaign=Software%20Engineering",
   "posted": "2026-09-25",
   "salary": null,
   "sponsorship": "unknown",
@@ -4797,8 +4845,8 @@
  {
   "company": "Amazon Web Services (AWS)",
   "role": "Software Development Engineer I, Annapurna Labs, Early Career - 2027",
-  "location": "New York, NY, United States",
-  "link": "https://jobright.ai/jobs/info/6ab54b624873fd3fd8528ac0?utm_campaign=Software%20Engineering",
+  "location": "Cupertino, CA, United States",
+  "link": "https://jobright.ai/jobs/info/6ab54b70b3db59402d0fbca4?utm_campaign=Software%20Engineering",
   "posted": "2026-09-23",
   "salary": null,
   "sponsorship": "unknown",
@@ -7508,7 +7556,6 @@
   "salary": null,
   "sponsorship": "unknown",
   "sources": [
-   "jobright",
    "simplify"
   ],
   "tier": 3,
@@ -7884,22 +7931,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "anduril industries|2027 early career firmware engineer",
-  "first_seen": "2026-09-22T22:07:13Z"
- },
- {
-  "company": "Southwest Airline Career Page",
-  "role": "Associate Software Engineer - Direct College Hire",
-  "location": "United States",
-  "link": "https://jobright.ai/jobs/info/6ab2c17a1508734c1530bb8c?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-22",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "southwest airline career page|associate software engineer direct college hire",
   "first_seen": "2026-09-22T22:07:13Z"
  },
  {
@@ -8501,6 +8532,22 @@
   "first_seen": "2026-09-18T14:30:56Z"
  },
  {
+  "company": "Safeway",
+  "role": "Front End Entry Level",
+  "location": "SeaTac, WA, United States",
+  "link": "https://jobright.ai/jobs/info/6ab44708d2f5fbd604be2993?utm_campaign=Software%20Engineering",
+  "posted": "2026-09-22",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "jobright"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "safeway|front end entry level",
+  "first_seen": "2026-09-18T04:46:27Z"
+ },
+ {
   "company": "Cala Health",
   "role": "Software Test Engineer",
   "location": "Remote - USA",
@@ -8963,22 +9010,6 @@
   "is_ml": true,
   "id": "nuclear company|ai engineer 1 compliance quality testing",
   "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "John Deere",
-  "role": "Engineer, Software",
-  "location": "Waterloo, IA, United States",
-  "link": "https://jobright.ai/jobs/info/6a85c1a7e459fa3baa8639cf?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-21",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "john deere|engineer software",
-  "first_seen": "2026-09-26T19:50:17Z"
  },
  {
   "company": "CACI",
@@ -10694,7 +10725,7 @@
   "company": "KLA",
   "role": "Customer Engagement Applications Engineer - SFS",
   "location": "Hillsboro, OR, United States",
-  "link": "https://jobright.ai/jobs/info/6a6812083b5e6b116a551e75?utm_campaign=Software%20Engineering",
+  "link": "https://jobright.ai/jobs/info/6a6811df5d2a117fb9cee887?utm_campaign=Software%20Engineering",
   "posted": "2026-09-20",
   "salary": null,
   "sponsorship": "unknown",
@@ -10908,22 +10939,6 @@
   "first_seen": "2026-09-20T16:03:21Z"
  },
  {
-  "company": "New York Life",
-  "role": "Associate - Full Stack Developer Job Details / New York Life Insurance Co",
-  "location": "New York, NY, United States",
-  "link": "https://jobright.ai/jobs/info/6aaf65222e757fcb5c8bcaa5?utm_campaign=Software%20Engineering",
-  "posted": "2026-09-19",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "jobright"
-  ],
-  "tier": 3,
-  "is_ml": true,
-  "id": "new york life|associate full stack developer job details new york life insurance",
-  "first_seen": "2026-09-20T11:23:04Z"
- },
- {
   "company": "Perseus Group",
   "role": "Software Engineer I",
   "location": "2 Locations",
@@ -11083,24 +11098,6 @@
   "tier": 3,
   "is_ml": false,
   "id": "revolutional|associate application programmer java developer",
-  "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Freeform",
-  "role": "Software Engineer - New Grad December 2026",
-  "location": "Los Angeles, CA",
-  "link": "https://job-boards.greenhouse.io/freeformfuturecorp/jobs/7826634003",
-  "posted": "2026-09-19",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "ats",
-   "jobright",
-   "speedyapply"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "freeform|software engineer new grad december 2026",
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
@@ -23344,6 +23341,23 @@
   "first_seen": "2026-09-01T19:50:59Z"
  },
  {
+  "company": "Freeform",
+  "role": "Software Engineer - New Grad December 2026",
+  "location": "Los Angeles, CA",
+  "link": "https://job-boards.greenhouse.io/freeformfuturecorp/jobs/7826634003",
+  "posted": "2026-08-25",
+  "salary": null,
+  "sponsorship": "unknown",
+  "sources": [
+   "ats",
+   "speedyapply"
+  ],
+  "tier": 3,
+  "is_ml": false,
+  "id": "freeform|software engineer new grad december 2026",
+  "first_seen": "2026-09-01T19:50:59Z"
+ },
+ {
   "company": "Applied Intuition",
   "role": "UX Test Engineer - New Grad (December 2026)",
   "location": "Sunnyvale",
@@ -26045,22 +26059,6 @@
   "is_ml": false,
   "id": "boom supersonic|software engineer exceptional talent",
   "first_seen": "2026-09-01T19:50:59Z"
- },
- {
-  "company": "Goldman Sachs",
-  "role": "Engineering New Analyst - Engineering",
-  "location": "Salt Lake City, UT",
-  "link": "https://higher.gs.com/roles/171570?type=students",
-  "posted": "2026-08-15",
-  "salary": null,
-  "sponsorship": "unknown",
-  "sources": [
-   "simplify"
-  ],
-  "tier": 3,
-  "is_ml": false,
-  "id": "goldman sachs|engineering new analyst engineering",
-  "first_seen": "2026-09-26T17:08:52Z"
  },
  {
   "company": "Dexmate",
